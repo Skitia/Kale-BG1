@@ -1,0 +1,39 @@
+// ITEMS
+LOAD_TRA ~Kale/translations/English/Kale_items.tra~
+
+COPY_EXISTING ~Kale/Item/X3KCLO.itm~ ~override/X3KCLO.itm~
+SAY NAME1 @45
+SAY NAME2 @45
+SAY DESC @46
+OUTER_SET strref = RESOLVE_STR_REF (@53)
+APPEND item_use.2da ~X3KCLO Kale %strref% 3~
+
+COPY_EXISTING ~Kale/Item/X3KNote.itm~ ~override/X3KNote.itm~
+SAY NAME1 @47
+SAY NAME2 @47
+SAY DESC @48	
+
+COPY_EXISTING ~Kale/Item/X3KREW.itm~ ~override/X3KREW.itm~
+SAY NAME1 @49
+SAY NAME2 @49
+SAY DESC @50	
+
+COPY_EXISTING ~Kale/Item/X3KCLOG.itm~ ~override/X3KCLOG.itm~
+SAY NAME1 @51
+SAY NAME2 @51
+SAY DESC @52
+	
+COPY_EXISTING ~Kale/Item/X3KSYBQ.itm~ ~override/X3KSYBQ.itm~
+SAY NAME1 @54
+SAY NAME2 @54
+SAY DESC @55
+
+COPY_EXISTING ~Kale/Item/X3KTBQ.itm~ ~override/X3KTBQ.itm~
+SAY NAME1 @56
+SAY NAME2 @56
+SAY DESC @57
+
+COPY_EXISTING ~Kale/Item/X32KQSL.itm~ ~override/X32KQSL.itm~ 
+SAY NAME1 @58 
+SAY NAME2 @58 
+SAY DESC @59

@@ -1,0 +1,11 @@
+IF
+Global("X3KDealQuest","GLOBAL",1)
+Global("X3DwarfSpawn","GLOBAL",0)
+InParty("X3Kale")
+AreaCheck("AR1215")
+THEN
+RESPONSE #100
+SetGlobal("X3DwarfSpawn","GLOBAL",1)
+CreateCreature("X3KIRK",[320.422],SE)
+Continue()
+END

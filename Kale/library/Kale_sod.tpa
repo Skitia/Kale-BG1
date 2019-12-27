@@ -1,0 +1,131 @@
+LOAD_TRA ~Kale/translations/English/Kale_sod.tra~
+
+
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////Siege of Dragonspear////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+//CREATURES
+
+COPY ~%MOD_FOLDER%/cre/SoD/x32Kale.cre~ ~override~
+  SAY NAME1 @1 //Kale
+  SAY NAME2 @1 //Kale
+  WRITE_ASCII 0x248 ~X32Kale~ #8  //override script
+  WRITE_ASCII 0x280 ~X3Kale~ #32  //DV
+  WRITE_ASCII 0x2cc ~X32Kale~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~KaleM~ #8   
+  WRITE_ASCII 0x3c ~KaleL~ #8   
+  SAY BIO @2 
+  SAY MORALE @3 // ~This isn't working out like I thought.~
+  SAY HAPPY @4 // ~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~
+  SAY UNHAPPY_ANNOYED @5 //
+  SAY UNHAPPY_SERIOUS @6
+  SAY UNHAPPY_BREAKING_POINT @7
+  SAY LEADER @8 // ~Oy, listen up!~
+  SAY TIRED @9 // ~I am so bushed, you have no idea.~
+  SAY BORED @10 // ~*Yawn*~
+  SAY BATTLE_CRY1 @11 // ~Damn, this is fun. Kill them all!~
+  SAY BATTLE_CRY2 @12 // ~Here comes halfling death!~
+  SAY BATTLE_CRY3 @13 // ~I love this part!~
+  SAY BATTLE_CRY4 @14 // ~Now you're gonna get it!~
+  SAY BATTLE_CRY5 @15 // ~Uh oh. Uninvited guests.~
+  SAY DAMAGE @16 //~Hugh!~ 
+  SAY DYING @17 //~Aww, not again...~ [KaleDead]
+  SAY HURT @18 // ~Hey, bleeding over here!~
+  SAY AREA_FOREST @19 // ~Oh lovely. What'd I step in now?~
+  SAY AREA_CITY @20
+  SAY AREA_DUNGEON @21 // ~*Pfft.* Every dungeon looks the same.~
+  SAY AREA_DAY @22 // ~Sooo. I wonder how much a map of this place would go for?~
+  SAY AREA_NIGHT @23 // ~Criminy. Where the bloody hell are we?~
+  SAY SELECT_COMMON1 @24 // ~Yeah? You want something, I bet.~  
+  SAY SELECT_COMMON2 @25 // ~Aye now. Something else you need?~
+  SAY SELECT_COMMON3 @26 // ~Soooo.~
+  SAY SELECT_COMMON4 @27 // ~Yep?~
+  SAY SELECT_COMMON5 @28 // ~Come on, come on!~
+  SAY SELECT_COMMON6 @24 // ~Yeah? You want something, I bet.~ 
+  SAY SELECT_ACTION1 @29 // ~Righto. Off we go.~
+  SAY SELECT_ACTION2 @30 // ~Okey-Dokey.~ 
+  SAY SELECT_ACTION3 @31 // ~Just give me a sec.~
+  SAY SELECT_ACTION4 @51 // ~Wish I thought of that.~
+  SAY SELECT_ACTION5 @49 // ~You might want to re-think that.~
+  SAY SELECT_ACTION6 @50 // ~Woohoo.~
+  SAY SELECT_ACTION7 @51 // ~Wish I thought of that.~
+  SAY CRITICAL_HIT @32 //~Yeah! That's the way!~ 
+  SAY CRITICAL_MISS @33 //~Bloody Hell~ 
+  SAY TARGET_IMMUNE @34 // ~I ain't doing much here.~
+  SAY INVENTORY_FULL @35 // ~What am I, a bloody mule?!~  
+  SAY SPELL_DISRUPTED @36 // ~I hate it when my bloody spells won't work.~ 
+  SAY SET_A_TRAP @37 // ~Yep. All done.~
+  SAY HIDDEN_IN_SHADOWS @38 // ~Time to slip into the shadows.~ 
+  SAY PICKED_POCKET @39 // ~Hey, what's this?~ 
+  SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
+  SAY SELECT_RARE2 @41 //~Come on, come on!~
+  SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
+  
+APPEND ~bddialog.2da~ ~X3Kale X32Kale X32KaleJ X32KaleD~ 
+  UNLESS ~X3Kale~
+
+
+////////////////DIALOGUES
+
+COMPILE EVALUATE_BUFFER ~Kale/dialogue/SoD/X32KBRO.d~
+COMPILE EVALUATE_BUFFER ~Kale/dialogue/SoD/X32Kale.d~
+COMPILE EVALUATE_BUFFER ~Kale/dialogue/SoD/X32KaleJ.d~
+COMPILE EVALUATE_BUFFER ~Kale/dialogue/SoD/X32KQST1.d~
+
+
+// Non-Area Scripts 
+COMPILE EVALUATE_BUFFER ~Kale/Script/SoD/X32KaleD.baf~
+COMPILE EVALUATE_BUFFER ~Kale/Script/SoD/X32Kale.baf~
+COMPILE EVALUATE_BUFFER ~Kale/Script/SoD/X32KBant.baf~
+COMPILE EVALUATE_BUFFER ~Kale/Script/SoD/X32KQST1.baf~
+
+
+////////////////Area SCRIPTS
+  EXTEND_TOP ~bd0063.bcs~ ~%MOD_FOLDER%/script/SoD/bd0063.baf~ 
+  EXTEND_TOP ~bd0101.bcs~ ~%MOD_FOLDER%/script/SoD/bd0101.baf~ 
+  EXTEND_TOP ~bd0103.bcs~ ~%MOD_FOLDER%/script/SoD/bd0103.baf~
+  EXTEND_TOP ~bd0104.bcs~ ~%MOD_FOLDER%/script/SoD/bd0104.baf~
+  EXTEND_TOP ~bd0109.bcs~ ~%MOD_FOLDER%/script/SoD/bd0109.baf~   
+  EXTEND_TOP ~bd0114.bcs~ ~%MOD_FOLDER%/script/SoD/bd0114.baf~ 
+  EXTEND_TOP ~bd0120.bcs~ ~%MOD_FOLDER%/script/SoD/bd0120.baf~
+  EXTEND_TOP ~bd1000.bcs~ ~%MOD_FOLDER%/script/SoD/bd1000.baf~ 
+  EXTEND_TOP ~bd2000.bcs~ ~%MOD_FOLDER%/script/SoD/bd2000.baf~ 
+  EXTEND_TOP ~bd3000.bcs~ ~%MOD_FOLDER%/script/SoD/bd3000.baf~ 
+  EXTEND_TOP ~bd4100.bcs~ ~%MOD_FOLDER%/script/SoD/bd4100.baf~
+  EXTEND_TOP ~bd4300.bcs~ ~%MOD_FOLDER%/script/SoD/bd4300.baf~
+  EXTEND_TOP ~bd4601.bcs~ ~%MOD_FOLDER%/script/SoD/bd4601.baf~
+  EXTEND_TOP ~bd5300.bcs~ ~%MOD_FOLDER%/script/SoD/bd5300.baf~
+  EXTEND_TOP ~bd7100.bcs~ ~%MOD_FOLDER%/script/SoD/bd7100.baf~ 
+  EXTEND_TOP ~bd7300.bcs~ ~%MOD_FOLDER%/script/SoD/bd7300.baf~ 
+  EXTEND_TOP ~bdparty.bcs~ ~%MOD_FOLDER%/script/SoD/bdparty.baf~ 
+  EXTEND_TOP ~bdcut08.bcs~ ~%MOD_FOLDER%/script/SoD/bdcut08.baf~ 
+  EXTEND_TOP ~bdintro.bcs~ ~%MOD_FOLDER%/script/SoD/bdintro.baf~
+  EXTEND_TOP ~bdcut58.bcs~ ~%MOD_FOLDER%/script/SoD/bdcut58.baf~
+  EXTEND_TOP ~bdcut59b.bcs~ ~%MOD_FOLDER%/script/SoD/bdcut59b.baf~
+  EXTEND_TOP ~bdcut61.bcs~ ~%MOD_FOLDER%/script/SoD/bdcut61.baf~
+  EXTEND_TOP ~bdport01.bcs~ ~%MOD_FOLDER%/script/SoD/bdport01.baf~
+///////////////Other Creatures 
+COPY ~%MOD_FOLDER%/cre/SoD/x32KBRO.cre~ ~override~
+SAY NAME1 ~Samuel~
+SAY NAME2 ~Samuel~
+  WRITE_ASCII 0x248 ~X32KBRO~ #8  //override script
+  WRITE_ASCII 0x280 ~X32KBRO~ #32  //DV
+  WRITE_ASCII 0x2cc ~X32KBRO~ #8   //pre-joining dialogue file
+COPY ~%MOD_FOLDER%/cre/SoD/X32KQST1.cre~ ~override~
+SAY NAME1 ~Lilah~
+SAY NAME2 ~Lilah~
+  WRITE_ASCII 0x248 ~X32KQST1~ #8  //override script
+  WRITE_ASCII 0x280 ~X32KQST1~ #32  //DV
+  WRITE_ASCII 0x2cc ~X32KQST1~ #8   //pre-joining dialogue file
+  COPY ~%MOD_FOLDER%/cre/SoD/X32KQST2.cre~ ~override~
+SAY NAME1 ~Dead Halfling~
+SAY NAME2 ~Dead Halfling~
+  WRITE_ASCII 0x248 ~X32KQST2~ #8  //override script
+  WRITE_ASCII 0x280 ~X32KQST2~ #32  //DV
+  WRITE_ASCII 0x2cc ~X32KQST2~ #8   //pre-joining dialogue file
+//TO MAKE IT DISPLAY RIGHT IN WEIDU
+
+LOAD_TRA ~Kale/translations/%LANGUAGE%/Kale.tra~

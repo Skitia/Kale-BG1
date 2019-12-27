@@ -1,0 +1,9 @@
+IF
+Global("X3KeepSpawn","GLOBAL",0)
+GlobalGT("X3KaleTalk","GLOBAL",8)
+THEN
+RESPONSE #100
+SetGlobal("X3KeepSpawn","GLOBAL",1)
+CreateCreature("X3KKEEP",[670.255],SW)
+Continue()
+END

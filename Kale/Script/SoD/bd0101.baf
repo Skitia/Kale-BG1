@@ -1,0 +1,94 @@
+/* We need to check for three instances, fortunately, only for this area.
+The first is if Kale never spawned, was in party. The second is if Kale never spawned, was not in party. The last is if Kale was spawned, was not killed, and is not in party.*/
+IF
+  InPartyAllowDead("X3Kale")
+  Global("X3KaleMarch","BD0101",0)
+THEN
+  RESPONSE #100
+    SetGlobal("X3KaleMarch","BD0101",1)  
+END 
+
+IF
+  Global("X3KaleMarch","BD0101",0)
+  Global("X3KaleSpawn","GLOBAL",0)
+  BeenInParty("X3Kale")
+THEN
+  RESPONSE #100
+    SetGlobal("X3KaleMarch","BD0101",1)
+	SetGlobal("X3KaleSpawn","GLOBAL",1) // So he doesn't randomly spawn in the Elfsong in case you can visit it later. 
+	MoveGlobal("BD0101","X3Kale",[937.554])
+	ActionOverride("X3Kale",Face(SW))
+    ReallyForceSpellDeadRES("BDREJUVE","X3Kale") // In case Kale died and was never raised. 	
+    ChangeEnemyAlly("X3Kale",NEUTRAL)
+    ChangeSpecifics("X3Kale",ALLIES)
+    ActionOverride("X3Kale",SetGlobal("bd_joined","LOCALS",0))
+    ActionOverride("X3Kale",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
+    ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+    ActionOverride("X3Kale",ChangeAIScript("X32Kale",OVERRIDE))
+    ActionOverride("X3Kale",ChangeAIScript("BDTHIE01",GENERAL))
+    Continue()
+END
+
+
+
+	// Never had Kale in the party. Creating Kale.
+IF
+  Global("X3KaleMarch","BD0101",0)
+  Global("X3KaleSpawn","GLOBAL",0)
+  !BeenInParty("X3Kale")
+THEN
+  RESPONSE #100
+    SetGlobal("X3KaleMarch","BD0101",1)
+	SetGlobal("X3KaleSpawn","GLOBAL",1) // So he doesn't randomly spawn in the Elfsong in case you can visit it later. 
+	CreateCreature("X32Kale",[937.554],SW)
+	ActionOverride("X3Kale",MakeGlobal())
+    ChangeEnemyAlly("X3Kale",NEUTRAL)
+    ChangeSpecifics("X3Kale",ALLIES)
+    ActionOverride("X3Kale",SetGlobal("bd_joined","LOCALS",0))
+    ActionOverride("X3Kale",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
+    ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+    ActionOverride("X3Kale",ChangeAIScript("BDTHIE01",GENERAL))
+    Continue()
+END	
+// Kale did spawn, but was not recruited. 
+IF
+  Global("X3KaleMarch","BD0101",0)
+  Global("X3KaleSpawn","GLOBAL",1)
+  !Dead("X3Kale") // If he's dead, the PC doesn't want him around...for some reason.
+  !InPartyAllowDead("X3Kale") // If he's not in the party, regardless of his state. 
+THEN
+  RESPONSE #100
+    SetGlobal("X3KaleMarch","BD0101",1)
+	MoveGlobal("BD0101","X3Kale",[937.554])
+	ActionOverride("X3Kale",Face(SW))
+	ActionOverride("X3Kale",MakeGlobal())
+    ChangeEnemyAlly("X3Kale",NEUTRAL)
+    ChangeSpecifics("X3Kale",ALLIES)
+    ActionOverride("X3Kale",SetGlobal("bd_joined","LOCALS",0))
+    ActionOverride("X3Kale",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
+    ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+    ActionOverride("X3Kale",ChangeAIScript("BDTHIE01",GENERAL))
+    Continue()
+END	
+
+IF
+	Global("bd_mdd010z_ot","bd0101",1)
+	!GlobalTimerNotExpired("bd_mdd010z_ot_timer","bd0101")
+	InMyArea("X3Kale")
+	!InParty("X3Kale")
+THEN
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Kale",~Getting into big waters now.~) // Comment here when you replace the string with @ tra.
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Kale",~The scamp would be proud, he'd be!~) // Now which one of your big, strong soldiers will help with my packs?
+	RESPONSE #10
+		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
+		SetGlobal("bd_mdd010z_ot","bd0101",0)
+		DisplayStringHead("X3Kale",~How am I going to be famous if the hero of Baldur's gate is coming along?~) // Someone stole your purse? This city...
+	RESPONSE #90 // ~Need to research the particular use of 90.
+		Continue()
+END

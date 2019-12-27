@@ -1,0 +1,40 @@
+
+
+IF
+  Global("X3Kale_MoveCamp","bd1000",0)
+  !Dead("X3Kale")
+  !InPartyAllowDead("X3Kale")
+THEN
+  RESPONSE #100
+    SetGlobal("X3Kale_MoveCamp","bd1000",1)
+    MoveGlobal("bd1000","X3Kale",[574.3592]) //look up area coordinates for bd1000.are
+    ActionOverride("X3Kale",Face(SW))
+    ReallyForceSpellDeadRES("bdrejuve","X3Kale")
+    ChangeEnemyAlly("X3Kale",NEUTRAL)
+    ChangeSpecifics("X3Kale",ALLIES)
+    ActionOverride("X3Kale",SetGlobal("bd_joined","locals",0))
+    ActionOverride("X3Kale",SetGlobal("bd_retreat","locals",0))
+    ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))
+    ActionOverride("X3Kale",ChangeAIScript("X32Kale",OVERRIDE))
+    ActionOverride("X3Kale",ChangeAIScript("bdasc3",CLASS))
+    ActionOverride("X3Kale",ChangeAIScript("BDSHOUT",RACE))
+    ActionOverride("X3Kale",ChangeAIScript("BDFIGH01",GENERAL))
+    ActionOverride("X3Kale",ChangeAIScript("",DEFAULT))
+    Continue()
+END
+
+IF
+  Global("bd_plot","global",170)
+  Global("bd_mdd016b_X3Kale","bd1000",0)
+  !GlobalTimerNotExpired("bd_mdd016b_timer","bd1000")
+  IfValidForPartyDialog("X3Kale")
+  NextTriggerObject("X3Kale")
+  Detect(Player1)
+THEN
+  RESPONSE #50
+    SetGlobal("bd_mdd016b_X3Kale","bd1000",1)
+  RESPONSE #50
+    SetGlobal("bd_mdd016b_X3Kale","bd1000",1)
+    SetGlobalTimer("bd_mdd016b_timer","bd1000",ONE_ROUND)
+    DisplayStringHead("X3Kale",~That woman...Her ma messed up with her.~)
+END

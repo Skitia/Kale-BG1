@@ -1,0 +1,11 @@
+//X: 670, Y: 259 AR0807: Samuel 
+
+IF
+Global("X3SamuelSpawn","GLOBAL",0)
+GlobalGT("X3KaleMomTalk","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("X3SamuelSpawn","GLOBAL",1)
+CreateCreature("X3KBRO",[670.259],SW)
+Continue()
+END

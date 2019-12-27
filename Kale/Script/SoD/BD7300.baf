@@ -1,0 +1,39 @@
+IF 
+Global("X32KaleQuest","GLOBAL",1)
+!InParty("X3Kale")
+TriggerOverride(Player1,See("X32KQST2"))
+THEN RESPONSE #100 
+SetGlobal("X32KaleQuest","GLOBAL",2)
+AddJournalEntry(@103,QUEST)
+END 
+
+IF 
+Global("X32KaleQuest","GLOBAL",1)
+InParty("X3Kale")
+OR(2)
+TriggerOverride("X3Kale",See("X32KQST2"))
+TriggerOverride(Player1,See("X32KQST2"))
+THEN RESPONSE #100 
+SetGlobal("X32KaleQuest","GLOBAL",2)
+SetGlobal("X32KaleQuestTalk","GLOBAL",4)
+AddJournalEntry(@103,QUEST)
+END 
+
+IF
+Global("X32KaleQuestSpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("X32KaleQuestSpawn","GLOBAL",1) 
+CreateCreature("X32KQST1",[1683.1935],S)
+Continue()
+END 
+
+IF
+GlobalGT("X32KaleQuest","GLOBAL",0)
+Global("X32KaleQuestBodySpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("X32KaleQuestBodySpawn","GLOBAL",0)
+CreateCreature("X32KQST2",[3767.1563],S)
+Continue()
+END 

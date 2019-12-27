@@ -1,0 +1,26 @@
+IF
+	Global("bd_hellevator_ot_X3Kale","bd4601",0)
+	Global("bd_hellevator_ot_X3Vien","bd4601",1)
+	IsValidForPartyDialogue("X3Kale")  // X3Kale
+	IsValidForPartyDialogue("X3Vien")  // Vienxay
+	!GlobalTimerNotExpired("bd_hellevator_timer","bd4601")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobal("bd_hellevator_ot_X3Kale","bd4601",1)
+		SetGlobalTimer("bd_hellevator_timer","bd4601",7)
+		DisplayStringHead("X3Kale",~Does it look like I can bloody help it?~)
+END
+
+IF
+	Global("bd_hellevator_ot_X3Kale","bd4601",0)
+	IsValidForPartyDialogue("X3Kale")  // X3Kale
+	!IsValidForPartyDialogue("X3Vien")  // Vienxay
+	!GlobalTimerNotExpired("bd_hellevator_timer","bd4601")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobal("bd_hellevator_ot_X3Kale","bd4601",1)
+		SetGlobalTimer("bd_hellevator_timer","bd4601",7)
+		DisplayStringHead("X3Kale",~Mom is going to kill me if she finds out about this.~)
+END

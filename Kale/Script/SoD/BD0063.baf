@@ -1,0 +1,10 @@
+IF
+	Global("X3_NPC02","MYAREA",0)
+	IsValidForPartyDialog("X3Kale")  // Kale
+	RandomNum(3,3)
+	Delay(3)
+THEN
+	RESPONSE #100
+		SetGlobal("X3_NPC02","MYAREA",1)
+		DisplayStringHead("X3Kale",~Mate...I gotta admit, I'm a bit spooked.~)  
+END

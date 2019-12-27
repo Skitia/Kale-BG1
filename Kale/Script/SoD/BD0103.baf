@@ -1,0 +1,44 @@
+
+
+
+IF
+  OR(2)
+    InMyArea("X3Kale")
+    InPartyAllowDead("X3Kale")
+  GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+  RESPONSE #100
+    ActionOverride("X3Kale",LeaveParty())
+	ActionOverride("PlayerChest00",TakeCreatureItems("X3Kale",BACKPACK))
+    SmallWait(1)
+    ActionOverride("X3Kale",DestroySelf())
+    Continue()
+END
+
+IF
+	Global("bd_plot","global",55)
+	Global("X3_MKale","global",0)
+	InParty("X3Kale")
+THEN
+	RESPONSE #100
+	MoveGlobal("BD0103","X3Kale",[582.341])
+	SetGlobal("X3_MKale","global",1)
+	ActionOverride("X3Kale",Face(NE)
+END
+ 	
+IF
+	Global("bd_plot","global",55)
+	Global("BD_PLAY_ONCE_X3Kale","BD0103",0)
+	Global("BD_OT_DELAY","BD0103",0)
+	IfValidForPartyDialog("X3Kale")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BD_OT_DELAY","BD0103",1)
+		SetGlobal("BD_PLAY_ONCE_X3Kale","BD0103",1)
+		Wait(1)
+		DisplayStringWait("X3Kale",~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~ [KaleHap]) 
+		SetGlobal("BD_OT_DELAY","BD0103",0)
+		SetInterrupt(TRUE)
+END
+

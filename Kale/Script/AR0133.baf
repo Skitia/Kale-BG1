@@ -1,0 +1,11 @@
+IF 
+Global("X3KaleCloakQuestAccept","GLOBAL",1)
+Global("X3KaleThiefSpawn","GLOBAL",0) 
+THEN 
+RESPONSE #100 
+SetGlobal("X3KaleThiefSpawn","GLOBAL",1) 
+CreateCreature("X3KTHUG2",[3868.2745],SE)
+CreateCreature("X3KTHUG3",[3868.2745],SE)
+CreateCreature("X3KMIKE",[3868.2745],SE)
+Continue()
+END 

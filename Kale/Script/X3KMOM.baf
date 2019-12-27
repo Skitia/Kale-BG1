@@ -1,0 +1,20 @@
+  IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+  THEN
+    RESPONSE #100
+      Enemy()
+	  ActionOverride("X3Kale",LeaveParty())
+	  	  ActionOverride("X3Kale",Enemy())
+		  AddJournalEntry(@10020,QUEST_DONE)
+  END 
+  
+
+IF
+Global("X3KMomSpawn","GLOBAL",1)
+!InParty("X3Kale")
+THEN
+RESPONSE #100
+SetGlobal("X3KMomSpawn","GLOBAL",0)
+DestroySelf()
+END   

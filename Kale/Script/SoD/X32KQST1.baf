@@ -1,0 +1,8 @@
+IF 
+See("X3Kale")
+Global("X32KaleQuestSpawn","GLOBAL",1) // They have spawned 
+THEN RESPONSE #100 
+SetGlobal("X32KaleQuestSpawn","GLOBAL",2) //Turn Off 
+DisplayStringHead("X32KQST1",~Is that...hey!~)
+Dialogue("X3Kale")
+END

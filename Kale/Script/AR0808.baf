@@ -1,0 +1,11 @@
+IF
+Global("X3SamuelSpawn","GLOBAL",1)
+InParty("X3Kale")
+AreaCheck("AR0808")
+THEN
+RESPONSE #100
+SetGlobal("X3SamuelSpawn","GLOBAL",2)
+CreateCreature("X3KDEAL",[482.243],SW)
+CreateCreature("X3KTHUG",[482.243],SW)
+Continue()
+END

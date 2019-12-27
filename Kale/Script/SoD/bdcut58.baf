@@ -1,0 +1,13 @@
+/* bdcut58.baf */
+
+
+IF
+  Global("X3Kale_kicked_bd4700","global",1) 
+  !Dead("X3Kale")
+  !InParty("X3Kale")
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    MoveGlobal("bd4400","X3Kale",[935.1105]) 
+    ActionOverride("X3Kale",Face(E))    
+END

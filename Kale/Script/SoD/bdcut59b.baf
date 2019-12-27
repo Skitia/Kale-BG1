@@ -1,0 +1,24 @@
+
+
+IF
+  Global("X3Kale_kicked_bd4700","global",1) 
+  !Dead("X3Kale")
+  !InParty("X3Kale")
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    MoveGlobal("bd4300","X3Kale",[415.511]) // This will almost never happen.
+    ActionOverride("X3Kale",Face(N))
+END
+
+
+IF
+  Global("X3Kale_kicked_bd4700","global",0)
+  !Dead("X3Kale")
+  !InParty("X3Kale")
+THEN
+  RESPONSE #100
+  CutSceneId(Player1)
+  MoveGlobal("bd4300","X3Kale",[942.877]) //coordinates whereverKale should be waiting if he wasn't with the PC to Avernus. 
+  ActionOverride("X3Kale",Face(S))
+END

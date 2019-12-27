@@ -1,0 +1,30 @@
+IF
+    InParty("X3Kale")
+	Global("X3Kale_MoveCamp","BD7100",0)
+THEN
+  RESPONSE #100
+    SetGlobal("X3Kale_MoveCamp","BD7100",1)
+END
+
+IF
+  Global("X3Kale_MoveCamp","bd3000",0)
+  !Dead("X3Kale")
+  !InPartyAllowDead("X3Kale")
+THEN
+  RESPONSE #100
+    SetGlobal("X3Kale_MoveCamp","bd3000",1)
+    MoveGlobal("bd3000","X3Kale",[1352.1689]) //look up area coordinates for bd3000.are
+    ActionOverride("X3Kale",Face(W))
+    ReallyForceSpellDeadRES("bdrejuve","X3Kale")
+    ChangeEnemyAlly("X3Kale",NEUTRAL)
+    ChangeSpecifics("X3Kale",ALLIES)
+    ActionOverride("X3Kale",SetGlobal("bd_joined","locals",0))
+    ActionOverride("X3Kale",SetGlobal("bd_retreat","locals",0))
+    ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))
+    ActionOverride("X3Kale",ChangeAIScript("X32Kale",OVERRIDE))
+    ActionOverride("X3Kale",ChangeAIScript("bdasc3",CLASS))
+    ActionOverride("X3Kale",ChangeAIScript("BDSHOUT",RACE))
+    ActionOverride("X3Kale",ChangeAIScript("BDFIGH01",GENERAL))
+    ActionOverride("X3Kale",ChangeAIScript("",DEFAULT))
+    Continue()
+END

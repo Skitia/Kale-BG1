@@ -1,0 +1,19 @@
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("potn10",Myself)
+ THEN
+ RESPONSE #100
+	DisplayStringHead(Myself,@17) //quaffs a potion
+	UseItem("potn10",Myself)
+	Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !HasItem("potn10",Myself)
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+	Continue()
+END

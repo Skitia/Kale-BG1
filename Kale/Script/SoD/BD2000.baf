@@ -1,0 +1,73 @@
+IF
+	Global("bd_plot","global",250)
+	!GlobalTimerNotExpired("bd_mdd410z_ot_timer","bd2000")
+	Global("bd_ot_X3Kale","bd2000",0)
+	IfValidForPartyDialogue("X3Kale")  // Kale
+	!IfValidForPartyDialogue("X3Rec") // Recorder
+	TriggerOverride("X3Kale",Range([ENEMY.0.0.0.CRUSADERS],30))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Kale","bd2000",1)
+		DisplayStringHead("X3Kale",~Woohoo! Take this and that, ha!~)  
+END
+
+
+IF
+	Global("bd_plot","global",250)
+	!GlobalTimerNotExpired("bd_mdd410z_ot_timer","bd2000")
+	Global("bd_ot_X3Kale","bd2000",0)
+	IfValidForPartyDialogue("X3Kale")  // Kale
+	IfValidForPartyDialogue("X3Rec")
+	TriggerOverride("X3Kale",Range([ENEMY.0.0.0.CRUSADERS],30))
+	Switch("bd_ot_X3Kale","bd2000")
+THEN
+	RESPONSE #0
+		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Kale","bd2000",1)
+		SetGlobal("bd_ot_X3KaleX3Rec","bd2000",1) 
+		DisplayStringHead("X3Kale",~Woohoo! Record this, Recorder!~)  
+END
+
+/* Recorder's Response, commented out for reference: 
+
+IF
+	Global("bd_plot","global",250)
+	!GlobalTimerNotExpired("bd_mdd410z_ot_timer","bd2000")
+	Global("bd_ot_X3Rec","bd2000",0)
+	IfValidForPartyDialogue("X3Kale")  // Recorder
+	IfValidForPartyDialogue("X3Rec")
+	TriggerOverride("X3Rec",Range([ENEMY.0.0.0.CRUSADERS],30))
+	Switch("bd_ot_X3Rec","bd2000")
+	Global("bd_ot_X3KaleX3Rec","bd2000",1)
+THEN
+	RESPONSE #0
+		SetGlobalTimer("bd_mdd410z_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Rec","bd2000",1)
+		SetGlobal("bd_ot_X3KaleX3Rec","bd2000",2)
+		DisplayStringHead("X3Rec",~Just shut up and swing!~)  
+END
+
+*/ 
+
+
+IF
+	Global("bd_X3Kale_special2","bd2000",0)
+	!IfValidForPartyDialogue("X3Kale")  // Kale
+	OpenState("Bhaal_Skull",TRUE)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_X3Kale_special2","bd2000",1)
+END
+
+IF
+	Global("bd_X3Kale_special2","bd2000",0)
+	IfValidForPartyDialogue("X3Kale")  // Kale
+	!ActuallyInCombat()
+	OpenState("Bhaal_Skull",TRUE)
+	Delay(8)
+THEN
+	RESPONSE #100
+		DisplayStringHead("X3Kale",~Pfft. Now you're just showing off!~)  
+		SetGlobal("bd_X3Kale_special2","bd2000",1)
+END

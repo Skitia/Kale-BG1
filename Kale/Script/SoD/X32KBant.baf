@@ -1,0 +1,1267 @@
+//Baeloth 
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleBaeloth1","MYAREA",0)
+Switch("X32KaleBaeloth1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Baeloth",~You're a scrumptous scrappy little man.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~That I am. What, you trying to butter me up for something?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Baeloth",~A new roaring ring of woundrous war and cataclysmic conflict!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Wouldn't be bad for a little while. Long as you had something better than dogs.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Baeloth",~An excellent explosion of excitement. We'll talk more later.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",-1)
+END 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleBaeloth2","MYAREA",0)
+Switch("X32KaleBaeloth2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo, about what we were talking about before.~) 
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Baeloth",~Are you  backing out? We haven't even started talking about pay proportion.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~I was never in, I don't commit like that. I just wanted to say...~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Theoretically, what sort of cloaks would I get?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Baeloth",~Huh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",-1)
+RESPONSE #50
+	DisplayStringHead("X3Kale",~You didn't dress up your combatants? No flashiness. Come on mate, looks are everything.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",50)
+RESPONSE #60 
+ 	DisplayStringHead("Baeloth",~Flashy Fluttering Capes? You've given me an ingenious idea. This will help business get booming. Once it restarts.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",60)
+RESPONSE #50
+	DisplayStringHead("X3Kale",~If and once. And if it does? I better get a hearty cut of the profits!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleBaeloth1","MYAREA",-1) 	
+END 
+
+// Corwin
+
+// Talk 1
+
+IF
+	InMyArea(Player1)
+	!ActuallyInCombat()
+	!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+	GlobalGT("X32KaleCorwin1","MYAREA",0)
+	Switch("X32KaleCorwin1","MYAREA")
+THEN
+RESPONSE #1
+	DisplayStringHead("X3Kale",~Soooo.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleCorwin1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("CORWIN",~Who are you "so-ing"?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~You.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleCorwin1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("CORWIN",~Then ask your question normally.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Eh. Uh.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleCorwin1","MYAREA",50)
+RESPONSE #50
+	DisplayStringHead("CORWIN",~Forget it.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin1","MYAREA",60)
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Come on! I was getting there. Sheesh.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleCorwin1","MYAREA",-1)	
+END 
+// Talk 2
+
+IF
+	InMyArea(Player1)
+	!ActuallyInCombat()
+	!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+	GlobalGT("X32KaleCorwin2","MYAREA",0)
+	Switch("X32KaleCorwin2","MYAREA")
+THEN
+RESPONSE #1
+	DisplayStringHead("Corwin",~You keep looking at me. Just ask already.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Okay. Soooooo.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Corwin",~Forget it.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Bloody hells. I didn't even get started.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleCorwin2","MYAREA",40)
+RESPONSE #40 
+	DisplayStringHead("Corwin",~You're taking your time on purpose. I don't have time.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin2","MYAREA",50)
+RESPONSE #50 
+	DisplayStringHead("X3Kale",~All right. You got me. Can I ask my question now?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleCorwin2","MYAREA",60)	
+RESPONSE #60 
+	DisplayStringHead("Corwin",~No.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleCorwin2","MYAREA",-1)
+END 	
+
+// Dorn 
+
+// Talk 1
+
+IF
+	InMyArea(Player1)
+	!ActuallyInCombat()
+	!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+	GlobalGT("X32KaleDorn1","MYAREA",0)
+	Switch("X32KaleDorn1","MYAREA")
+THEN
+RESPONSE #1
+	DisplayStringHead("X3Kale",~Soooo. Dorn. Pal. Got a question.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDorn1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Dorn",~I am not your pal, fool.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Sheesh. Someone's moody. Just wanted to ask about your patron.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDorn1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Dorn",~Speak.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~So. This is service for life? No outs or anything?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDorn1","MYAREA",50)
+RESPONSE #50
+	DisplayStringHead("Dorn",~Ur-Gothoz demands loyalty. A loyalty well worth the price.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn1","MYAREA",60)
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Even if he told you couldn't eat your favorite meal anymore?.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDorn1","MYAREA",60)	
+RESPONSE #70 
+	DisplayStringHead("Dorn",~Your inability to understand what is worth consideration is your weakness.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn1","MYAREA",60)
+RESPONSE #80 	
+	DisplayStringHead("X3Kale",~That's what you might think mate. I'm going to continue to value delicious pastries.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDorn1","MYAREA",-1)
+END 
+// Talk 2
+
+IF
+	InMyArea(Player1)
+	!ActuallyInCombat()
+	!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+	GlobalGT("X32KaleDorn2","MYAREA",0)
+	Switch("X32KaleDorn2","MYAREA")
+THEN
+RESPONSE #1
+	DisplayStringHead("Dorn",~You are not as worthless as I thought, but you could strive to be stronger.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~This Ur-guy, you mean? You're saying I should talk to him.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Dorn",~No. You are unworthy of his consideration.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Mate, if your Ur-Guy had met me first, well...nothing would be different.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleDorn2","MYAREA",40)
+RESPONSE #40 
+	DisplayStringHead("Dorn",~My point precisely. You are and would still be, mediocre.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDorn2","MYAREA",-1)
+END 	
+
+/*Dynaheir's common is difficult!*/
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleDynaheir1","MYAREA",0)
+Switch("X32KaleDynaheir1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Dynaheir",~Thou art becoming more and more the little Minsc, Kale.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~What a distinction! Thou makes me smile.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Dynaheir",~Why art thou speaking like me?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Why, I art as well start being like thee too.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Dynaheir",~Perhaps I was wrong about thee. Thou art more and more just a pesky halfling.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDynaheir1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~And I was hoping to be told I was becoming like you. Shame!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDynaheir1","MYAREA",-1)
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleDynaheir2","MYAREA",0)
+Switch("X32KaleDynaheir2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo. How are thou today, Dynaheir?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Dynaheir",~Don't speak like you know me.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Dynaheir",~Why art thou continuing this tirade?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Just a bit of fun! 'Sides, don't you like it?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Dynaheir",~No! I art not amused by thee.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~Why do I see a smile?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("Dynaheir",~I am *not* smiling.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleDynaheir2","MYAREA",70)	
+RESPONSE #70
+	DisplayStringHead("X3Kale",~You'll admit you like this someday.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleDynaheir2","MYAREA",-1)
+END 
+
+// Edwin 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleEdwin1","MYAREA",0)
+Switch("X32KaleEdwin1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Edwin",~Kale, you keep running in front of my spells. Do you have a death wish?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~What's wrong with that?.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Edwin",~Because my power could incinerate you.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Really? It's not done much at all yet.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Edwin",~You insolent monkey!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleEdwin1","MYAREA",-1)	
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleEdwin2","MYAREA",0)
+Switch("X32KaleEdwin2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Edwin",~Halfling, you continue to be extremely reckless in front of my magic.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Mate, maybe I feel so confident and free spirited because of your magic, eh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Edwin",~What are you saying?  You are saying it calms you?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~When I know I've got some reinforcing magic behind me, makes me look all the more great for it.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Edwin",~I had not thought of that (Though I do not want to make him more interesting.) Carry on then with your foolish charging.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~You bet!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleEdwin2","MYAREA",-1)	
+END 
+
+// Glint 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleGlint1","MYAREA",0)
+Switch("X32KaleGlint1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Glint",~So, Kale. You are a halfling.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Heh. Sure not a gnome, mate.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Glint",~Right, definitely not. Though we're quite similar. Anyway, you have family, right?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~A brother who ain't the brightest and a mother who sure is...motherly.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Glint",~Oh I know all about that. Mothers and all. Though I love her dearly. And my Aunt too.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleGlint1","MYAREA",50)	
+RESPONSE #50 
+	DisplayStringHead("X3Kale",~I just wish she was less nosey. Let me do what I want! I'm my own grown man!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",60)	
+RESPONSE #60 
+	DisplayStringHead("Glint",~Yes, oh definitely yes. But family is family, and very important.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",60)		
+RESPONSE #70
+	DisplayStringHead("X3Kale",~Not enough to slave over, or constantly get out of trouble.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",80)		
+RESPONSE #80 
+	DisplayStringHead("Glint",~Oh. Oh. You have a lot of bad experiences with that sort of situation?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",90)		
+RESPONSE #90
+	DisplayStringHead("X3Kale",~I could talk about it all day.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint1","MYAREA",-1)
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleGlint2","MYAREA",0)
+Switch("X32KaleGlint2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Glint",~So. Kale. Yeah. Have you helped your mother a lot with problems? Or your brother?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Mother's old, but she ain't helpless, just annoying. My brother though? Horrible with money.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Glint",~Oh. Oh dear. I can understand. My cousin always seems to be short of money. Always needs a bit more.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~He needs to just think with his head. Gold is glorious, but no quick way to earn it.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Glint",~Well there are a few get rich quick schemes I have heard work from some people. Very interesting some of them.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~And you know how many you should try, mate? None. Not a one. Trust me on that. Brother nearly made me broke with one idea.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",60)	
+RESPONSE #60 
+ 	DisplayStringHead("Glint",~What happened? What was the idea?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",70)	
+RESPONSE #70
+	DisplayStringHead("X3Kale",~A lovemaking potion.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",-1)
+RESPONSE #80 
+	DisplayStringHead("Glint",~A...oh. That doesn't sound very applicable. How did it work exactly?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",90)		
+RESPONSE #90
+	DisplayStringHead("X3Kale",~You really don't want to know. Let's just say it was a very embarrassing business venture.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleGlint2","MYAREA",-1)
+END 	
+
+// Jaheria 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleJaheria1","MYAREA",0)
+Switch("X32KaleJaheria1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Jaheria",~You are reckless, Kale. Think before you act.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Eh, if I wanted to be mothered I would ask my mother along.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Jaheria",~Charging into the fray endangers all of us, and that is why we are speaking.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Yeah yeah, whatever.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Jaheria",~I would take this more seriously if I were you. If anyone is hurt...~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleJaheria1","MYAREA",50)	
+RESPONSE #50 
+	DisplayStringHead("X3Kale",~All right, all right! You're worse than ma.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria1","MYAREA",-1)	
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleJaheria2","MYAREA",0)
+Switch("X32KaleJaheria2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Jaheria",~You've been heeding my words.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~If you call listening to our leader's orders, yeah, I have.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Jaheria",~You know what I mean. I wished to give my thanks for it.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~This mean you'll stop glaring my way when I make the smallest error?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Jaheria",~I am not that hard on you.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~Maybe not, but it sure feels that way.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleJaheria2","MYAREA",-1)	
+END  
+
+// Khalid 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleKhalid1","MYAREA",0)
+Switch("X32KaleKhalid1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo. Khalid.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Khalid",~Y-yes? You need something, Kale?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Marriage. Why'd you bother?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Khalid",~W-w-what? Why d-do, why d-do you ask?.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~The pressure of it is why I'm here and not elsewhere.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleKhalid1","MYAREA",50)	
+RESPONSE #50 
+	DisplayStringHead("Khalid",~D-d-do you not love them?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid1","MYAREA",60)	
+RESPONSE #60 
+	DisplayStringHead("X3Kale",~That isn't it, it was...nevermind. Nevermind.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleKhalid1","MYAREA",-1)	
+END 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleKhalid2","MYAREA",0)
+Switch("X32KaleKhalid2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Khalid, I've been thinking. About our last conversation~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Khalid",~Oh. M-marriage. Right.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Sometimes I think I didn't want to because I didn't think I was her best choice.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Khalid",~Y-you are strong, and b-brave. You've done more than your part for us.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Yeah, but a relationship is a different battle. Anyway, I just don't like the idea of forever. It's scary, you know?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Khalid",~I, I d-do. I m-mean...~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~But you do have the courage for it. Strength of yours. Maybe even a little admirable.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",70)	
+RESPONSE #70 
+	DisplayStringHead("Khalid",~Oh? T-thank you Kale. Thank you.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",80)
+RESPONSE #80 
+	DisplayStringHead("X3Kale",~Yep. And when I get agreeable to the dreadful idea of chains, I know just who to ask for advice!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleKhalid2","MYAREA",-1)	
+END 
+
+// M'khiin 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleMkhiin1","MYAREA",0)
+Switch("X32KaleMkhiin1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Suprised you haven't betrayed us yet, goblin.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMkhiin1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Mkhiin",~No reason to.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMkhiin1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Yeah? You're a goblin.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMkhiin1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Mkhiin",~Not a reason.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMkhiin1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Playing tough, are we?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleMkhiin1","MYAREA",50)
+RESPONSE #50
+	DisplayStringHead("Mkhiin",~No. Just no reason.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMkhiin1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~I've got my eye on you.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleMkhiin1","MYAREA",50)	
+END
+
+// Minsc 
+  	
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleMinsc1","MYAREA",0)
+Switch("X32KaleMinsc1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Minsc, pal, buddy! You ever wonder if we're really on the right side?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Minsc",~No no. We are on the right side! The butts we kick are surely evil.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Yeah, but don't they think the same of us?~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Minsc",~Minsc has not thought of this. Perhaps they need help to change their ways!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Mate, I'll just save our conversations for swords from now on.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleMinsc1","MYAREA",-1)
+END
+  
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleMinsc2","MYAREA",0)
+Switch("X32KaleMinsc2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~This crusade is going to leave a lot of dead people.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Minsc",~Ah, but that is why we are here. To kick their butts liberally so it stops.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Yeah, but the dead will still be dead. Too late for all of that.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Minsc",~We raise our swords so they live, and no one else falls! Fight so evil hurts the good no more!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleMinsc2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Wish I had that spirit all the time, Minsc. Damn precious it is. Don't lose it for nothing.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleMinsc2","MYAREA",-1)
+END
+
+// Neera 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleNeera1","MYAREA",0)
+Switch("X32KaleNeera1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Neera",~I'm so hungry. What I would't give to have the next surge summon a banquet.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~You and me both. We really don't get enough meals.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Neera",~And when we do, they are all gray and uck.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Heh. How about you and I try to stir something together during one of our rests, eh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Neera",~Oh I know all about that. Mothers and all. Though I love her dearly. And my Aunt too.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleNeera1","MYAREA",-1)	
+END
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleNeera2","MYAREA",0)
+Switch("X32KaleNeera2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Neera",~So. You want to talk about it?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~Nope. Pretending that cooking fiasco didn't happen.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("Neera",~Really? The taste grew on me after the first few bites.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Kale",~Yeah? I couldn't even dare another one.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("Neera",~I guess we'll have to stick with boring taks and rations.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Kale",~Damn shame. Was hopeful I had a potential career as a chef to hope for.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleNeera2","MYAREA",-1)	
+END	 
+
+// Rasaad 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleRasaad1","MYAREA",0)
+Switch("X32KaleRasaad1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Rasaad, you're always so composed. Tight. Why not relax, take it easy.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Rasaad",~Too much ails my heart right now Kale. It is not easy to just let go.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Just ignore it. We're out taking down a crusade. Nothing else matters.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Rasaad",~I wish I could my friend. I wish I could.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad1","MYAREA",-1)
+END
+  
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleRasaad2","MYAREA",0)
+Switch("X32KaleRasaad2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Rasaad",~Are you really so unburdened, Kale?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Kale",~I've got things that'd drag me down if I thought about them too much..~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~But that's why I say don't think about them. Nothing we can do for it right now.~ )
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Rasaad",~I can see your wisdom, friend. And yet that answer does not ease me at all.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Guess I just like to push away and walk my problems. When things get tough for a halfling, you can just walk away.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleRasaad2","MYAREA",-1)
+RESPONSE #30
+	DisplayStringHead("Rasaad",~I am afraid this is something I cannot just ignore. But I thank you for trying to ease me.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleRasaad2","MYAREA",40)
+END 	
+
+// Safana 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleSafana1","MYAREA",0)
+Switch("X32KaleSafana1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~I used to like girls like you Safana.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Safana",~Only used to, dear?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Yeah. Then I saw how easy you get your way. I'm a half-man! I'll not be someone's servant.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Safana",~What's wrong with that? I get what I want, and whoever helps me gets whatever they want from me.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~*Anything?*~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Safana",~Anything you want.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleSafana1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Damn it, this is why! Must. Resist.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleSafana1","MYAREA",-1)
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleSafana2","MYAREA",0)
+Switch("X32KaleSafana2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~How do you speak like that?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Safana",~Like what, dear?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~That sultry voice. It's not your real voice, is it?.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Safana",~It's definitely my voice, Kale. Have no doubts of it.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Gods. I'm glad you aren't my size.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Safana",~And what if I was? Does it matter?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleSafana2","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Please Arvoreen, help me. Help me resist.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleSafana2","MYAREA",-1)
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleViconia1","MYAREA",0)
+Switch("X32KaleViconia1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~So, drow lady. Let's talk.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Viconia",~Talk and nothing more, sakphul?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Well, I'm always open for more if you are.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Viconia",~I'm not. Talk.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Damn. Well. The sun. Doesn't it bother you?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Viconia",~It burns like miserable hell.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Why are you here, then?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia1","MYAREA",70)		
+RESPONSE #70
+	DisplayStringHead("Viconia",~I will not share that, sakphul, nor talk further with you.~)
+	SetGlobal("X32KaleViconia","GLOBAL",2)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",ONE_MINUTE)
+	RealSetGlobalTimer("X32_BANTER_DELAY","GLOBAL",THIRTY_MINUTES)
+	RealSetGlobalTimer("X32KaleViconiaTalk","GLOBAL",ONE_HOUR) 
+	SetGlobal("X32KaleViconia1","MYAREA",-1)
+END 
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleViconia2","MYAREA",0)
+Switch("X32KaleViconia2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo..~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Viconia",~What now, sakphul? I can tell you're addressing me.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~You can call me Kale, you know. What's this sakphul mean anyway?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Viconia",~I'm calling you what you are.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~That would actually be Kale.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Viconia",~You are persistent.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleViconia2","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Heh, the persistent halfling gets his breakfast.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleViconia2","MYAREA",70)		
+RESPONSE #70
+	DisplayStringHead("Viconia",~Sometimes you are nothing like the rest of your sakphul kind. Then you say things like that.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleViconia1","MYAREA",-1)
+END 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleVoghlin1","MYAREA",0)
+Switch("X32KaleVoghlin1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("Voghlin",~So tell me if Voghlin is right. You have a lady, Kale?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Had. Who knows where she is now.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Voghlin",~Mm. There be always ale to fill the hole of the lady.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~I'm not down now, pal. 'Sides, I've my own special brew from Gullykin.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Voghlin",~Ja? The Mighty Voghlin would want a bit, or a whole keg.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Sure pal. When it's quiet, eh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin1","MYAREA",70)		
+END
+	
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleVoghlin2","MYAREA",0)
+Switch("X32KaleVoghlin2","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo. Think I drinked too much of that brew during our last rest.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Voghlin",~Ho ho. You swiveled like a squirrel and passed out for the whole night.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Was damn bloody good mate. Worth it. Except for the headache.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Voghlin",~Ja. You get used to it. Just have to drink more!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~You know what? Let's do it. More later!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("Voghlin",~Ho ho, that's my boy!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin2","MYAREA",-1)	
+END
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleVoghlin3","MYAREA",0)
+Switch("X32KaleVoghlin3","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~Soooo. Think I held it better. Not a bad brew, eh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin3","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("Voghlin",~A fine drink. You should show me this Gullykin sometime.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin3","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~When this is over, and you want to step by? Come by. I even know the comeliest lasses I can introduce you to.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin3","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("Voghlin",~Ho ho! To friendship, friend of mighty Voghlin!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin3","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~To friendship!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleVoghlin3","MYAREA",-1)	
+END
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleX3mily1","MYAREA",0)
+Switch("X32KaleX3mily1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~So. From what I understand, you and Caelar are pretty similar. What stops you from turning on us?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleX3mily1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3mily",~Just because we are both aasimar doesn't mean we'll be buddies, Kale. What she is doing is wrong.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleX3mily1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Yet she's doing it. And you're supposed to be goodly, perfect people.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3mily1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3mily",~I don't think you understand us much at all, Kale. And I wish I could understand her.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3mily1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Seems simple enough to understand she needs to  be stopped at least.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3mily1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3mily",~Stopped, yes. And hopefully shown the error of her ways.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3mily1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~That's not going to work, but believe what you want.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3mily1","MYAREA",-1)
+END 
+
+// Helga 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleX3Helga1","MYAREA",0)
+Switch("X32KaleX3Helga1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Helga",~Hero of Gullykin, eh? Heard of ye.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3Helga1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Oh yeah? Care to recount one of my glorious takes.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3Helga1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Helga",~Nay. Most of it was stretched out garbage from what I recall.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Hey, if it was the one where I slammed two kobold heads into eachother, that was perfectly true!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Helga",~I know how battle works. It's glory, and good, but just tell it how it is. And credit your help.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~All right, all right, it was someone else with me. But I helped set up the kobold head smash move.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3Helga1","MYAREA",70)
+RESPONSE #70 
+	DisplayStringHead("X3Helga",~Why did I bloody bother? Ye not even getting the point of my lesson.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",80)
+RESPONSE #80 
+	DisplayStringHead("X3Kale",~Be a better liar?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",90)
+RESPONSE #90 
+	DisplayStringHead("X3Helga",~Bah. Clearly that.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Helga1","MYAREA",-1)
+END 	
+
+// Recorder 
+
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleX3Rec1","MYAREA",0)
+Switch("X32KaleX3Rec1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~I've never seen a bard take their work so seriously. All that scrawling.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleX3Rec1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Rec",~It is important. While people will spread it by word, what is happening can be remembered more honestly when noted down~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",8)
+	SetGlobal("X32KaleX3Rec1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~Honestly, eh?  You mean your honesty.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",7)
+	SetGlobal("X32KaleX3Rec1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Rec",~There is a bit of perspective, but that is unavoidable. But by recording what people say by their mouth of opposing beliefs you can balance it out.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Rec1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Huh. Good point.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Rec1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Rec",~Thank you. There is an art to recording history.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",5)
+	SetGlobal("X32KaleX3Rec1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~Still sounds a mite dull, unless it's about me.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3Rec1","MYAREA",-1)
+END 
+	
+/* Note, Vienxay and Kale will have different banters within their respective banter files.*/
+IF
+InMyArea(Player1)
+!ActuallyInCombat()
+!GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+GlobalGT("X32KaleX3Vien1","MYAREA",0)
+Switch("X32KaleX3Vien1","MYAREA")
+THEN
+RESPONSE #0
+	DisplayStringHead("X3Kale",~What was it like, a noble being in a cell? Even I heard about that little fight when I was in the city.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",10)
+RESPONSE #10
+	DisplayStringHead("X3Vien",~Why are you even asking me this, halfling?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",20)
+RESPONSE #20
+	DisplayStringHead("X3Kale",~I want to be amused. Come on, give me the details! Did they feed you exquisite dinners? Put a bed in your cell so you were nice and comfortable?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",30)
+RESPONSE #30
+	DisplayStringHead("X3Vien",~Please. They treated me like a peasant. I was rather insulted. Evermeet had better cells.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",40)
+RESPONSE #40
+	DisplayStringHead("X3Kale",~Maybe if you treated us like your equals, you'd land yourself in less terrible situations, eh?~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",50)	
+RESPONSE #50
+	DisplayStringHead("X3Vien",~Shut up and bother somebody else, peasant.~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",4)
+	SetGlobal("X32KaleX3Vien1","MYAREA",60)	
+RESPONSE #60
+	DisplayStringHead("X3Kale",~See? That's exactly the problem!~)
+	SetGlobalTimer("BD_BANTER_DELAY","MYAREA",6)
+	SetGlobal("X32KaleX3Vien1","MYAREA",-1)
+END 
+
+IF
+  !GlobalTimerNotExpired("BD_BANTER_DELAY","MYAREA")
+THEN
+  RESPONSE #100
+    SetAreaScript("",GENERAL)
+END

@@ -1,0 +1,28 @@
+IF
+	Global("BD_AREA_HOSTILE","BD5300",1)
+	!GlobalTimerNotExpired("bd_sdd350b_ot_timer","bd2000")
+	Global("bd_ot_X3Helga","bd5300",1)
+	IsValidForPartyDialog("X3Helga")  
+	IsValidForPartyDialog("X3Kale")  
+	TriggerOverride("X3Kale",Range([ENEMY.0.0.0.HOSTILES3],30))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sdd350b_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Helga","bd5300",2)
+		DisplayStringHead("X3Kale",~Bloody hells, it's always for ale!~) 
+END
+
+IF
+	Global("BD_AREA_HOSTILE","BD5300",1)
+	!GlobalTimerNotExpired("bd_sdd350b_ot_timer","bd2000")
+	Global("bd_ot_X3Kale","bd5300",0)
+	IsValidForPartyDialog("X3Kale")  
+	!IsValidForPartyDialog("X3Helga")  
+	TriggerOverride("X3Kale",Range([ENEMY.0.0.0.HOSTILES3],30))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sdd350b_ot_timer","bd2000",THREE_MINUTES)
+		SetGlobal("bd_ot_X3Kale","bd5300",1)
+		DisplayStringHead("X3Kale",~Here I come!~) 
+END
+

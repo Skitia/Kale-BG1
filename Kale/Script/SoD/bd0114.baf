@@ -1,0 +1,16 @@
+
+IF
+	Global("BD_POINT6","BD0114",4)
+	StateCheck("BDBEETRH",STATE_REALLY_DEAD)  // Rhinoceros Beetle
+	GlobalLT("BD_BEETLE_BANTER","BD0114",6)
+	Global("BD_BEETLE_X3Kale","BD0114",0)
+	!GlobalTimerNotExpired("BD_TIMER_RHINOTALK","BD0114")
+	IfValidForPartyDialogue("X3Kale")  // Kale
+	RandomNumLT(14,6)
+THEN
+	RESPONSE #100
+		DisplayStringHead("X3Kale",~Well, the bigger they are, the more fun to kill, am I right?~)  // Well, the bigger they are, the more fun to kill, am I right?
+		SetGlobal("BD_BEETLE_X3Kale","BD0114",1)
+		IncrementGlobal("BD_BEETLE_BANTER","BD0114",1)
+		SetGlobalTimer("BD_TIMER_RHINOTALK","BD0114",ONE_MINUTE)
+END

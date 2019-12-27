@@ -1,0 +1,11 @@
+  IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+  THEN
+    RESPONSE #100
+      Enemy()
+	  ActionOverride("X3Kale",LeaveParty())
+	  	  ActionOverride("X3Kale",Enemy())
+		  AddJournalEntry(@10020,QUEST_DONE)
+  END 
+  

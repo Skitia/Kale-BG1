@@ -1,0 +1,18 @@
+IF
+	Global("X32KaleTalk","GLOBAL",11)
+	Global("bd_plot","global",495)
+	InParty("X3Kale")  
+THEN
+	RESPONSE #100
+		SetGlobal("X32KaleTalk","GLOBAL",12)
+END
+
+IF
+	Global("X32KaleTalk","GLOBAL",12)
+	InParty("X3Kale")  // X3Kale
+	IsValidForPartyDialogue("X3Kale")  // X3Kale
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		ActionOverride("X3Kale",StartDialogueNoSet(Player1))
+END

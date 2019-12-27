@@ -1,0 +1,116 @@
+IF
+Global("X3KaleSpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleSpawn","GLOBAL",1)
+CreateCreature("X3Kale",[2614.476],SW)
+Continue()
+END
+
+// These blocks set up Kale's experience based off of the PC's level.
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPLT(Player1,1251)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",1000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,1250)
+XPLT(Player1,2501)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",2000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,2500)
+XPLT(Player1,5001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",4000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,5000)
+XPLT(Player1,10001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",8000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,10000)
+XPLT(Player1,20001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",16000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,20000)
+XPLT(Player1,40001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",32000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,40000)
+XPLT(Player1,70001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",64000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,70000)
+XPLT(Player1,110001)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",72000)
+Continue()
+END
+
+IF
+InParty("X3Kale")
+Global("X3KaleExperienceSet","GLOBAL",0)
+XPGT(Player1,110000)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleExperienceSet","GLOBAL",1)
+AddXPObject("X3Kale",89000)
+Continue()
+END

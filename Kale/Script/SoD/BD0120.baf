@@ -1,0 +1,69 @@
+// SoD - talk before Korlasz
+
+IF
+    GlobalLT("X32KaleCryptComment1","GLOBAL",1)
+	InParty("X3Kale")
+THEN
+  RESPONSE #100
+    SetGlobal("X32KaleCryptComment1","GLOBAL",1)
+    RealSetGlobalTimer("X32KaleCryptCommentTimer1","GLOBAL",60)
+END
+
+IF
+    InParty("X3Kale")
+    !StateCheck("X3Kale",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+	!InParty("Alora")
+    Global("X32KaleCryptComment1","GLOBAL",1)
+	RealGlobalTimerExpired("X32KaleCryptCommentTimer1","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("X32KaleCryptComment1","GLOBAL",2)
+	DisplayStringHead("X3Kale",~Ma, Gullykin, and admirers await in droves. Can't wait to get out of here.~)
+END
+
+IF
+    InParty("X3Kale")
+    !StateCheck("X3Kale",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+	InParty("Alora")
+    Global("X32KaleCryptComment1","GLOBAL",1)
+	RealGlobalTimerExpired("X32KaleCryptCommentTimer1","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("X32KaleCryptComment1","GLOBAL",2)
+	DisplayStringHead("X3Kale",~When we're done with this, we'll be seeing places together, Alora. <CHARNAME> won't need us anymore.~)
+	Wait(6) 
+	DisplayStringHead("Alora",~I'd like that.~)
+END
+
+// SoD - talk after Korlasz
+
+IF
+    InParty("X3Kale")
+    Global("X32KaleCryptComment2","GLOBAL",0)
+	Global("BDSH_Imoen_Floor","GLOBAL",3)
+	Global("BDSH_Rope","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("X32KaleCryptComment2","GLOBAL",1)
+    RealSetGlobalTimer("X32KaleCryptCommentTimer2","GLOBAL",6)
+END
+
+IF
+    InParty("X3Kale")
+    !StateCheck("X3Kale",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    RealGlobalTimerExpired("X32KaleCryptCommentTimer2","GLOBAL")
+    Global("X32KaleCryptComment2","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("X32KaleCryptComment2","GLOBAL",2)
+	DisplayStringHead("X3Kale",~Woohoo! Time to relax.~ [KaleAct6])
+END

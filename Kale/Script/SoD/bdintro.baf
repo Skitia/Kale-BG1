@@ -1,0 +1,9 @@
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("X3Kale")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("X3Kale",SetDialog("X32KaleJ"))
+		ActionOverride("X3Kale",ChangeAIScript("X32Kale",OVERRIDE))
+END

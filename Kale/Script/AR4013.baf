@@ -1,0 +1,9 @@
+IF
+Global("X3KMomSpawn","GLOBAL",0)
+InParty("X3Kale")
+THEN
+RESPONSE #100
+SetGlobal("X3KMomSpawn","GLOBAL",1)
+CreateCreature("X3KMOM",[318.226],SW)
+Continue()
+END

@@ -1,0 +1,376 @@
+// Pause Timer to give time for music to finish between NPCs .
+IF 
+Global("X3PauseTimer","GLOBAL",0)
+InParty(Myself)
+THEN RESPONSE #100 
+SetGlobal("X3PauseTimer","GLOBAL",1)
+RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+END 
+// SEX CHANGE
+IF
+    InParty(Myself)
+	Gender(Myself,MALE)
+	HasItemEquiped("belt05",Myself)
+    Global("X3KaleSexChange","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(1)
+	SetGlobal("X3KaleSexChange","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END
+
+// Quest "Reminder" Setup
+IF 
+	InParty(Myself)
+	Global("X3KaleReminderTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobalTimer("X3KaleReminderTimer","GLOBAL",SEVEN_DAYS) 
+	SetGlobal("X3KaleReminderTalk","GLOBAL",1)       
+END
+// Quest "Reminder" Firing 
+IF 
+    InParty(Myself)
+    Global("X3KaleMomTalk","GLOBAL",0)
+    Global("X3KaleReminderTalk","GLOBAL",1)		
+	GlobalTimerExpired("X3KaleReminderTimer","GLOBAL")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+THEN
+RESPONSE #100	
+	Wait(1)
+	SetGlobal("X3KaleReminderTalk","GLOBAL",2)
+	StartDialogueNoSet(Player1)
+END 
+// Talk 3	
+IF 
+    InParty(Myself)
+	!AreaCheck("AR4013")
+    Global("X3KaleMomTalk","GLOBAL",2)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+	THEN
+  RESPONSE #100
+	Wait(1)
+	SetGlobal("X3KaleMomTalk","GLOBAL",3)
+	StartDialogueNoSet(Player1)
+END 
+/* This sets the initial timer. REMEMBER the reseting of the timer must happen in the condition of the Dialogue file, not here. */
+IF 
+InParty(Myself)
+Global("X3KaleTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobalTimer("X3KaleFirstTimer","GLOBAL",600) // TESTING will have this set at a VERY low number. 
+SetGlobal("X3KaleTalk","GLOBAL",1)       // Each block must run only once.
+END
+// This is for the first talk's expired timer, which is a game timer of one day.
+IF
+InParty(Myself)
+GlobalTimerExpired("X3KaleFirstTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          
+!See([ENEMY])
+!AreaType(DUNGEON)			                               
+Global("X3KaleTalk","GLOBAL",1)
+
+
+THEN
+RESPONSE #100
+IncrementGlobal("X3KaleTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+RealGlobalTimerExpired("X3KaleTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          
+!See([ENEMY])
+!AreaType(DUNGEON)			  
+OR(3)                       // YOU WILL NEED TO ADD +1 TO THIS OR NUMBER FOR EVERY ADDITONAL TALK YOU ADD          
+Global("X3KaleTalk","GLOBAL",3)
+Global("X3KaleTalk","GLOBAL",5)
+Global("X3KaleTalk","GLOBAL",7)
+
+THEN
+RESPONSE #100
+IncrementGlobal("X3KaleTalk","GLOBAL",1)
+END
+
+
+
+// So, if timer expired, everybody's able to talk and there's no battle, we increase the variable by one. Now our X3KaleTalk variable is at 2, or 4, or 6... or 20, or 30.
+// EXACTLY like the condition in the beginning of each talk, right?
+// Now all that's left is making Branwen talk to you. We could just add StartDialogueNoSet(Player1) into the last block, but the engine is tricky: if you give a command when Branwen's about to talk, she may miss her dialogue!
+// So we add another block. 
+IF
+RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+OR(4)                                    // YOU WILL NEED TO ADD +1 TO THIS OR NUMBER FOR EVERY ADDITONAL TALK YOU ADD  
+Global("X3KaleTalk","GLOBAL",2)
+Global("X3KaleTalk","GLOBAL",4)
+Global("X3KaleTalk","GLOBAL",6)
+Global("X3KaleTalk","GLOBAL",8)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+PlaySong(0)
+PlaySound("X3KSong") 
+StartDialogueNoSet(Player1)
+END
+
+// Cloak Timer
+IF 
+PartyHasItem("X3KTBQ")
+Global("X3KaleCloakStart","GLOBAL",0)
+THEN RESPONSE #100 
+SetGlobal("X3KaleCloakStart","GLOBAL",1) 
+END 
+
+IF 
+Global("X3KaleCloakStart","GLOBAL",1)
+!AreaCheck("AR1320")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+THEN
+RESPONSE #100
+SetGlobal("X3KaleCloakStart","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+IF 
+Global("X3KaleCloakStart","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobalTimer("X3KaleCloakMaking","GLOBAL",ONE_DAY) // One Game Day
+SetGlobal("X3KaleCloakStart","GLOBAL",4) 
+END 
+
+IF 
+Global("X3KaleCloak","GLOBAL",0)
+GlobalTimerExpired("X3KaleCloakMaking","GLOBAL")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+THEN 
+RESPONSE #100 
+SetGlobal("X3KaleCloak","GLOBAL",1)
+TakeItemReplace("X3KCLOG","X3KTBQ","X3Kale")
+END 
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+!AreaType(DUNGEON)
+Global("X3KaleCloak","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF 
+Dead("X3KKEEP")
+Global("X3KKEEPDEAD","GLOBAL",0)
+!Global("X3KaleCloakQuestAccept","GLOBAL",2)
+THEN
+RESPONSE #100 
+SetGlobal("X3KKEEPDEAD","GLOBAL",1)
+DisplayString(Player1,@574)
+AddJournalEntry(@10036,QUEST)
+GiveItemCreate("X3KTBQ","X3Kale",0,0,0)
+END 
+
+
+// Talk 6 
+/* As long as the player is out of the district post quest, this conversation will fire.*/
+IF
+RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)    
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)                          
+!See([ENEMY])
+!AreaType(DUNGEON)	
+Global("X3KaleSixthTalk","GLOBAL",0)
+GlobalGT("X3KaleQuestDone","GLOBAL",1)
+!AreaCheck("AR0800")
+!AreaCheck("AR0801")
+!AreaCheck("AR0802")
+!AreaCheck("AR0803")
+!AreaCheck("AR0804")
+!AreaCheck("AR0805")
+!AreaCheck("AR0806")
+!AreaCheck("AR0807")
+!AreaCheck("AR0808")
+!AreaCheck("AR0809")
+!AreaCheck("AR0810")
+!AreaCheck("AR0811")
+!AreaCheck("AR0812")
+!AreaCheck("AR0813")
+!AreaCheck("AR0814")
+THEN 
+RESPONSE #100 
+SetGlobal("X3KaleSixthTalk","GLOBAL",1)
+PlaySong(0)
+RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+StartDialogueNoSet(Player1)
+PlaySound("X3KSong") 
+END
+
+IF 
+GlobalGT("Chapter","GLOBAL",5)
+
+Global("X3KaleSixthTalk","GLOBAL",2)
+Global("X3KaleFinalTalk","GLOBAL",0)
+	InParty(Myself)
+THEN 
+RESPONSE #100 
+	RealSetGlobalTimer("X3KaleFinalTimer","GLOBAL",3300) 
+	SetGlobal("X3KaleFinalTalk","GLOBAL",1) 
+	
+END 
+
+IF 
+	RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
+    InParty(Myself)
+    Global("X3KaleFinalTalk","GLOBAL",1)		
+	RealGlobalTimerExpired("X3KaleFinalTimer","GLOBAL")
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+THEN
+RESPONSE #100	
+	RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
+	Wait(2)
+	PlaySong(0)
+	SetGlobal("X3KaleFinalTalk","GLOBAL",2) 
+	StartDialogueNoSet(Player1)
+	PlaySound("X3KSong") 
+END 
+
+// Durlag's Tower  (AR0500 )
+IF 
+	InParty(Myself)
+	AreaCheck("AR0500")
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)    
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)                          
+	!See([ENEMY])	
+	Global("X3KaleTower","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	SetGlobal("X3KaleTower","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END	
+
+// Wolfwere Caverns (AR2012)
+
+IF 
+	InParty(Myself)
+	AreaCheck("AR2012")
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)    
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)                          
+	!See([ENEMY])	
+	Global("X3KaleCaverns","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	SetGlobal("X3KaleCaverns","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END	
+
+// Candlekeep (AR2626)
+IF 
+	InParty(Myself)
+	AreaCheck("AR2626")
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)    
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)                          
+	!See([ENEMY])	
+	Global("X3KaleKeep","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	SetGlobal("X3KaleKeep","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END	
+
+// AR4500 
+IF 
+	InParty(Myself)
+	AreaCheck("AR4500")
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)    
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)                          
+	!See([ENEMY])	
+	Global("X3KaleFire","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	SetGlobal("X3KaleFire","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END	
+
+//AR5201  
+IF 
+	InParty(Myself)
+	AreaCheck("AR5201")
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)    
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)                          
+	!See([ENEMY])	
+	Global("X3KaleRuins","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	SetGlobal("X3KaleRuins","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END	
+

@@ -1,0 +1,17 @@
+IF 
+Dead("X3KDEAL")
+GlobalLT("X3KDealQuest","GLOBAL",2)
+THEN 
+RESPONSE #100 
+SetGlobal("X3KDealQuest","GLOBAL",2)	
+AddJournalEntry(@10016,QUEST)
+Continue()
+END 
+
+IF
+    See(NearestEnemyOf(Myself))
+ THEN
+ RESPONSE #100
+	Attack(NearestEnemyOf(Myself)) 
+	Continue()
+END
