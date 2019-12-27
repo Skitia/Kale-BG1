@@ -1,0 +1,71 @@
+@45 = ~The Champion's Cloak~
+@46 = ~Kale doesn't go anywhere without his cloak. He insists the ladies love it, and it makes him look the part of dashing savior. The cloak is part of the reason for Kale's great hardiness in battle, an amazing feat for a halfling to take blow after blow and remain standing, to the annoyance of his opposition.
+
+STATISTICS:
+
++2 Constitution
+
+Usable By: 
+Kale
+Barbarian~
+
+@47 = ~Kale's Mother's Letter~ 
+@48 = ~Dear Samuel,
+
+You've not written back in a while, and I've gotten a touch worried. I'm sending your brother with this letter to meet you. Please write back soon, it's lonely without you two around.
+
+Ma.~
+
+@49 = ~Samuel's Dagger~
+@50 = ~Samuel's Dagger carries a potent enchantment, preventing him from being immobilized. Presumably, this was to help him defend himself and be able to flee if overwhelmed.
+
+STATISTICS:
+
+Immunity to Hold Person
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 0 
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1
+~
+
+@51 = ~Hero's Cloak~
+@52 = ~This "Hero's Cloak", as Kale calls it, is stylish and fitting for any adventurer. You can't help but feel confident and want to move with a bit of swagger. Perhaps it's the material, or a bit of magic, but it certainly seems to enhance your self-approval.
+
+STATISTICS:
+
++1 Charisma
++1 AC
+Immunity to Fear.
+
+Usable By: Anyone~
+
+@53 = ~Kale whips his cloak away from your grasp. "Nope. Not parting with it for anything, mate."~
+
+@54 = ~Stolen Supplies.~
+@55 = ~These look to be the stolen supplies from the shop.~
+
+@56 = ~Raw Materials.~
+@57 = ~These bagged materials include tools and textiles useful for the crafting of clothing.~
+
+@58 = ~Hearth Sling~
+
+@59 = ~In some hin communities it is traditional to give the departing would be traveler a sling, gifted to them by one of their parents. Often blessed by one of the local faiths, typically Arvoreen or Cyrrollalee, these slings helped ensure the young adventurer that departed off returned home someday. A few do not however, and these wind up lost.
+
+STATISTICS:
+
+THAC0: +3
+Damage: +3 (piercing)
+Speed Factor: 3 
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+ Dwarf, Gnome, or Halfling.
+
+Weight: 0
+~

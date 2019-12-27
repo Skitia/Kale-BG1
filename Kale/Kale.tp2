@@ -1,1 +1,93 @@
+BACKUP ~Kale\backup~
+AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
+README ~Kale/readme.txt~
 
+VERSION ~1.41~
+AUTO_TRA ~Kale/translations/%s~
+
+ALWAYS
+  INCLUDE ~Kale/library/eet.tph~
+  INCLUDE ~Kale/library/functions.tph~
+END
+
+
+ALWAYS
+ACTION_IF FILE_EXISTS_IN_GAME ~neera.dlg~ THEN BEGIN
+  /*Tell the player it is using BG:EE stuff */
+  PRINT @1 /* BG:EE install detected */
+  INCLUDE ~Kale\library\liam_bgee_vars.tpa~
+END ELSE BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ THEN BEGIN
+    /* Tell the player it is using Tutu stuff */
+    PRINT @2 /* Tutu install detected. */
+    INCLUDE ~Kale\library\g3_tutu_cpmvars.tpa~
+  END ELSE BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~AR7200.are~ THEN BEGIN
+        /* Tell the player it is using BGT stuff */
+        PRINT @3 /* BGT install detected. */
+        INCLUDE ~Kale\library\g3_bgt_cpmvars.tpa~
+        /* Tell the player it is not Tutu or BGT */
+    END ELSE BEGIN FAIL @4 /* Please install on BG:EE, Tutu or BGT. */
+    END
+  END
+END
+END
+
+LANGUAGE ~English~
+         ~english~
+         ~Kale/translations/english/Kale.TRA~
+
+BEGIN @6 /* Verr'Sza - the rakshasa NPC for BG1EE */
+  REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @7 /* This component must be installed on BG:EE. */ 
+INCLUDE ~Kale/library/Kale_items.tpa~  
+INCLUDE ~Kale/library/Kale_bg1.tpa~ 
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN
+INCLUDE ~Kale/library/Kale_sod.tpa~ 
+END
+
+		COPY ~%MOD_FOLDER%/portraits/KaleL.bmp~ ~override/KaleL.bmp~
+		COPY ~%MOD_FOLDER%/portraits/KaleM.bmp~ ~override/KaleM.bmp~
+		COPY ~%MOD_FOLDER%/portraits/KaleS.bmp~ ~override/KaleS.bmp~
+		
+PRINT ~Would you like to install Music for Kale? These will play during banters with the player.~
+
+PRINT ~Please choose one of the following:
+[1] Yes
+[2] No
+~
+
+OUTER_SPRINT ~music~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~music~) OR (~music~ > 0x2) OR (~music~ < 0x1)) BEGIN
+  PRINT ~Please select 1 or 2 and press Enter.~
+  ACTION_READLN ~music~
+END
+      ACTION_IF ("music" = 1) THEN BEGIN
+	COPY_EXISTING ~sw1h01.itm~ ~override/bg1npcmusic.g3~
+
+	MKDIR ~music/blank~
+	COPY ~Kale/Music/blank.mus~ ~music~
+		~Kale/Music/blank.acm~ ~music/blank/blanka.acm~
+
+	COPY_EXISTING ~songlist.2da~ ~override~
+  		SET_2DA_ENTRY 0 0 2 ~2DA_V1.0~
+  		SET_2DA_ENTRY 0 1 2 ~~
+  		SET_2DA_ENTRY 0 0 2 ~IDOBEK Name~
+  		SET_2DA_ENTRY 1 2 3 ~Blank.mus~
+		SET_2DA_ENTRY 1 1 3 ~BLANK~
+  		SET_2DA_ENTRY 0 0 3 ~~
+  		REPLACE_TEXTUALLY CASE_INSENSITIVE ~2DA_V1.0~ ~2DA V1.0~
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = ~Kale/music~
+    oggdec_path = ~Kale/music~
+    sox_path = ~Kale/music~
+END
+
+PRINT ~Installed Music for Kale.~
+END 
+
+ACTION_IF ("music" = 2) THEN BEGIN
+PRINT ~Did not install Music for Kale.~
+END 		
