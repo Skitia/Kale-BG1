@@ -1,7 +1,70 @@
-@1    = ~BG:EE install detected~
-@2    = ~Tutu install detected.~
-@3    = ~BGT install detected.~
-@4    = ~Please install on BG:EE, Tutu or BGT.~
-@6    = ~Kale NPC for BG1EE~
-@7    = ~This component must be installed on BG:EE.~
+@0    = ~Kale NPC for BG1EE and SoD~
+@1 = ~Kale~
+@2 = ~Kale claps his hand on your back and almost eagerly launches into his story. Born faster, stronger, and more courageous than the rest of Gullykin combined, he describes himself as a daredevil and ladies' man, listing exploits of strength and flashing scar after scar. While the other hin of Gullykin were more homebodies or expert cons, Kale quickly realized his peerless strength and flashed it as his feat of mettle. Still, you have a feeling he is exaggerating when he begins to describe the process of slaying a wyvern with a sword into it's hindquarters blindfolded. He ends with how proud his mother is, obviously very fond of her as he goes into how much she gushes over his stories.~
+@3 = ~This isn't working out like I thought.~ [KaleFlee]
+@4 = ~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~ [KaleHap]
+@5 = ~Things aren't all bad, but they aren't all great either.~
+@6 = ~I ain't pleased with what's going on, don't expect me to stick around if this keeps up.~ 
+@7 = ~Whelp, I warned you! No more will my legend follow your bloody mess.~
+@8 = ~Oy, listen up!~ [KaleLead]
+@9 = ~I am so bushed, you have no idea.~ [KaleRest]
+@10 = ~*Yawn*~ [KaleBore]
+@11 = ~Damn, this is fun. Kill them all!~ [KaleCry1]
+@12 = ~Here comes halfling death!~ [KaleCry2]
+@13 = ~I love this part!~ [KaleCry3]
+@14 = ~Now you're gonna get it!~ [KaleCry4]
+@15 = ~Uh oh. Uninvited guests.~ [KaleCry5]
+@16 = ~Hugh!~ [KaleDam]
+@17 = ~Aww, not again...~ [KaleDead]
+@18 = ~Hey, bleeding over here!~ [KaleHurt]
+@19 = ~Oh lovely. What'd I step in now?~ [KaleFor]
+@20 = ~Think there'll be a tavern singing about my glorious feats? And maybe yours.~
+@21 = ~*Pfft.* Every dungeon looks the same.~ [KaleDun]
+@22 = ~Sooo. I wonder how much a map of this place would go for?~ [KaleDay]
+@23 = ~Criminy. Where the bloody hell are we?~ [KaleNigh]
+@24 = ~Yeah? You want something, I bet.~  [KaleCom1]
+@25 = ~Aye now. Something else you need?~ [KaleCom2]
+@26 = ~Soooo.~ [KaleCom3]
+@27 = ~Yep?~ [KaleCom4]
+@28 = ~Come on, come on!~ [KaleCom5]
+@29 = ~Righto. Off we go.~ [KaleAct1]
+@30 = ~Okey-Dokey.~ [KaleAct2]
+@31 = ~Wish I thought of that.~ [KaleAct3]
+@51 = ~Just give me a sec.~ [KaleAct4]
+@49 = ~You might want to re-think that.~ [KaleAct5]
+@50 = ~Woohoo.~ [KaleAct6]
+@32 = ~Yeah! That's the way!~ [KaleCrit]
+@33 = ~Bloody hell~ [KaleCrtM]
+@34 = ~I ain't doing much here.~ [KaleImm]
+@35 = ~What am I, a bloody mule?!~  [KaleInv]
+@36 = ~I hate it when my bloody spells won't work.~ [KaleSpel]
+@37 = ~Yep. All done.~ [KaleTrap]
+@38 = ~Time to slip into the shadows.~ [KaleHide]
+@39 = ~Hey, what's this?~ [KalePP]
+@40 = ~Oh um. Maybe we should organize ourselves a bit?~ [KaleRare]
+@41 = ~Come on, come on!~ [KaleCom5]
+@42 = ~Oh shoot. And we were doing so well...~ [KaleDieR]
+@43 = ~Oh um. Maybe we should organize ourselves a bit?~ [KaleRare]
+@44 = ~Come on, come on!~ [KaleCom5]
+@45 = ~warden~
+@46 = ~Warden~
+@47 = ~Warden: A warrior tradition placing emphasis on fighting in pairs, these warriors work best with a partner next to them, who they choose to elevate their ability in combat. The Warden takes on the defensive role in the pair, while their partner, 
+	the Ward, receives elevated offensive prowess. This comes at the cost of the own Warden’s skill with weapons being inferior to other fighter traditions, but there are few other partners one would wish to stand next to.
+	
+	Advantages:
+	-Hit Die:d12
+	-May use WARD once per day. Gains one use at level 1, one use at level eight, an additional use every eight levels thereafter.
+	
+	WARD: Designates Target as the Ward. The Ward is granted greater offensive prowess, while the Warden gains penalties for the same amount in place of bonuses to their defense for one turn. The bonuses vary on level. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
+	Level 1: The Ward receives +1 Damage bonus, -1 Thaco. The Warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 Hitpoint per 6 seconds.
+	Level 8: The Ward receives +2 Damage Bonus, -2 Thaco. The Warden Receives penalties for the same amount, but gains 20% Resistance to Physical Damage, and regenerates 1 hitpoint per 3 seconds.
+	Level 16: The Ward receives +3 Damage bonus, -3 Thaco. The Warden receives penalties for the same amount, but gains 30% Resistance to Physical Damage and regenerates 1 hp per second.
 
+	Disadvantages:
+	May only become specialized in ranged weapons, and may not exceed mastery in any other weapon.~
+@48 = ~Ward~
+@49 = ~WARD: Designates Target as the Ward. The Ward is granted greater offensive prowess, while the Warden gains penalties for the same amount in place of bonuses to their defense for one turn. The bonuses vary on level, and it can be used once per day per 8 levels, starting at level 1. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
+Level 1: The Ward receives +1 Damage bonus, -1 Thaco. The Warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 Hitpoint per 6 seconds.
+Level 8: The Ward receives +2 Damage Bonus, -2 Thaco. The Warden Receives penalties for the same amount, but gains 20% Resistance to Physical Damage, and regenerates 1 hitpoint per 3 seconds.
+Level 16: The Ward receives +3 Damage bonus, -3 Thaco. The Warden receives penalties for the same amount, but gains 30% Resistance to Physical Damage and regenerates 1 hp per second.
+~

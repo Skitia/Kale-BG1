@@ -36,13 +36,22 @@ CHAIN X3Kale b1.5
 @16 // ~You know what, that ain't half a bad idea. Been wanting out of this village for a while, but not had the company to take on the wilds. I'm in if you'll have me.~
 END
 ++ @26 EXTERN X3Kale b1.join // ~I will. Join us.~
-++ @27 EXTERN X3Kale b1.skills // ~What sort of skills do you have?~
++~Kit("X3Kale",BARBARIAN)~+ @27 EXTERN X3Kale b1.skills // ~What sort of skills do you have?~
++~!Kit("X3Kale",BARBARIAN)~+ @27 EXTERN X3Kale b1.skills2 // ~What sort of skills do you have?~
 ++ @21 EXTERN X3Kale b1.4 // ~Perhaps another time.~
 
 CHAIN X3Kale b1.skills 
 @28 // ~I'm skilled with polearms and two handed weapons, mostly. Don't worry, I can lift them without a problem.~ 
 == X3Kale @29 // ~Plate armor though, well, not my type of armor. I'd prefer to be able to move fast, strike hard, anyway.~
-== X3Kale @30 // ~Got some skill with the sling too, if you want to use me far away, though that sure ain't my preference.~
+EXTERN X3Kale b1.sling 
+
+CHAIN X3Kale b1.skills2
+@35 // ~I'm skilled with large blades and a shield, mostly. Don't worry, I can lift them without a problem.~ 
+== X3Kale @36 // ~I could be put in the heaviest armor you can find and I'd still stand strong!~
+EXTERN X3Kale b1.sling 
+
+CHAIN X3Kale b1.sling
+@30 // ~Got some skill with the sling too, if you want to use me far away, though that sure ain't my preference.~
 END 
 ++ @31 EXTERN X3Kale b1.join // ~I could use that skill set. Join us.~
 ++ @32 EXTERN X3Kale b1.action // ~A halfling fighting with big weapons. You can come, I'd like to see you in action.~
