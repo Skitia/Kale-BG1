@@ -23,61 +23,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN
 INCLUDE ~Kale/library/Kale_sod.tpa~ 
 END
 
-BEGIN ~Warden(Fighter Kit)~
-SUBCOMPONENT ~Choose an alternate class for Kale?~
-
-
-ADD_KIT ~X3KFK~
-
-	~X3KFK 1 1 1 1 1 1 1 1~
- // appended column-wise to WEAPPROF.2da
-//11                                T   S           F   Q             S S
-//10                                W   C           L   U             W I
-//9                         B L S   O   I   W       A   A             O N
-//8                         A O H   H   M   A       I   R C   S       R G
-//7         L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6         _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5         S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4         W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3         O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2         R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1         D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
- ~X3KFK	    3 3 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-
- 	~X3KFK 9 12 12 3 3 9~
-	~X3KFK 0 0 0 0 0 0~
-	~X3KFK 0 0 0 0 0 0~
-    ~X3KFK 0 0 0 0 0 0~
-	~X3KFK 1 1 1 1 1 1 1 1 1~
-	~X3KFK 0 0 0 0 0 0~
-	~%MOD_FOLDER%/2da/X3KFKcl.2da~
-	~~ 
-	 ~0x00000001       2~
-	~FI0~
-	~* * * * * * * * * * * * * * * * * * *  *~
-	SAY @45
-	SAY @46
-	SAY @47
-LAF fl#add_kit_ee
-
-
-// The below sets some more variables.		
-	STR_VAR
-		kit_name = ~X3KFK~ // Same as your ADD KIT line. 
-/* The first two lines dictate fighter thaco bonuses. You want 1 where I have both zeros for fighters to generate their bonus thaco/attacks per round. The third number is thaco penalty,
-this activates on weapons you are not proficient in. Standard here is three. */
-		clswpbon = ~1 0 2~		
-		numwslot = ~4~ // This determines the number of non-off hand weapon slots you have. You can have up to four of these.
-		hpclass = ~HPBARB~ // Bards use the rogue hit point table. You can make your own, but it's easiest to use already existing hit point progressions. 
-		clsrcreq = ~1 1 1 1 1 1 1~ // This is character generation race choices.
-END
-
-// Spells 
-COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
-SAY NAME1 @48
-SAY NAME2 @48
-SAY DESC @49
-
 COPY ~%MOD_FOLDER%/cre/X3KaleW.cre~ ~override/X3Kale.cre~
   SAY NAME1 @1 //Kale
   SAY NAME2 @1 //Kale
@@ -238,3 +183,58 @@ END
 ACTION_IF ("music" = 2) THEN BEGIN
 PRINT ~Did not install Music for Kale.~
 END 
+
+BEGIN ~Warden(Fighter Kit)~
+SUBCOMPONENT ~Choose an alternate class for Kale?~
+
+
+ADD_KIT ~X3KFK~
+
+	~X3KFK 1 1 1 1 1 1 1 1~
+ // appended column-wise to WEAPPROF.2da
+//11                                T   S           F   Q             S S
+//10                                W   C           L   U             W I
+//9                         B L S   O   I   W       A   A             O N
+//8                         A O H   H   M   A       I   R C   S       R G
+//7         L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
+//6         _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
+//5         S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
+//4         W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
+//3         O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
+//2         R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
+//1         D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
+ ~X3KFK	    3 3 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+
+ 	~X3KFK 9 12 12 3 3 9~
+	~X3KFK 0 0 0 0 0 0~
+	~X3KFK 0 0 0 0 0 0~
+    ~X3KFK 0 0 0 0 0 0~
+	~X3KFK 1 1 1 1 1 1 1 1 1~
+	~X3KFK 0 0 0 0 0 0~
+	~%MOD_FOLDER%/2da/X3KFKcl.2da~
+	~~ 
+	 ~0x00000001       2~
+	~FI0~
+	~* * * * * * * * * * * * * * * * * * *  *~
+	SAY @45
+	SAY @46
+	SAY @47
+LAF fl#add_kit_ee
+
+
+// The below sets some more variables.		
+	STR_VAR
+		kit_name = ~X3KFK~ // Same as your ADD KIT line. 
+/* The first two lines dictate fighter thaco bonuses. You want 1 where I have both zeros for fighters to generate their bonus thaco/attacks per round. The third number is thaco penalty,
+this activates on weapons you are not proficient in. Standard here is three. */
+		clswpbon = ~1 0 2~		
+		numwslot = ~4~ // This determines the number of non-off hand weapon slots you have. You can have up to four of these.
+		hpclass = ~HPBARB~ // Bards use the rogue hit point table. You can make your own, but it's easiest to use already existing hit point progressions. 
+		clsrcreq = ~1 1 1 1 1 1 1~ // This is character generation race choices.
+END
+
+// Spells 
+COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
+SAY NAME1 @48
+SAY NAME2 @48
+SAY DESC @49
