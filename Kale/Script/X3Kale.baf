@@ -1,4 +1,5 @@
 // Pause Timer to give time for music to finish between NPCs .
+
 IF 
 Global("X3PauseTimer","GLOBAL",0)
 InParty(Myself)
