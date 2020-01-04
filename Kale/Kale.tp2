@@ -51,7 +51,7 @@ ADD_KIT ~X3KFK~
 	~X3KFK 1 1 1 1 1 1 1 1 1~
 	~X3KFK 0 0 0 0 0 0~
 	~%MOD_FOLDER%/2da/X3KFKcl.2da~
-	~K_F_H   K_F_D  K_F_G  K_F_E  K_F_HE  K_F_HL  K_F_HO~ 
+	~~ 
 	 ~0x00000001       2~
 	~FI0~
 	~* * * * * * * * * * * * * * * * * * *  *~
