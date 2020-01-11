@@ -2,7 +2,7 @@ BACKUP ~Kale\backup~
 AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
 README ~Kale/readme.txt~
 
-VERSION ~1.5~
+VERSION ~1.51~
 AUTO_TRA ~Kale/translations/%s~
 
 ALWAYS
@@ -16,6 +16,13 @@ LANGUAGE ~English~
          ~Kale/translations/english/Kale.TRA~
 
 BEGIN @0 /* Kale for BGEE/SOD */
+ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
+OUTER_SPRINT "bg1_eet_symbol" AR
+END
+
+ACTION_IF GAME_IS ~EET~ THEN BEGIN
+OUTER_SPRINT "bg1_eet_symbol" BG
+END
 INCLUDE ~Kale/library/Kale_items.tpa~  
 INCLUDE ~Kale/library/Kale_bg1.tpa~ 
 
@@ -119,6 +126,7 @@ this activates on weapons you are not proficient in. Standard here is three. */
 END
 
 // Spells 
+COPY "%MOD_FOLDER%/Spells/X3KW.Bam" override 
 COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
 SAY NAME1 @48
 SAY NAME2 @48
