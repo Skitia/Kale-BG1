@@ -2,7 +2,7 @@ IF
 Global("X3KDealQuest","GLOBAL",1)
 Global("X3DwarfSpawn","GLOBAL",0)
 InParty("X3Kale")
-AreaCheck("AR1215")
+AreaCheck("%bg1_eet_symbol%1215")
 THEN
 RESPONSE #100
 SetGlobal("X3DwarfSpawn","GLOBAL",1)

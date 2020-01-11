@@ -1,7 +1,7 @@
 IF
 Global("X3SamuelSpawn","GLOBAL",1)
 InParty("X3Kale")
-AreaCheck("AR0808")
+AreaCheck("%bg1_eet_symbol%0808")
 THEN
 RESPONSE #100
 SetGlobal("X3SamuelSpawn","GLOBAL",2)

@@ -50,7 +50,7 @@ END
 // Talk 3	
 IF 
     InParty(Myself)
-	!AreaCheck("AR4013")
+	!AreaCheck("%bg1_eet_symbol%4013")
     Global("X3KaleMomTalk","GLOBAL",2)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID) 
@@ -148,7 +148,7 @@ END
 
 IF 
 Global("X3KaleCloakStart","GLOBAL",1)
-!AreaCheck("AR1320")
+!AreaCheck("%bg1_eet_symbol%1320")
 InParty(Myself)
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
@@ -226,21 +226,21 @@ CombatCounter(0)
 !AreaType(DUNGEON)	
 Global("X3KaleSixthTalk","GLOBAL",0)
 GlobalGT("X3KaleQuestDone","GLOBAL",1)
-!AreaCheck("AR0800")
-!AreaCheck("AR0801")
-!AreaCheck("AR0802")
-!AreaCheck("AR0803")
-!AreaCheck("AR0804")
-!AreaCheck("AR0805")
-!AreaCheck("AR0806")
-!AreaCheck("AR0807")
-!AreaCheck("AR0808")
-!AreaCheck("AR0809")
-!AreaCheck("AR0810")
-!AreaCheck("AR0811")
-!AreaCheck("AR0812")
-!AreaCheck("AR0813")
-!AreaCheck("AR0814")
+!AreaCheck("%bg1_eet_symbol%0800")
+!AreaCheck("%bg1_eet_symbol%0801")
+!AreaCheck("%bg1_eet_symbol%0802")
+!AreaCheck("%bg1_eet_symbol%0803")
+!AreaCheck("%bg1_eet_symbol%0804")
+!AreaCheck("%bg1_eet_symbol%0805")
+!AreaCheck("%bg1_eet_symbol%0806")
+!AreaCheck("%bg1_eet_symbol%0807")
+!AreaCheck("%bg1_eet_symbol%0808")
+!AreaCheck("%bg1_eet_symbol%0809")
+!AreaCheck("%bg1_eet_symbol%0810")
+!AreaCheck("%bg1_eet_symbol%0811")
+!AreaCheck("%bg1_eet_symbol%0812")
+!AreaCheck("%bg1_eet_symbol%0813")
+!AreaCheck("%bg1_eet_symbol%0814")
 THEN 
 RESPONSE #100 
 SetGlobal("X3KaleSixthTalk","GLOBAL",1)
@@ -287,7 +287,7 @@ END
 // Durlag's Tower  (AR0500 )
 IF 
 	InParty(Myself)
-	AreaCheck("AR0500")
+	AreaCheck("%bg1_eet_symbol%0500")
 	InParty(Myself)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)    
@@ -306,7 +306,7 @@ END
 
 IF 
 	InParty(Myself)
-	AreaCheck("AR2012")
+	AreaCheck("%bg1_eet_symbol%2012")
 	InParty(Myself)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)    
@@ -324,7 +324,7 @@ END
 // Candlekeep (AR2626)
 IF 
 	InParty(Myself)
-	AreaCheck("AR2626")
+	AreaCheck("%bg1_eet_symbol%2626")
 	InParty(Myself)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)    
@@ -342,7 +342,7 @@ END
 // AR4500 
 IF 
 	InParty(Myself)
-	AreaCheck("AR4500")
+	AreaCheck("%bg1_eet_symbol%4500")
 	InParty(Myself)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)    
@@ -360,7 +360,7 @@ END
 //AR5201  
 IF 
 	InParty(Myself)
-	AreaCheck("AR5201")
+	AreaCheck("%bg1_eet_symbol%5201")
 	InParty(Myself)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)    

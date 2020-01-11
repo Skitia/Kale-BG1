@@ -5,7 +5,7 @@ BEGIN X3KaleP
 IF ~Global("X3KaleKickedOut","GLOBAL",0)~ kicked1
 SAY @1 /*~Aww, we were having such fun! Are you sure, mate?~*/
 ++ @2 /*~I'm sorry, my mistake. Stay with me.~ */ DO ~JoinParty()~ EXIT
-++ @3 /*Leave for now. If you're in Gullykin, I may come find you there if I need you in the future.*/ DO ~SetGlobal("X3KaleKickedOut","GLOBAL",1) MoveGlobal("AR4000","X3Kale",[2614.476])~ EXIT
+++ @3 /*Leave for now. If you're in Gullykin, I may come find you there if I need you in the future.*/ DO ~SetGlobal("X3KaleKickedOut","GLOBAL",1) MoveGlobal("%bg1_eet_symbol%4000","X3Kale",[2614.476])~ EXIT
 ++ @9 DO ~SetGlobal("X3KaleKickedOut","GLOBAL",1)LeaveParty()~ EXIT // ~Stay here for now.~ 
 END
 

@@ -142,19 +142,19 @@ ADD_JOURNAL TITLE (@99) @100 @101 @102 @103 @104 USING ~Kale/translations/englis
 ///////////////////////////////////////////////
 
   // Area scripts
-      EXTEND_TOP ~ar4000.bcs~ ~Kale/Script/ar4000.baf~
+      EXTEND_TOP ~ar4000.bcs~ ~Kale/Script/%bg1_eet_symbol%4000.baf~
         EVALUATE_BUFFER
-      EXTEND_TOP ~ar4013.bcs~ ~Kale/Script/ar4013.baf~
+      EXTEND_TOP ~ar4013.bcs~ ~Kale/Script/%bg1_eet_symbol%4013.baf~
         EVALUATE_BUFFER		
-      EXTEND_TOP ~ar0807.bcs~ ~Kale/Script/ar0807.baf~
+      EXTEND_TOP ~ar0807.bcs~ ~Kale/Script/%bg1_eet_symbol%0807.baf~
         EVALUATE_BUFFER		
-      EXTEND_TOP ~ar0808.bcs~ ~Kale/Script/ar0808.baf~
+      EXTEND_TOP ~ar0808.bcs~ ~Kale/Script/%bg1_eet_symbol%0808.baf~
         EVALUATE_BUFFER	
-      EXTEND_TOP ~ar1215.bcs~ ~Kale/Script/ar1215.baf~
+      EXTEND_TOP ~ar1215.bcs~ ~Kale/Script/%bg1_eet_symbol%1215.baf~
         EVALUATE_BUFFER	
-      EXTEND_TOP ~ar1200.bcs~ ~Kale/Script/ar0133.baf~
+      EXTEND_TOP ~ar1200.bcs~ ~Kale/Script/%bg1_eet_symbol%0133.baf~
         EVALUATE_BUFFER			
-      EXTEND_TOP ~ar1320.bcs~ ~Kale/Script/ar1320.baf~
+      EXTEND_TOP ~ar1320.bcs~ ~Kale/Script/%bg1_eet_symbol%1320.baf~
         EVALUATE_BUFFER			
 	
 APPEND ~pdialog.2da~ ~X3Kale X3KaleP X3KaleJ X3KaleD~
@@ -258,8 +258,14 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~x3HelgaB.dlg~
 THEN BEGIN
-  PRINT @48 // Adding crossmod banter between Kale and Vienxay
+  PRINT @490 // Adding crossmod banter between Kale and Helga
 COMPILE ~Kale/dialogue/CrossMod/Helga.d~
+END 
+
+ACTION_IF FILE_EXISTS_IN_GAME ~x3RecB.dlg~
+THEN BEGIN
+  PRINT @500 // Adding crossmod banter between Kale and Recorder
+COMPILE ~Kale/dialogue/CrossMod/Recorder.d~
 END 
 
 //TO MAKE IT DISPLAY RIGHT IN WEIDU
