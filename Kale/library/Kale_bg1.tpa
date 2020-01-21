@@ -142,19 +142,19 @@ ADD_JOURNAL TITLE (@99) @100 @101 @102 @103 @104 USING ~Kale/translations/englis
 ///////////////////////////////////////////////
 
   // Area scripts
-      EXTEND_TOP ~ar4000.bcs~ ~Kale/Script/%bg1_eet_symbol%4000.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%4000.bcs~ ~Kale/Script/AR4000.baf~
         EVALUATE_BUFFER
-      EXTEND_TOP ~ar4013.bcs~ ~Kale/Script/%bg1_eet_symbol%4013.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%4013.bcs~ ~Kale/Script/AR4013.baf~
         EVALUATE_BUFFER		
-      EXTEND_TOP ~ar0807.bcs~ ~Kale/Script/%bg1_eet_symbol%0807.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%0807.bcs~ ~Kale/Script/AR0807.baf~
         EVALUATE_BUFFER		
-      EXTEND_TOP ~ar0808.bcs~ ~Kale/Script/%bg1_eet_symbol%0808.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%0808.bcs~ ~Kale/Script/AR0808.baf~
         EVALUATE_BUFFER	
-      EXTEND_TOP ~ar1215.bcs~ ~Kale/Script/%bg1_eet_symbol%1215.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%1215.bcs~ ~Kale/Script/AR1215.baf~
         EVALUATE_BUFFER	
-      EXTEND_TOP ~ar1200.bcs~ ~Kale/Script/%bg1_eet_symbol%0133.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%1200.bcs~ ~Kale/Script/AR0133.baf~
         EVALUATE_BUFFER			
-      EXTEND_TOP ~ar1320.bcs~ ~Kale/Script/%bg1_eet_symbol%1320.baf~
+      EXTEND_TOP ~%bg1_eet_symbol%1320.bcs~ ~Kale/Script/AR1320.baf~
         EVALUATE_BUFFER			
 	
 APPEND ~pdialog.2da~ ~X3Kale X3KaleP X3KaleJ X3KaleD~
