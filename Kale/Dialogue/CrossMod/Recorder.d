@@ -76,4 +76,4 @@ DO ~SetGlobal("CrossKaleRec","LOCALS",2)~
 == X3RecB @22 // ~What does that mean?~
 == X3KaleB @23 // ~It means drop it and get your big gnome nose out of my business. Arvoreen's pants, you had your chance eh?~
 == X3RecB @24 // ~I'll stop. But you're so self absorbed sometimes.~
-
+EXIT
