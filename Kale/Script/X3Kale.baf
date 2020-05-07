@@ -1,12 +1,6 @@
-// Pause Timer to give time for music to finish between NPCs .
 
-IF 
-Global("X3PauseTimer","GLOBAL",0)
-InParty(Myself)
-THEN RESPONSE #100 
-SetGlobal("X3PauseTimer","GLOBAL",1)
-RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
-END 
+
+
 // SEX CHANGE
 IF
     InParty(Myself)
@@ -117,7 +111,6 @@ END
 // Now all that's left is making Branwen talk to you. We could just add StartDialogueNoSet(Player1) into the last block, but the engine is tricky: if you give a command when Branwen's about to talk, she may miss her dialogue!
 // So we add another block. 
 IF
-RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
 InParty(Myself)
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID) 
@@ -132,9 +125,7 @@ Global("X3KaleTalk","GLOBAL",6)
 Global("X3KaleTalk","GLOBAL",8)
 THEN
 RESPONSE #100
-RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
 PlaySong(0)
-PlaySound("X3KSong") 
 StartDialogueNoSet(Player1)
 END
 
@@ -216,7 +207,6 @@ END
 // Talk 6 
 /* As long as the player is out of the district post quest, this conversation will fire.*/
 IF
-RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
 InParty(Myself)
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID)    
@@ -245,9 +235,7 @@ THEN
 RESPONSE #100 
 SetGlobal("X3KaleSixthTalk","GLOBAL",1)
 PlaySong(0)
-RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
 StartDialogueNoSet(Player1)
-PlaySound("X3KSong") 
 END
 
 IF 
@@ -264,7 +252,6 @@ RESPONSE #100
 END 
 
 IF 
-	RealGlobalTimerExpired("X3PauseTalkTimer","GLOBAL")
     InParty(Myself)
     Global("X3KaleFinalTalk","GLOBAL",1)		
 	RealGlobalTimerExpired("X3KaleFinalTimer","GLOBAL")
@@ -276,12 +263,9 @@ IF
 	!AreaType(DUNGEON)
 THEN
 RESPONSE #100	
-	RealSetGlobalTimer("X3PauseTalkTimer","GLOBAL",ONE_MINUTE)
-	Wait(2)
 	PlaySong(0)
 	SetGlobal("X3KaleFinalTalk","GLOBAL",2) 
 	StartDialogueNoSet(Player1)
-	PlaySound("X3KSong") 
 END 
 
 // Durlag's Tower  (AR0500 )

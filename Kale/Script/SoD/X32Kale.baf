@@ -1,12 +1,19 @@
-// Kale Quest Timer 
-IF 
-Global("X32PauseTimer","GLOBAL",0)
-InParty(Myself)
-THEN RESPONSE #100 
-SetGlobal("X32PauseTimer","GLOBAL",1)
-RealSetGlobalTimer("X32PauseTalkTimer","GLOBAL",ONE_MINUTE)
+// Experience 
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  !AreaCheck("BD0120")
+  !AreaCheck("BD0130")
+  !AreaCheck("BD0103")
+   XPLT(Myself,161000) // Just in case it is higher.
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobal("BD_JOINXP","LOCALS",1)
+    ChangeStat(Myself,XP,161000,SET)//Adjust value as needed to match other NPCs.
 END 
 
+// Kale Quest Timer 
 IF 
 Global("X32KaleQuestTalk","GLOBAL",1)
 THEN RESPONSE #100
@@ -15,6 +22,7 @@ SetGlobal("X32KaleQuestTalk","GLOBAL",2)
 END
 
 IF
+InParty(Myself)
 GlobalTimerExpired("X32KaleQuestTimer","GLOBAL")
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID)
@@ -28,6 +36,7 @@ StartDialogueNoSet(Player1)
 END 
 
 IF 
+InParty(Myself)
 !StateCheck(Player1,CD_STATE_NOTVALID)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 CombatCounter(0)
@@ -66,6 +75,7 @@ IncrementGlobal("X32KaleTalk","GLOBAL",1)
 END 
 
 IF 
+InParty(Myself)
 GlobalTimerExpired("X32KaleGameTalkTimer","GLOBAL")
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID)
@@ -79,9 +89,9 @@ IncrementGlobal("X32KaleTalk","GLOBAL",1)
 END 
 
 IF 
+InParty(Myself)
 GlobalTimerExpired("X32KaleGameTalkTimer","GLOBAL")
 RealGlobalTimerExpired("X32KaleRealTalkTimer","GLOBAL")
-RealGlobalTimerExpired("X32PauseTalkTimer","GLOBAL")
 See(Player1)
 !StateCheck(Player1,CD_STATE_NOTVALID)
 !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -100,7 +110,7 @@ END
 
 IF
 See(Player1)
-RealGlobalTimerExpired("X32PauseTalkTimer","GLOBAL")
+InParty(Myself)
 !StateCheck(Player1,CD_STATE_NOTVALID)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 CombatCounter(0)
@@ -112,10 +122,8 @@ Global("X32KaleTalk","GLOBAL",4)
 Global("X32KaleTalk","GLOBAL",6)
 Global("X32KaleTalk","GLOBAL",10)
 THEN RESPONSE #100 
-RealSetGlobalTimer("X32PauseTalkTimer","GLOBAL",60)
 PlaySong(0)
 StartDialogueNoSet(Player1)
-PlaySound("X3KSong")
 END 
 
 
