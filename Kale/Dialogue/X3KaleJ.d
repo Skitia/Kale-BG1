@@ -1045,10 +1045,10 @@ I_C_T Slave6 0 X3KaleSlave60
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @591
 END
 
-//Tazok 
+/*Tazok...Commenting this out JUST in case the line was added by a mod and somehow never removed? (I really don't think so though.)
 I_C_T2 Tazok 38 X3KaleTazok38
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @589 // ~Uh, Kivan, <CHARNAME>? Prepare to get swarmed by these bloody blokes!~
-END
+END*/
 
 // Unshey 
 

@@ -3,7 +3,7 @@ BEGIN X32KaleJ
 // Talk 1 
 
 IF ~Global("X32KaleTalk","GLOBAL",2)~ Talk1 
-SAY ~Another day, another problem. Never seems to end, does it?~
+SAY ~Another day, another problem. Never seems to end, does it?~ [X3KSong]
 ++ ~You seem quite glum about it.~ + T1.A
 ++ ~That's what we're here to fix.~ + T1.B
 ++ ~No, and they won't get solved with us talking about it either.~ + T1.C
@@ -66,7 +66,7 @@ END
 // Talk 2 
 
 IF ~Global("X32KaleTalk","GLOBAL",4)~ Talk2 
-SAY ~Surprisingly hard to stay down around you, mate. You've got this charm about you.~ 
+SAY ~Surprisingly hard to stay down around you, mate. You've got this charm about you.~ [X3KSong] 
 ++ ~It's nice to see you cheery again.~ + T2.A 
 +~Race(Player1,HALFLING)Race(Player1,DWARF)Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B 
 +~!Race(Player1,HALFLING)!Race(Player1,DWARF)!Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
@@ -174,7 +174,7 @@ END
 // Talk 3 
 
 IF ~Global("X32KaleTalk","GLOBAL",6)~ Talk3 
-SAY ~Soooooo.~ [KaleCom3]
+SAY ~Soooooo.~ [X3KSong]
 ++ ~Hmm?~ + T3.A 
 ++ ~Let me guess. You have something to ask?~ + T3.A 
 ++ ~What do you want?~ + T3.A 
@@ -238,7 +238,7 @@ END
 
 // Talk 4
 IF ~Global("X32KaleTalk","GLOBAL",8)~ Talk4 
-SAY ~Whew, am I glad we're stopping. I'm starving!~
+SAY ~Whew, am I glad we're stopping. I'm starving!~ [X3KSong]
 +~!Race(Player1,HALFLING)~+ ~That's very halfling of you.~ + T4.A 
 ++ ~You and me both.~ + T4.B 
 +~InParty("X3Helga")~+ ~It's more Hardtack. Nothing to be excited for.~ + T4.C 
@@ -312,7 +312,7 @@ IF ~~ + T4.X
 END 
 
 IF ~Global("X32KaleTalk","GLOBAL",10)~ Talk5 // Only occurs if Romance Variable is still at 1.
-SAY ~I gotta get something off my chest, mate.~
+SAY ~I gotta get something off my chest, mate.~ [X3KSong]
 ++ ~What is it, Kale?~ + T5.A 
 ++ ~I don't see anything on your chest.~ + T5.B 
 ++ ~Now isn't the time.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.X // There will be no other opportunity to raise it, so flag it off.
