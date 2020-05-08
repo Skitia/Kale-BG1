@@ -334,14 +334,14 @@ END
 IF ~~ T5.C 
 SAY ~That's nice to hear mate, really. You're a special friend, you know that?~
 ++ ~Thanks Kale. You're a good friend as well.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.F1 
-++ ~Just a friend?~ + T5.G
++~Global("X32KaleRomanceActive","GLOBAL",1)~+ ~Just a friend?~ + T5.G
 ++ ~I definitely know of my own greatness.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~+ T5.H  
 END 
 
 IF ~~ T5.D 
 SAY ~Do you need us then, mate?~  
 ++ ~I need my friends, Kale. I can't do this alone.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.F1 
-++ ~I need you, Kale, but for more than just your blade. You're special to me. I like you a lot.~ + T5.G 
++~Global("X32KaleRomanceActive","GLOBAL",1)~+ ~I need you, Kale, but for more than just your blade. You're special to me. I like you a lot.~ + T5.G 
 ++ ~You're not necessary. But you are here because I asked you to be all the same.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.H1 
 ++ ~That's not a question I'm comfortable answering.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.X 
 END 
@@ -349,7 +349,7 @@ END
 IF ~~ T5.E 
 SAY ~I just wonder if I'm really necessary for this cause. You? You're integral. Me? I could probably be replaced.~
 ++ ~I need my friends, Kale. I can't do this alone.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.F1
-++ ~I need you, Kale, but for more than just your blade. You're special to me. I like you a lot.~ + T5.G 
++~Global("X32KaleRomanceActive","GLOBAL",1)~+ ~I need you, Kale, but for more than just your blade. You're special to me. I like you a lot.~ + T5.G 
 ++ ~You're not necessary. But you are here because I asked you to be all the same.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.H1 
 ++ ~That's not a question I'm comfortable answering.~ DO ~SetGlobal("X32KaleRomanceActive","GLOBAL",3)~ + T5.X 
 END 
