@@ -68,8 +68,8 @@ END
 IF ~Global("X32KaleTalk","GLOBAL",4)~ Talk2 
 SAY ~Surprisingly hard to stay down around you, mate. You've got this charm about you.~ [X3KSong] 
 ++ ~It's nice to see you cheery again.~ + T2.A 
-+~Race(Player1,HALFLING)Race(Player1,DWARF)Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B 
-+~!Race(Player1,HALFLING)!Race(Player1,DWARF)!Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
++~Race(Player1,HALFLING)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B 
++~!Race(Player1,HALFLING)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
 ++ ~What did you expect? I am amazing.~ +  T2.C 
 ++ ~How about you put that newfound hope to work?~ + T2.D 
 END 
@@ -95,8 +95,8 @@ END
 IF ~~ T2.C 
 SAY ~And full of yourself, mate. Suppose it's deserved, at least. None of us would be here if it weren't for you.~ 
 ++ ~It's nice to see you cheery again.~ + T2.A 
-+~Race(Player1,HALFLING)Race(Player1,DWARF)Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B // This is a romance trigger. 
-+~!Race(Player1,HALFLING)!Race(Player1,DWARF)!Race(Player1,GNOME)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
++~Race(Player1,HALFLING))~+ ~I'd like to here more about this charm you see in me.~ +  T2.B // This is a romance trigger. 
++~!Race(Player1,HALFLING)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
 ++ ~Thanks. Now let's set our eyes on our goal.~ + T2.D 
 END 
 
@@ -109,8 +109,8 @@ END
 IF ~~ T2.E1 
 SAY ~And good looking too. Not that looks are everything, but they sure add to the package.~
 ++ ~I agree, I am good looking.~ + T2.F 
-+~Race(Player1,HALFLING)Race(Player1,DWARF)Race(Player1,GNOME)~+ ~You're not so bad yourself.~ + T2.G // Romance flag 
-+~!Race(Player1,HALFLING)!Race(Player1,DWARF)!Race(Player1,GNOME)~+ ~You're not so bad yourself.~ + T2.G2
++~Race(Player1,HALFLING)~+ ~You're not so bad yourself.~ + T2.G // Romance flag 
++~!Race(Player1,HALFLING)~+ ~You're not so bad yourself.~ + T2.G2
 ++ ~Thank you.~ + T2.Thanks 
 ++ ~And what of Alora?~ + T2.Alora 
 END 
@@ -119,8 +119,8 @@ IF ~~ T2.E2
 SAY ~Not the most...quality looking person out there. But your actions does you proud where your appearance doesn't.~ 
 ++ ~Are you calling me ugly?~ + T2.H
 ++ ~Thanks. I think.~ + T2.Thanks 
-+~Race(Player1,HALFLING)Race(Player1,DWARF)Race(Player1,GNOME)~+ ~You're not so bad yourself.~ + T2.G // Romance flag. 
-+~!Race(Player1,HALFLING)!Race(Player1,DWARF)!Race(Player1,GNOME)~+ ~You're not so bad yourself.~ + T2.G2
++~Race(Player1,HALFLING)~+ ~You're not so bad yourself.~ + T2.G // Romance flag. 
++~!Race(Player1,HALFLING)~+ ~You're not so bad yourself.~ + T2.G2
 END 
 
 IF ~~ T2.F 

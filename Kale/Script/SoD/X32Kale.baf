@@ -52,10 +52,6 @@ IF
 	InParty(Myself)
 	ReputationGT(Player1,5)
 	Global("X32KaleMatch","GLOBAL",0)
-	OR(3) 
-	Race(Player1,DWARF)
-	Race(Player1,HALFLING)
-	Race(Player1,GNOME)
 THEN
   RESPONSE #100
 	SetGlobal("X32KaleMatch","GLOBAL",1)
