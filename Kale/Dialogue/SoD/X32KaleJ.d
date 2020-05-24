@@ -95,7 +95,7 @@ END
 IF ~~ T2.C 
 SAY ~And full of yourself, mate. Suppose it's deserved, at least. None of us would be here if it weren't for you.~ 
 ++ ~It's nice to see you cheery again.~ + T2.A 
-+~Race(Player1,HALFLING))~+ ~I'd like to here more about this charm you see in me.~ +  T2.B // This is a romance trigger. 
++~Race(Player1,HALFLING)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B // This is a romance trigger. 
 +~!Race(Player1,HALFLING)~+ ~I'd like to here more about this charm you see in me.~ +  T2.B2
 ++ ~Thanks. Now let's set our eyes on our goal.~ + T2.D 
 END 

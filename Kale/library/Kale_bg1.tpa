@@ -266,7 +266,25 @@ ACTION_IF FILE_EXISTS_IN_GAME ~x3RecB.dlg~
 THEN BEGIN
   PRINT @500 // Adding crossmod banter between Kale and Recorder
 COMPILE ~Kale/dialogue/CrossMod/Recorder.d~
-END 
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BC0Aura.dlg~
+THEN BEGIN
+  PRINT @501 // Adding crossmod banter between Kale and Aura
+COMPILE ~Kale/dialogue/CrossMod/Aura.d~
+END  
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BC0Drake.dlg~
+THEN BEGIN
+  PRINT @502 // Adding crossmod banter between Kale and Drake 
+COMPILE ~Kale/dialogue/CrossMod/Drake.d~
+END  
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BC0Siren.dlg~
+THEN BEGIN
+  PRINT @503 // Adding crossmod banter between Kale and Sirene
+COMPILE ~Kale/dialogue/CrossMod/Sirene.d~
+END  
 
 //TO MAKE IT DISPLAY RIGHT IN WEIDU
 
