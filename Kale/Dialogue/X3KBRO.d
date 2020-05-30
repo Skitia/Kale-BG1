@@ -58,7 +58,7 @@ CHAIN X3KBRO b2Done
 @29 // ~Thank you. I'm going to write to ma right away, I'm happy enough to put words to ink!~
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @30 // ~Just don't stress her out anymore, Samuel. Stay out of trouble.~
 == X3KBRO @31 // ~Yes, yes, I will. Thank you Kale, and thank you to your friends. Take this, I was saving it in case things got bad, but I won't need it anymore.~
-DO ~EscapeArea()SetGlobal("X3KaleQuestDone","GLOBAL",2)AddJournalEntry(@10019,QUEST_DONE)CreateItem("X3KREW",0,0,0)AddexperienceParty(4500)~
+DO ~EscapeArea()SetGlobal("X3KaleQuestDone","GLOBAL",2)AddJournalEntry(@10019,QUEST_DONE)GiveItem("X3KREW",Player1)AddexperienceParty(4500)~
 EXIT 
 
 APPEND X3KBRO 
