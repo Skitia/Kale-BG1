@@ -2,7 +2,7 @@ BACKUP ~Kale\backup~
 AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
 README ~Kale/readme.txt~
 
-VERSION ~1.58~
+VERSION ~1.59~
 AUTO_TRA ~Kale/translations/%s~
 
 ALWAYS
@@ -116,10 +116,8 @@ LAF fl#add_kit_ee
 
 // The below sets some more variables.		
 	STR_VAR
-		kit_name = ~X3KFK~ // Same as your ADD KIT line. 
-/* The first two lines dictate fighter thaco bonuses. You want 1 where I have both zeros for fighters to generate their bonus thaco/attacks per round. The third number is thaco penalty,
-this activates on weapons you are not proficient in. Standard here is three. */
-		clswpbon = ~1 0 2~		
+		kit_name = ~X3KFK~ 
+		clswpbon = ~1 0 3~		
 		numwslot = ~4~ // This determines the number of non-off hand weapon slots you have. You can have up to four of these.
 		hpclass = ~HPBARB~ // Bards use the rogue hit point table. You can make your own, but it's easiest to use already existing hit point progressions. 
 		clsrcreq = ~1 1 1 1 1 1 1~ // This is character generation race choices.
@@ -186,7 +184,7 @@ COPY ~%MOD_FOLDER%/cre/X3KaleW.cre~ ~override/X3Kale.cre~
   SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
   SAY SELECT_RARE2 @41 //~Come on, come on!~
   SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~X3KFK~))  
+  WRITE_BYTE  0x246 ~%X3KFK%~ 
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~
 THEN BEGIN
@@ -244,5 +242,5 @@ COPY ~Kale/cre/SoD/X32KaleW.cre~ ~override/X32Kale.cre~
   SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
   SAY SELECT_RARE2 @41 //~Come on, come on!~
   SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~X3KFK~))  
+  WRITE_BYTE  0x246 ~%X3KFK%~   
 END 
