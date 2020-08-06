@@ -48,23 +48,22 @@
 @44 = ~Come on, come on!~ [KaleCom5]
 @45 = ~warden~
 @46 = ~Warden~
-@47 = ~Warden: A warrior tradition placing emphasis on fighting in pairs, these warriors work best with a partner next to them, who they choose to elevate their ability in combat. The Warden takes on the defensive role in the pair, while their partner, 
-	the Ward, receives elevated offensive prowess. This comes at the cost of the own Warden’s skill with weapons being inferior to other fighter traditions, but there are few other partners one would wish to stand next to.
+@47 = ~WARDEN: The warden is a warrior whose discipline and traditions center around fighting in pairs. The warden takes on the defensive role in the pair, while the ward receives elevated offensive prowess. Their remarkable protective talents come at the cost of the warden’s skill with weapons being inferior to other fighter traditions.
 	
 	Advantages:
-	-Hit Die:d12
-	-May use WARD once per day. Gains one use at level 1, one use at level eight, an additional use every eight levels thereafter.
+	-Hit Die: d12
+	-May use the Ward ability once per day. Gains one use at level 1, one use at level eight, and an additional use every eight levels thereafter.
 	
-	WARD: Designates Target as the Ward. The Ward is granted greater offensive prowess, while the Warden gains penalties for the same amount in place of bonuses to their defense for one turn. The bonuses vary on level. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
-	Level 1: The Ward receives +1 Damage bonus, -1 Thaco. The Warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 Hitpoint per 6 seconds.
-	Level 8: The Ward receives +2 Damage Bonus, -2 Thaco. The Warden Receives penalties for the same amount, but gains 20% Resistance to Physical Damage, and regenerates 1 hitpoint per 3 seconds.
-	Level 16: The Ward receives +3 Damage bonus, -3 Thaco. The Warden receives penalties for the same amount, but gains 30% Resistance to Physical Damage and regenerates 1 hp per second.
+	WARD: Designates target as the ward for one turn. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
+	Level 1: The ward receives +1 damage bonus and -1 THAC0. The warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 hitpoint per 6 seconds.
+	Level 8: The ward receives +2 damage bonus and -2 THAC0. The warden receives penalties for the same amount, but gains 20% resistance to physical damage, and regenerates 1 hitpoint per 3 seconds.
+	Level 16: The ward receives +3 damage bonus and -3 THAC0. The warden receives penalties for the same amount, but gains 30% resistance to physical damage and regenerates 1 hitpoint per second.
 
 	Disadvantages:
 	May only become specialized in ranged weapons, and may not exceed mastery in any other weapon.~
 @48 = ~Ward~
-@49 = ~WARD: Designates Target as the Ward. The Ward is granted greater offensive prowess, while the Warden gains penalties for the same amount in place of bonuses to their defense for one turn. The bonuses vary on level, and it can be used once per day per 8 levels, starting at level 1. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
-Level 1: The Ward receives +1 Damage bonus, -1 Thaco. The Warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 Hitpoint per 6 seconds.
-Level 8: The Ward receives +2 Damage Bonus, -2 Thaco. The Warden Receives penalties for the same amount, but gains 20% Resistance to Physical Damage, and regenerates 1 hitpoint per 3 seconds.
-Level 16: The Ward receives +3 Damage bonus, -3 Thaco. The Warden receives penalties for the same amount, but gains 30% Resistance to Physical Damage and regenerates 1 hp per second.
+@490 = ~WARD: Designates target as the ward for one turn. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
+Level 1: The ward receives +1 damage bonus and -1 THAC0. The warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 hitpoint per 6 seconds.
+Level 8: The ward receives +2 damage bonus and -2 THAC0. The warden receives penalties for the same amount, but gains 20% resistance to physical damage, and regenerates 1 hitpoint per 3 seconds.
+Level 16: The ward receives +3 damage bonus and -3 THAC0. The warden receives penalties for the same amount, but gains 30% resistance to physical damage and regenerates 1 hitpoint per second.
 ~

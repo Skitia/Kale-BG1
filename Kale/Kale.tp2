@@ -2,11 +2,11 @@ BACKUP ~Kale\backup~
 AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
 README ~Kale/readme.txt~
 
-VERSION ~1.59~
+VERSION ~1.6~
 AUTO_TRA ~Kale/translations/%s~
 
 ALWAYS
-  INCLUDE ~Kale/library/eet.tph~
+  
   INCLUDE ~Kale/library/functions.tph~
   INCLUDE ~Kale/library/fl#add_kit_ee.tpa~
 END
@@ -18,10 +18,12 @@ LANGUAGE ~English~
 BEGIN @0 /* Kale for BGEE/SOD */
 ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
 OUTER_SPRINT "bg1_eet_symbol" AR
+ INCLUDE ~Kale\library\liam_bgee_vars.tpa~
 END
 
 ACTION_IF GAME_IS ~EET~ THEN BEGIN
 OUTER_SPRINT "bg1_eet_symbol" BG
+INCLUDE ~EET/other/cpmvars/eet_cpmvars.tpa~
 END
 INCLUDE ~Kale/library/Kale_items.tpa~  
 INCLUDE ~Kale/library/Kale_bg1.tpa~ 
@@ -123,12 +125,7 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~ // This is character generation race choices.
 END
 
-// Spells 
-COPY "%MOD_FOLDER%/Spells/X3KW.Bam" override 
-COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
-SAY NAME1 @48
-SAY NAME2 @48
-SAY DESC @49
+
 
 COPY ~%MOD_FOLDER%/cre/X3KaleW.cre~ ~override/X3Kale.cre~
   SAY NAME1 @1 //Kale
@@ -244,3 +241,10 @@ COPY ~Kale/cre/SoD/X32KaleW.cre~ ~override/X32Kale.cre~
   SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
   WRITE_BYTE  0x246 ~%X3KFK%~   
 END 
+
+// Spells 
+COPY "%MOD_FOLDER%/Spells/X3KW.Bam" override 
+COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
+SAY NAME1 @48
+SAY NAME2 @48
+SAY 0x50 @490
