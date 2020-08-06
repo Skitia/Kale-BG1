@@ -5,7 +5,7 @@ AreaCheck("%bg1_eet_symbol%0808")
 THEN
 RESPONSE #100
 SetGlobal("X3SamuelSpawn","GLOBAL",2)
-CreateCreature("X3KDEAL",[482.243],SW)
-CreateCreature("X3KTHUG",[482.243],SW)
+CreateCreature("X3KDEAL",[535.407],SE)
+CreateCreature("X3KTHUG",[633.403],SW)
 Continue()
 END
