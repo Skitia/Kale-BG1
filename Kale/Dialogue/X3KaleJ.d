@@ -945,7 +945,7 @@ I_C_T BERRUN 8 X3KaleBERRUN8
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @584 // ~Now this is the good stuff. Gold and glory! Let's clear a mine.~
 END 
 
-I_C_T MIRIAN 1 X3KaleMirian1 
+I_C_T2 MIRIAN 1 X3KaleMirian1 
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @585 // ~A good kin bloody died to get this to you. I hope you honor him.~
 END
 
@@ -1309,7 +1309,7 @@ SAY  @179 // ~Yeah? What you want to talk about, mate?~
 +~GlobalGT("X3KaleTalk","GLOBAL",4)Global("X3KalePFeudTopic","GLOBAL",0)~+ @184 DO ~SetGlobal("X3KalePFeudTopic","GLOBAL",1)~  + Kale.PT2Story // ~You said that halfling you saved later died in a kobold attack, but not much else.~
 +~GlobalGT("X3KaleMomTalk","GLOBAL",3)Global("X3KalePFatherTopic","GLOBAL",1)~+ @185 DO ~SetGlobal("X3KalePFatherTopic","GLOBAL",1)~  + Kale.PT3Pa // ~I've met your ma, but not your father.~
 +~GlobalGT("X3KaleTalk","GLOBAL",6)Global("X3KalePBrotherTopic","GLOBAL",0)~+ @186 DO ~SetGlobal("X3KalePBrotherTopic","GLOBAL",1)~  + Kale.PT4Sewing // ~So. You like sewing.~
-+~GlobalGT("X3KaleTalk","GLOBAL",8)Global("X3KalePParentsTopic","GLOBAL",0)~+ @187 DO ~SetGlobal("X3KalePParentsTopic","GLOBAL",1)~  + Kale.PT5Gift // ~So is there anything special about this cloak you gave me?~
++~GlobalGT("X3KaleTalk","GLOBAL",8)Global("X3KaleCloak","GLOBAL",2)Global("X3KaleCloakTopic","GLOBAL",0)~+ @187 DO ~SetGlobal("X3KaleCloakTopic","GLOBAL",1)~  + Kale.PT5Gift // ~So is there anything special about this cloak you gave me?~
 +~GlobalGT("X3KaleSixthTalk","GLOBAL",2)Global("X3KalePBrotherTopic2","GLOBAL",0)~+ @188 DO ~ SetGlobal("X3KalePBrotherTopic2","GLOBAL",1)~ + Kale.PT6Brother // ~How do you think your brother is doing?~
 +~GlobalGT("X3KaleFinalTalk","GLOBAL",1)Global("X3KalePStayTopic","GLOBAL",0)~+ @189 DO ~SetGlobal("X3KalePStayTopic","GLOBAL",0)~ + Kale.PT7Stay // ~When this is over, why not stick around with me for a while?~
 +~Global("X3KalePGullyTopic","GLOBAL",0)~+ @190 DO ~SetGlobal("X3KaleGullyTopic","GLOBAL",1)~ + Kale.PGullykin // ~Can you tell me more about Gullykin?~
