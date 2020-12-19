@@ -583,9 +583,9 @@ END
 
 IF ~~ Kale.6NH 
 SAY @369 // ~Bloody bastard always wants the easy way out. This will help him learn to take care of himself.~
-++ @396 + Kale.6NH1 // ~It should help him realize to be accountable for himself.~ 
+++ @394 + Kale.6NH1 // ~It should help him realize to be accountable for himself.~ 
 ++ @395 + Kale.6NHF // ~Family shouldn't take advantage of family.~ 
-++ @397 + Kale.6NHS // ~Need a bit of spine to survive.~ 
+++ @396 + Kale.6NHS // ~Need a bit of spine to survive.~ 
 END 
 
 IF ~~ Kale.6NHF 
