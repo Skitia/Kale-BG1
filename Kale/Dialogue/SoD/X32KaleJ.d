@@ -514,7 +514,7 @@ END
 
 // Quest 1 
 
-IF ~Global("X32KQuestTalk","GLOBAL",2)~ Quest1 
+IF ~Global("X32KaleQuestTalk","GLOBAL",2)~ Quest1 
 SAY ~Didn't expect to meet Lilah way out here.~
 ++ ~What is your history with her?~ + Q1.A 
 ++ ~Did you know her brother?~ + Q1.B 
@@ -563,10 +563,10 @@ END
 
 IF ~~ Q1.Exit
 SAY ~Right, got a brother to find, and a girl to bring a smile to, eh?~
-IF ~~ DO ~IncrementGlobal("X32KQuestTalk","GLOBAL",1)~ EXIT 
+IF ~~ DO ~IncrementGlobal("X32KaleQuestTalk","GLOBAL",1)~ EXIT 
 END 
 
-IF ~Global("X32KQuestTalk","GLOBAL",4)~ Q2 
+IF ~Global("X32KaleQuestTalk","GLOBAL",4)~ Q2 
 SAY ~Damn it. Damn it damn it damn it!~
 = ~Dead. Why did he have to be dead?~
 ++ ~I am sorry, but there isn't more we can do for him.~ + Q2.A
@@ -607,12 +607,12 @@ END
 
 IF ~~ Q2.E 
 SAY ~Right then. Glad you agree with me on this mate. Let's get this over with before the guilt gets me.~
-IF ~~ DO ~SetGlobal("X32KQuestTalk","GLOBAL",5)SetGlobal("X32KaleQuestLie","GLOBAL",1)~ EXIT 
+IF ~~ DO ~SetGlobal("X32KaleQuestTalk","GLOBAL",5)SetGlobal("X32KaleQuestLie","GLOBAL",1)~ EXIT 
 END 
 
 IF ~~ Q2.F 
 SAY ~You're the leader. *Sigh*. Guess if that's that, then.~
-IF ~~ DO ~SetGlobal("X32KQuestTalk","GLOBAL",5)~ EXIT 
+IF ~~ DO ~SetGlobal("X32KaleQuestTalk","GLOBAL",5)~ EXIT 
 END 
 
 IF ~~ Q2.G 
