@@ -136,7 +136,7 @@ END
 CHAIN X32KQST1 Q3.Lie2 
 ~Thank you so much. Tymora bless you! And I will miss you, Kale.~
 == X32KaleJ ~Yeah. I'll miss you too.~
-EXIT 
+DO ~EscapeArea()~ EXIT 
 
 CHAIN X32KQST1 Q3.Sling 
 ~Yes. Here. You can make more use of it than I.~
