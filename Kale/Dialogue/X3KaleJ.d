@@ -1103,6 +1103,7 @@ END
 
 I_C_T Tellan 6 X3KaleTellan6
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @512
+== Tellan @602
 END 
 
 // Yeslick 
