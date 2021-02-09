@@ -154,7 +154,8 @@ END
 
 // Trigger 
 IF 
-OR(2) 
+CombatCounter(0)
+!See([ENEMY])
 Global("X32KalemkhiinConflict","LOCALS",1)	
 THEN RESPONSE #100 
 StartDialogueNoSet(Player1)

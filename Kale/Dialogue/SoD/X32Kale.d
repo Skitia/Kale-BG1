@@ -1,7 +1,8 @@
 BEGIN X32Kale
 //Kale Prejoining, no brother. 
 
-CHAIN IF WEIGHT #-1 ~Global("X32KaleMet","GLOBAL",0)!AreaCheck("BD0109")~ THEN X32Kale c1 
+CHAIN IF WEIGHT #-1 ~Global("X32KaleMet","GLOBAL",0)!AreaCheck("BD0109")!AreaCheck("BD0120")
+!AreaCheck("BD0130")~ THEN X32Kale c1 
 ~Well, look who it is! The hero himself!~ 
 DO ~SetGlobal("X32KaleMet","GLOBAL",1)~ 
 END

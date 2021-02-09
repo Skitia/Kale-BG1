@@ -1,9 +1,9 @@
 IF
-Global("X3KaleSpawn","GLOBAL",0)
+Global("X3KaleSpawn","BD0109",0)
 BeenInParty("X3Kale")
 THEN
 RESPONSE #100
-SetGlobal("X3KaleSpawn","GLOBAL",1)
+SetGlobal("X3KaleSpawn","BD0109",1)
 //CreateCreature("X32Kale",[626.581],SW)
 MoveGlobal("BD0109","X3Kale",[626.581])
 CreateCreature("X32KBRO",[593.591],NE)
@@ -27,11 +27,11 @@ CreateCreature("X32KBRO",[593.591],NE)
 END
 
 IF 
-Global("X3KaleSpawn","GLOBAL",0)
+Global("X3KaleSpawn","BD0109",0)
 !BeenInParty("X3Kale")
 THEN 
 RESPONSE #100 
-SetGlobal("X3KaleSpawn","GLOBAL",1)
+SetGlobal("X3KaleSpawn","BD0109",1)
 CreateCreature("X32Kale",[626.581],SW)
 ActionOverride("X3Kale",MakeGlobal())
 CreateCreature("X32KBRO",[593.591],NE)
