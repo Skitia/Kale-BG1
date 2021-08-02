@@ -612,3 +612,6 @@
 @600 = ~Funny question, that.~
 @601 = ~No pilfering here, kin. Just a pure business transaction with a rare, worthwhile gem.~
 @602 = ~I wasn't asking, fool! It *will* be mine.~
+//String Fix 
+@603 = ~Your voice sounds odd.~
+@604 = ~Well, that's a bit rude to say, <CHARNAME>. Heh, just messing with you. Just need to clear my throat, I bet. One sec.~
