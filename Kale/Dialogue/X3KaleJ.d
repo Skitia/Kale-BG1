@@ -1245,6 +1245,7 @@ IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID
  +~HPPercentGT(Myself,74)RandomNum(5,5)~+ @225 + Kale.PHowAreYou5 // ~How are you doing?~
  +~HPPercentLT(Myself,75)HPPercentGT(Myself,49)RandomNum(2,2)~+ @225 + Kale.PHowAreYouInjured2  // ~How are you doing?~
  ++ @336 + Kale.PTalk // ~Let's stop and chat for a bit.~ 
+ ++ @603 + FixString
  ++ @193 EXIT // ~I need nothing at the moment.~ 
  END 
 
@@ -1319,6 +1320,7 @@ SAY  @179 // ~Yeah? What you want to talk about, mate?~
 +~RandomNum(3,3)~+ @191 + Kale.PTips3
 +~GlobalGT("X3KaleAlora1","GLOBAL",3)Global("X3KaleAloraTopic","GLOBAL",0)~+ @192 DO ~SetGlobal("X3KaleAloraTopic","GLOBAL",1)~ + Kale.PAlora // ~I've noticed you and Alora have gotten close.~
 +~GlobalGT("X3KaleTalk","GLOBAL",10)Global("X3KaleLoversTopic","GLOBAL",0)~+ @437 DO ~SetGlobal("X3KaleLoversTopic","GLOBAL",1)~ + Kale.PLovers // ~Have you had any non-halfling lovers?~
+ ++ @193 EXIT // ~I need nothing at the moment.~ 
 END 
 
 IF ~~ Kale.PC1Advice 
@@ -2016,6 +2018,13 @@ END
 IF ~~ Kale.PTips6
 SAY @543 // ~Scented oils, mate. And give the hair a good scrub. You can get better clients if you smell and look nice.~
 IF ~~ EXIT 
+END 
+
+IF ~~ FixString
+SAY @604
+IF ~~ DO ~ClearAllActions() 
+      StartCutSceneMode() 
+      StartCutScene("X3KReset")~ EXIT 
 END 
 
 END 

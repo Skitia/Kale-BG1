@@ -1422,6 +1422,7 @@ IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID
  +~HPPercentGT(Myself,74)RandomNum(5,5)~+ ~How are you doing?~ + Kale.PHowAreYou5 // ~How are you doing?~
  +~HPPercentLT(Myself,75)HPPercentGT(Myself,49)RandomNum(2,2)~+ ~How are you doing?~ + Kale.PHowAreYouInjured2  // ~How are you doing?~
  ++ ~Let's stop and chat for a bit.~ + Kale.PTalk // ~Let's stop and chat for a bit.~ 
+ ++ ~Your voice sounds odd.~ + FixString
  ++ ~I need nothing at the moment.~ EXIT // ~I need nothing at the moment.~ 
  END 
  
@@ -1478,6 +1479,7 @@ SAY  ~Sure mate, I'm listening.~
 +~Global("X32KaleMarriage","GLOBAL",0)~+ ~You mentioned something about getting married before you came along.~ DO ~SetGlobal("X32KaleMarriage","GLOBAL",1)~  + X32KaleP.Marriage
 +~GlobalGT("X32KaleTalk","GLOBAL",6)Global("X32KalePIDTalk2","GLOBAL",0)~+ ~You seem very serious about not getting attached to people or things.~ DO ~SetGlobal("X32KalePIDTalk2","GLOBAL",0)~ + X32KaleP.PIDTalk2
 +~Global("X32KaleRomanceActive","GLOBAL",2)Global("X32KalePIDTalk3","GLOBAL",0)~+ ~So, about us...~ DO ~SetGlobal("X32KalePIDTalk3","GLOBAL",0)~ + X32KaleP.PIDTalk3
+++ ~Actually, let's talk later.~ EXIT 
 END 
 
 IF ~~ Kale.PCompanionThoughts 
@@ -1858,6 +1860,13 @@ IF ~~ PID3.X
 SAY ~...Maybe...yeah, maybe that's just it then. For the best. Would only have lasted so long, I suppose.~
 = ~...Guess we should get back to adventuring, or whatever  you want to tell us to do.~
 IF ~~ EXIT 
+END 
+
+IF ~~ FixString
+SAY ~Well, that's a bit rude to say, <CHARNAME>. Heh, just messing with you. Just need to clear my throat, I bet. One sec.~
+IF ~~ DO ~ClearAllActions() 
+      StartCutSceneMode() 
+      StartCutScene("X3KReset")~ EXIT 
 END 
 
 END
