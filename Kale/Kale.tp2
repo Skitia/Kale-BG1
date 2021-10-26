@@ -36,16 +36,13 @@ END
 		COPY ~%MOD_FOLDER%/portraits/KaleM.bmp~ ~override/KaleM.bmp~
 		COPY ~%MOD_FOLDER%/portraits/KaleS.bmp~ ~override/KaleS.bmp~
 		
-PRINT ~Would you like to install Music for Kale? These will play during banters with the player.~
+PRINT @48
 
-PRINT ~Please choose one of the following:
-[1] Yes
-[2] No
-~
+PRINT @49
 
 OUTER_SPRINT ~music~ ~placeholder_value~
 OUTER_WHILE (!(IS_AN_INT ~music~) OR (~music~ > 0x2) OR (~music~ < 0x1)) BEGIN
-  PRINT ~Please select 1 or 2 and press Enter.~
+  PRINT @50
   ACTION_READLN ~music~
 END
       ACTION_IF ("music" = 1) THEN BEGIN
@@ -71,15 +68,15 @@ LAF HANDLE_AUDIO
     sox_path = ~Kale/music~
 END
 
-PRINT ~Installed Music for Kale.~
+PRINT @51
 END 
 
 ACTION_IF ("music" = 2) THEN BEGIN
-PRINT ~Did not install Music for Kale.~
+PRINT @52
 END 
 
-BEGIN ~Warden(Fighter Kit)~
-SUBCOMPONENT ~Choose an alternate class for Kale?~
+BEGIN @53
+SUBCOMPONENT @54 
 
 
 ADD_KIT ~X3KFK~

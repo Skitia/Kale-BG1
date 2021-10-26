@@ -80,15 +80,15 @@ THEN
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Kale",~Getting into big waters now.~) // Comment here when you replace the string with @ tra.
+		DisplayStringHead("X3Kale",@0) // Comment here when you replace the string with @ tra.
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Kale",~The scamp would be proud, he'd be!~) // Now which one of your big, strong soldiers will help with my packs?
+		DisplayStringHead("X3Kale",@1) // Now which one of your big, strong soldiers will help with my packs?
 	RESPONSE #10
 		SetGlobalTimer("bd_mdd010z_ot_timer","bd0101",ONE_ROUND)
 		SetGlobal("bd_mdd010z_ot","bd0101",0)
-		DisplayStringHead("X3Kale",~How am I going to be famous if the hero of Baldur's gate is coming along?~) // Someone stole your purse? This city...
+		DisplayStringHead("X3Kale",@2) // Someone stole your purse? This city...
 	RESPONSE #90 // ~Need to research the particular use of 90.
 		Continue()
 END

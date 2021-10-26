@@ -37,7 +37,7 @@ THEN
 		SetGlobal("BD_OT_DELAY","BD0103",1)
 		SetGlobal("BD_PLAY_ONCE_X3Kale","BD0103",1)
 		Wait(1)
-		DisplayStringWait("X3Kale",~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~ [KaleHap]) 
+		DisplayStringWait("X3Kale",@0) 
 		SetGlobal("BD_OT_DELAY","BD0103",0)
 		SetInterrupt(TRUE)
 END

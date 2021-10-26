@@ -21,7 +21,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32KaleCryptComment1","GLOBAL",2)
-	DisplayStringHead("X3Kale",~Ma, Gullykin, and admirers await in droves. Can't wait to get out of here.~)
+	DisplayStringHead("X3Kale",@0)
 END
 
 IF
@@ -36,9 +36,9 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32KaleCryptComment1","GLOBAL",2)
-	DisplayStringHead("X3Kale",~When we're done with this, we'll be seeing places together, Alora. <CHARNAME> won't need us anymore.~)
+	DisplayStringHead("X3Kale",@1)
 	Wait(6) 
-	DisplayStringHead("Alora",~I'd like that.~)
+	DisplayStringHead("Alora",@2)
 END
 
 // SoD - talk after Korlasz
@@ -65,5 +65,5 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("X32KaleCryptComment2","GLOBAL",2)
-	DisplayStringHead("X3Kale",~Woohoo! Time to relax.~ [KaleAct6])
+	DisplayStringHead("X3Kale",@3)
 END

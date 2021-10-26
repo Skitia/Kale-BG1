@@ -9,7 +9,7 @@ IF
 	RandomNumLT(14,6)
 THEN
 	RESPONSE #100
-		DisplayStringHead("X3Kale",~Well, the bigger they are, the more fun to kill, am I right?~)  // Well, the bigger they are, the more fun to kill, am I right?
+		DisplayStringHead("X3Kale",@0)  // Well, the bigger they are, the more fun to kill, am I right?
 		SetGlobal("BD_BEETLE_X3Kale","BD0114",1)
 		IncrementGlobal("BD_BEETLE_BANTER","BD0114",1)
 		SetGlobalTimer("BD_TIMER_RHINOTALK","BD0114",ONE_MINUTE)

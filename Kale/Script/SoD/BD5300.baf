@@ -9,7 +9,7 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_sdd350b_ot_timer","bd2000",THREE_MINUTES)
 		SetGlobal("bd_ot_X3Helga","bd5300",2)
-		DisplayStringHead("X3Kale",~Bloody hells, it's always for ale!~) 
+		DisplayStringHead("X3Kale",@0) 
 END
 
 IF
@@ -23,6 +23,6 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_sdd350b_ot_timer","bd2000",THREE_MINUTES)
 		SetGlobal("bd_ot_X3Kale","bd5300",1)
-		DisplayStringHead("X3Kale",~Here I come!~) 
+		DisplayStringHead("X3Kale",@1) 
 END
 

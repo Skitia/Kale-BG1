@@ -67,3 +67,13 @@ Level 1: The ward receives +1 damage bonus and -1 THAC0. The warden receives pen
 Level 8: The ward receives +2 damage bonus and -2 THAC0. The warden receives penalties for the same amount, but gains 20% resistance to physical damage, and regenerates 1 hitpoint per 3 seconds.
 Level 16: The ward receives +3 damage bonus and -3 THAC0. The warden receives penalties for the same amount, but gains 30% resistance to physical damage and regenerates 1 hitpoint per second.
 ~
+@48 = ~Would you like to install Music for Kale? These will play during banters with the player.~
+@49 = ~Please choose one of the following:
+[1] Yes
+[2] No
+~
+@50 = ~Please select 1 or 2 and press Enter.~
+@51 = ~Installed Music for Kale.~
+@52 = ~Did not install Music for Kale.~
+@53 = ~Warden(Fighter Kit)~
+@54 = ~Give Kale the Warden Class? (Recommended)~

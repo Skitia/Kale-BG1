@@ -6,5 +6,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("X3_NPC02","MYAREA",1)
-		DisplayStringHead("X3Kale",~Mate...I gotta admit, I'm a bit spooked.~)  
+		DisplayStringHead("X3Kale",@0)  
 END

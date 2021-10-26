@@ -46,7 +46,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",1)
-DisplayStringHead("X3Kale",~Marriage just ain't for me, Sam.~)
+DisplayStringHead("X3Kale",@0)
 END
 
 IF 
@@ -57,7 +57,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",2)
-DisplayStringHead("X32KBRO",~It's just a handfasting.~)
+DisplayStringHead("X32KBRO",@1)
 END
 
 IF 
@@ -68,7 +68,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",3)
-DisplayStringHead("X3Kale",~Comes with expectations. Not ready to be tied down.~)
+DisplayStringHead("X3Kale",@2)
 END
 
 IF 
@@ -79,7 +79,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",4)
-DisplayStringHead("X32KBRO",~Ma only wants a kid or two. And she liked Alora.~)
+DisplayStringHead("X32KBRO",@3)
 END
 
 
@@ -91,7 +91,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",5)
-DisplayStringHead("X3Kale",~Should have found a halfman instead. Gives you an excuse. Kids keep you rooted.~)
+DisplayStringHead("X3Kale",@4)
 END
 
 IF 
@@ -102,7 +102,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",6)
-DisplayStringHead("X32KBRO",~Halfman? Not halfwoman?~)
+DisplayStringHead("X32KBRO",@5)
 END
 
 IF 
@@ -113,7 +113,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",7)
-DisplayStringHead("X3Kale",~Why not? Fine fair people of all types, Sam.~)
+DisplayStringHead("X3Kale",@6)
 END
 // If  the Main Character is male, he'll give him as an example. Otherwise a different section will play. 
 IF 
@@ -125,7 +125,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",8)
-DisplayStringHead("X3Kale",~Got Littleman, the hero of Baldur's Gate, heck, Brandobaris himself! *Whistle*. Who wouldn't want the scamp as a partner?~)
+DisplayStringHead("X3Kale",@7)
 END
 
 IF 
@@ -137,7 +137,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",9)
-DisplayStringHead("X32KBRO",~I'd prefer an ordinary common person.~)
+DisplayStringHead("X32KBRO",@8)
 END
 
 IF 
@@ -148,7 +148,7 @@ Global("X3KaleSpawnCon","GLOBAL",9)
 THEN 
 RESPONSE #100 
 SetGlobal("X3KaleSpawnCon","GLOBAL",10)
-DisplayStringHead("X3Kale",~And that's why you have an ordinary common life, Sam.~)
+DisplayStringHead("X3Kale",@9)
 END
 
 // Not Male
@@ -161,7 +161,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",8)
-DisplayStringHead("X3Kale",~It's not that Alora is bad. I liked it when she was curious! How'd her mind get infected with the settling idea?~)
+DisplayStringHead("X3Kale",@10)
 END
 
 IF 
@@ -173,7 +173,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",9)
-DisplayStringHead("X32KBRO",~Ma made her very curious about it. She's got a way with these things.~)
+DisplayStringHead("X32KBRO",@11)
 END
 
 IF 
@@ -185,7 +185,7 @@ THEN
 RESPONSE #100 
 SetGlobalTimer("X3KaleSamCon","GLOBAL",6)
 SetGlobal("X3KaleSpawnCon","GLOBAL",9)
-DisplayStringHead("X3Kale",~Bloody mothers.~)
+DisplayStringHead("X3Kale",@12)
 END
 
 

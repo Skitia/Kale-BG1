@@ -4,7 +4,7 @@ Global("X32KaleQuest","GLOBAL",1)
 TriggerOverride(Player1,See("X32KQST2"))
 THEN RESPONSE #100 
 SetGlobal("X32KaleQuest","GLOBAL",2)
-AddJournalEntry(@103,QUEST)
+AddJournalEntry(@10103,QUEST)
 END 
 
 IF 
@@ -16,7 +16,7 @@ TriggerOverride(Player1,See("X32KQST2"))
 THEN RESPONSE #100 
 SetGlobal("X32KaleQuest","GLOBAL",2)
 SetGlobal("X32KaleQuestTalk","GLOBAL",4)
-AddJournalEntry(@103,QUEST)
+AddJournalEntry(@10103,QUEST)
 END 
 
 IF

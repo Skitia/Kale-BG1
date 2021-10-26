@@ -8,7 +8,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("bd_MDD892a_ot","bd4300",1)
 		SetGlobalTimer("bd_MDD892a_ot_timer","bd4300",ONE_MINUTE)
-		DisplayStringHead("X3Kale",~The hell they keep trying to kill you for? Pfft. It never works.~)  // 
+		DisplayStringHead("X3Kale",@0)  // 
 END
 
 IF
@@ -20,5 +20,5 @@ THEN
   RESPONSE #100
     SetGlobalTimer("bd_mdd905a_ot_timer","bd4300",THREE_MINUTES)
     SetGlobal("bd_ot_X3Kale","bd4300",1)
-    DisplayStringHead("X3Kale",~Mate, think it's time to go.~)
+    DisplayStringHead("X3Kale",@1)
 END

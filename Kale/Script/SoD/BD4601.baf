@@ -9,7 +9,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("bd_hellevator_ot_X3Kale","bd4601",1)
 		SetGlobalTimer("bd_hellevator_timer","bd4601",7)
-		DisplayStringHead("X3Kale",~Does it look like I can bloody help it?~)
+		DisplayStringHead("X3Kale",@0)
 END
 
 IF
@@ -22,5 +22,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("bd_hellevator_ot_X3Kale","bd4601",1)
 		SetGlobalTimer("bd_hellevator_timer","bd4601",7)
-		DisplayStringHead("X3Kale",~Mom is going to kill me if she finds out about this.~)
+		DisplayStringHead("X3Kale",@1)
 END

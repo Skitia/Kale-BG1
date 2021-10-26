@@ -134,7 +134,7 @@ COPY ~Kale/cre/X3Kale.cre~ ~override/X3Kale.cre~
   
 ADD_JOURNAL TITLE (%Kale of Gullykin%) @10011 @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019 @10020 @10021 @10022 USING ~Kale/translations/english/Kale_bg1.tra~
 ADD_JOURNAL TITLE (@10030) @10031 @10032 @10033 @10034 @10035 @10036 @10037 USING ~Kale/translations/english/Kale_bg1.tra~
-ADD_JOURNAL TITLE (@99) @100 @101 @102 @103 @104 USING ~Kale/translations/english/Kale_bg1.tra~ 
+ADD_JOURNAL TITLE (@10099) @10100 @10101 @10102 @10103 @10104 USING ~Kale/translations/english/Kale_bg1.tra~ 
  
 ///////////////
 
