@@ -61,7 +61,7 @@
 
 	Disadvantages:
 	May only become specialized in ranged weapons, and may not exceed mastery in any other weapon.~
-@48 = ~Ward~
+@480 = ~Ward~
 @490 = ~WARD: Designates target as the ward for one turn. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
 Level 1: The ward receives +1 damage bonus and -1 THAC0. The warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 hitpoint per 6 seconds.
 Level 8: The ward receives +2 damage bonus and -2 THAC0. The warden receives penalties for the same amount, but gains 20% resistance to physical damage, and regenerates 1 hitpoint per 3 seconds.
