@@ -2,7 +2,7 @@ BACKUP ~Kale\backup~
 AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
 README ~Kale/readme.txt~
 
-VERSION ~1.65~
+VERSION ~1.66~
 AUTO_TRA ~Kale/translations/%s~
 
 ALWAYS
@@ -242,6 +242,6 @@ END
 // Spells 
 COPY "%MOD_FOLDER%/Spells/X3KW.Bam" override 
 COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
-SAY NAME1 @48
-SAY NAME2 @48
+SAY NAME1 @480
+SAY NAME2 @480
 SAY 0x50 @490
