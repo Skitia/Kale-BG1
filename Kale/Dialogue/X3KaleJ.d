@@ -945,12 +945,14 @@ I_C_T BERRUN 8 X3KaleBERRUN8
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @584 // ~Now this is the good stuff. Gold and glory! Let's clear a mine.~
 END 
 
-I_C_T2 MIRIAN 1 X3KaleMirian1 
+I_C_T MIRIAN 1 X3KaleMirian1 
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @585 // ~A good kin bloody died to get this to you. I hope you honor him.~
+== MIRIAN @605
 END
 
 I_C_T MIRIAN 2 X3KaleMirian2 
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @585 // ~A good kin bloody died to get this to you. I hope you honor him.~
+== MIRIAN @605
 END
 
 I_C_T2 DINK 2 X3KaleDINK2 
@@ -1395,6 +1397,8 @@ SAY @367 // ~Which one, now?~
 +~InParty("X3Vien")~+ @289 + Em.Vienxay 
 +~InParty("X3mily")~+ @290 + Em.Emily 
 +~InParty("c0aura")~+ @291 + Em.Aura 
++~InParty("X3Rec")~+ ~Recorder.~ + Em.Recorder
++~InParty("X3Helga")~+ ~Recorder.~ + Em.Helga
 +~InParty("C0Sirene")~+ @292 + Em.Sirene1 
 + ~InParty("L#1DVER")~ + @293 + Em.Verrsza
 +~InParty("#Ishy")GlobalLT("IshyRomanceActive","GLOBAL",2)~+ @544 + Em.Ishy 
@@ -1578,6 +1582,16 @@ END
 
 IF ~~ Em.Verrsza 
 SAY @328 // ~I've got my reservations about that Rakasha. But as long as he isn't against us, suppose what's the harm?~
+IF ~~ EXIT 
+END 
+
+IF ~~ Em.Helga
+SAY @606
+IF ~~ EXIT 
+END 
+
+IF ~~ Em.Recorder
+SAY @607
 IF ~~ EXIT 
 END 
 
