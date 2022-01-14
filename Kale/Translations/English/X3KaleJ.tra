@@ -615,3 +615,8 @@
 //String Fix 
 @603 = ~Your voice sounds odd.~
 @604 = ~Well, that's a bit rude to say, <CHARNAME>. Heh, just messing with you. Just need to clear my throat, I bet. One sec.~
+//Mirian Fix 
+@605 = ~I won't forget what was lost for this, friend. I swear it.~
+//Recorder/Helga missing crossmod
+@606 = ~Helga, eh? She's sure a tough dwarf, I can say that much. Wonder what she looked like when she was younger. Just saying, mate!~
+@607 = ~She's nice, not like other gnomes I know. And she's got that alluring voice, that just pulls you in. Heh, could listen to her all day.~
