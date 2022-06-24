@@ -365,3 +365,75 @@ THEN
 	StartDialogueNoSet(Player1)
 END		
 
+// These blocks set up Kale's experience based off of the PC's level.
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPLT(Player1,2000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,1999)
+	XPLT(Player1,4000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	ChangeStat(Myself,XP,2000,SET)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,3999)
+	XPLT(Player1,8000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	ChangeStat(Myself,XP,4000,SET)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,7999)
+	XPLT(Player1,16000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	ChangeStat(Myself,XP,8000,SET)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,15999)
+	XPLT(Player1,32000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	ChangeStat(Myself,XP,16000,SET)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,31999)
+	XPLT(Player1,64000)
+THEN RESPONSE #100
+	SetInterrupt(FALSE)
+	ChangeStat(Myself,XP,32000,SET)
+	SetGlobal("BD_JOINXP","LOCALS",1)
+	SetInterrupt(TRUE)
+END
+
