@@ -52,7 +52,7 @@
 	
 	Advantages:
 	-Hit Die: d12
-	-May use the Ward ability once per day. Gains one use at level 1, one use at level eight, and an additional use every eight levels thereafter.
+	-May use the Ward ability once per day. Gains one use every four levels. (Start at 1st level with one use.)
 	
 	WARD: Designates target as the ward for one turn. It does not stack with itself, and if the ward is changed, the previous ward loses their bonuses. 
 	Level 1: The ward receives +1 damage bonus and -1 THAC0. The warden receives penalties for the same amount, but gains 10% resistance to physical damage and regenerates 1 hitpoint per 6 seconds.
