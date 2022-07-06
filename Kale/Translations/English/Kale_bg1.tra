@@ -182,3 +182,10 @@ Lilah's brother is dead.~
 
 @10104 = ~Lilah's brother is dead. We agreed to let Kale lie about what happened.~
 
+@300103  = ~^RKale slightly disapproves.^-~
+@300106  = ~^RKale disapproves.^-~
+@300109  = ~^RKale greatly disapproves.^-~
+@300113  = ~^GKale slightly approves^-~
+@300116  = ~^GKale approves^-~
+@300119  = ~^GKale greatly approves^-~
+@30099 = ~^0xFFFF00FFYou have established a deep bond with Kale. Your synergy has improved her capabilities.^-~
