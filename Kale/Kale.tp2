@@ -2,7 +2,7 @@ BACKUP ~Kale\backup~
 AUTHOR ~https://forums.beamdog.com/discussion/74630/mod-kale-npc-for-bg-ee-v1-11/p1?new=1~
 README ~Kale/readme.txt~
 
-VERSION ~1.68~
+VERSION ~1.69~
 AUTO_TRA ~Kale/translations/%s~
 
 ALWAYS
@@ -240,8 +240,30 @@ COPY ~Kale/cre/SoD/X32KaleW.cre~ ~override/X32Kale.cre~
 END 
 
 // Spells 
+
+//Portait Icon.
+DEFINE_ACTION_FUNCTION cd_new_portrait_icon
+  INT_VAR string = 0
+  STR_VAR bam_file = "****"
+  RET     icon
+  BEGIN
+
+  COPY_EXISTING ~statdesc.2da~ ~override~
+    COUNT_2DA_ROWS 3 count
+    READ_2DA_ENTRY (count - 1) 0 3 icon
+    SET icon += 1
+
+  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~ UNLESS ~%bam_file%~
+
+END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Ward~) STR_VAR bam_file = X3KW RET X3KW = icon END
+
 COPY "%MOD_FOLDER%/Spells/X3KW.Bam" override 
+
 COPY "%MOD_FOLDER%/Spells/X3KFKS.SPL" override 
 SAY NAME1 @480
 SAY NAME2 @480
 SAY 0x50 @490
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = X3KW END
+
