@@ -1218,12 +1218,12 @@ END
 
 IF ~~ KaleFireGlad 
 SAY @533 // ~Thanks, mate. Just be careful where you make us step. Place is bound to have trouble when we get into the depths of it.~
-IF ~~ DO ~SetGlobal("X3KaleKeep","GLOBAL",2)~ EXIT 
+IF ~~ DO ~SetGlobal("X3KaleFire","GLOBAL",2)~ EXIT 
 END 
 
 IF ~~ KaleFireQuiet 
 SAY @534 // ~Who the hells will hear us? The dead? Eh, you might have a point, I suppose. Bloody hells. Shutting up now.~
-IF ~~ DO ~SetGlobal("X3KaleKeep","GLOBAL",2)~ EXIT 
+IF ~~ DO ~SetGlobal("X3KaleFire","GLOBAL",2)~ EXIT 
 END 
 
 // Firewine Dungeon Interjection 
