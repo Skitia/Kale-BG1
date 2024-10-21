@@ -1398,7 +1398,7 @@ SAY @367 // ~Which one, now?~
 +~InParty("X3mily")~+ @290 + Em.Emily 
 +~InParty("c0aura")~+ @291 + Em.Aura 
 +~InParty("X3Rec")~+ ~Recorder.~ + Em.Recorder
-+~InParty("X3Helga")~+ ~Recorder.~ + Em.Helga
++~InParty("X3Helga")~+ ~Helga.~ + Em.Helga
 +~InParty("C0Sirene")~+ @292 + Em.Sirene1 
 + ~InParty("L#1DVER")~ + @293 + Em.Verrsza
 +~InParty("#Ishy")GlobalLT("IshyRomanceActive","GLOBAL",2)~+ @544 + Em.Ishy 
