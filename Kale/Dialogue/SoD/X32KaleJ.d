@@ -630,6 +630,62 @@ SAY @207
 ++ @206 + Q2.E 
 END 
 
+//Post Quest 
+
+IF ~Global("X32KaleQuest","GLOBAL",3)~ QuestFinish 
+SAY @422
+IF ~Global("X32KaleQuestLie","GLOBAL",1)~ DO ~SetGlobal("X32KaleQuest","GLOBAL",4)~ + QuestLie
+IF ~!Global("X32KaleQuestLie","GLOBAL",1)~ DO ~SetGlobal("X32KaleQuest","GLOBAL",4)~ + QuestTruth
+END 
+
+IF ~~ QuestLie 
+SAY @423
+++ @428 + QL.1
+++ @429 + QL.2
+++ @430 + QL.3
+END 
+
+IF ~~ QuestTruth
+SAY @424
+++ @425 + QT.1
+++ @426 + QT.2
+++ @427 + QT.3
+END 
+
+IF ~~ QT.1
+SAY @431
+IF ~~ + QF.1 
+END 
+
+IF ~~ QT.2 
+SAY @431
+IF ~~ + QF.1 
+END 
+
+IF ~~ QT.3
+SAY @436
+IF ~~ + QF.1 
+END 
+
+IF ~~ QL.1
+SAY @435
+IF ~~ + QF.1 
+END 
+
+IF ~~ QL.2 
+SAY @434
+IF ~~ + QF.1 
+END 
+
+IF ~~ QL.3
+SAY @433
+IF ~~ + QF.1 
+END 
+
+IF ~~ QF.1
+SAY @432
+IF ~~ EXIT 
+END 
 
 // THRIX
 
@@ -1422,6 +1478,7 @@ IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID
  +~HPPercentGT(Myself,74)RandomNum(5,5)~+ @279 + Kale.PHowAreYou5 // @279
  +~HPPercentLT(Myself,75)HPPercentGT(Myself,49)RandomNum(2,2)~+ @279 + Kale.PHowAreYouInjured2  // @279
  ++ @280 + Kale.PTalk // @280 
+ +~Global("X32KaleRomanceActive","GLOBAL",1)~+ @608 + KaleP.Interact
  ++ @281 + FixString
  ++ @282 EXIT // @282 
  END 
@@ -1471,9 +1528,10 @@ SAY  @291
 /*Options will  vary as the game goes on.*/ 
 /*Chapter Advice, these repeat.*/ 
 // Companion Thoughts 
-+ ~NumInPartyAliveGT(2)~ + @292  + Kale.PCompanionThoughts // @292 
++ ~NumInPartyAliveGT(2)~ + @292  + Kale.PCompanionThoughts // @292 GlobalGT("X3KaleApp","GLOBAL",44)
 + ~NumInPartyAliveLT(3)ReputationGT(Player1,5)Global("X32KaleRomanceActive","GLOBAL",2)~ + @293 + Em.Me3 // @293
-+ ~NumInPartyAliveLT(3)ReputationGT(Player1,5)!Global("X32KaleRomanceActive","GLOBAL",2)~ + @293 + Em.Me1 // @293
++ ~NumInPartyAliveLT(3)ReputationGT(Player1,5)GlobalGT("X3KaleApp","GLOBAL",44)!Global("X32KaleRomanceActive","GLOBAL",2)~ + @293 + Em.Me4 // @293
++ ~NumInPartyAliveLT(3)ReputationGT(Player1,5)GlobalLT("X3KaleApp","GLOBAL",44)!Global("X32KaleRomanceActive","GLOBAL",2)~ + @293 + Em.Me1 // @293
 + ~NumInPartyAliveLT(3)ReputationLT(Player1,6)~ + @293 + Em.Me2 // @293
 // Dialogue From Talk Expansions. These fire once, and there will be 3 only: A talk of things while they were gone (7/8), something friendly, and something flirty. 
 +~Global("X32KaleMarriage","GLOBAL",0)~+ @294 DO ~SetGlobal("X32KaleMarriage","GLOBAL",1)~  + X32KaleP.Marriage
@@ -1506,10 +1564,11 @@ SAY @298 // @298
 +~InParty("X3Helga")~+ @314 + Em.Helga
 +~InParty("X3Rec")~+ @315 + Em.Recorder
 +~InParty("X3Vien")~+ @316 + Em.Vienxay 
-+~InParty("X3Kale")~+ @317 + Em.Emily
++~InParty("X3Emi")~+ @317 + Em.Emily
 +~InParty("c0aura")~+ @318 + Em.Aura 
 +~InParty("c0Drake")~+ @319 + Em.Drake 
 +~InParty("C0Sirene")~+ @320 + Em.Sirene
++~InParty("SUFINCH")~+ @663 + Em.Finch
 +~InParty("L#1DVER")~ + @321 + Em.Verrsza
 +~InParty("#Ishy")~ + @322 + Em.Ishy 
 // Myself 
@@ -1654,6 +1713,16 @@ IF ~~ Em.Me3
 SAY @351
 IF ~~ EXIT 
 END 
+
+IF ~~ Em.Finch
+SAY @661 // ~Didn't pin her for the adventuring type, but she seems to carry herself just fine. Wonder if she'll like my charms, eh?~
+IF ~~ EXIT 
+END 
+
+IF ~~ Em.Me4
+SAY @662 // ~I say this with the utmost seriousness: I'd follow you to the hells and back, friend. We make quite the force, and I'm proud to be the best looking member of that.~
+IF ~~ EXIT 
+END
 
 IF ~~ X32KaleP.Marriage
 SAY @352
@@ -1862,11 +1931,257 @@ SAY @418
 IF ~~ EXIT 
 END 
 
+
+IF ~~ KaleP.Interact 
+SAY @609
++~RandomNum(3,1)~+ @610 + ThinkingAbout1
++~RandomNum(3,2)~+ @610 + ThinkingAbout2
++~RandomNum(3,3)~+ @610 + ThinkingAbout3
++~RandomNum(3,1)~+ @611 + Hero1
++~RandomNum(3,2)~+ @611 + Hero2
++~RandomNum(3,3)~+ @611 + Hero3
++~RandomNum(3,1)~+ @612 + Watch1
++~RandomNum(3,2)~+ @612 + Watch2
++~RandomNum(3,3)~+ @612 + Watch3
++~RandomNum(3,1)~+ @613 + TellJoke1
++~RandomNum(3,2)~+ @613 + TellJoke2
++~RandomNum(3,3)~+ @613 + TellJoke3
++~RandomNum(3,1)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump1
++~RandomNum(3,2)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump2
++~RandomNum(3,3)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump3
++~RandomNum(3,1)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump1
++~RandomNum(3,2)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump2
++~RandomNum(3,3)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump3
++~RandomNum(3,1)~+ @615 + Side1
++~RandomNum(3,2)~+ @615 + Side2
++~RandomNum(3,3)~+ @615 + Side3
++~RandomNum(3,1)~+ @604 + Cheek1
++~RandomNum(3,2)~+ @604 + Cheek2
++~RandomNum(3,3)~+ @604 + Cheek3
++~RandomNum(3,1)~+ @616 + Drink1
++~RandomNum(3,2)~+ @616 + Drink2
++~RandomNum(3,3)~+ @616 + Drink3
++~RandomNum(3,1)~+ @617 + With1
++~RandomNum(3,2)~+ @617 + With2
++~RandomNum(3,3)~+ @617 + With3
++~RandomNum(3,1)~+ @618 + Smile1
++~RandomNum(3,2)~+ @618 + Smile2
++~RandomNum(3,3)~+ @618 + Smile3
++~RandomNum(3,1)~+ @619 + Cape1
++~RandomNum(3,2)~+ @619 + Cape2
++~RandomNum(3,3)~+ @619 + Cape3
++~RandomNum(3,1)~+ @620 + Cute1
++~RandomNum(3,2)~+ @620 + Cute2
++~RandomNum(3,3)~+ @620 + Cute3
+++ @603 EXIT 
+END 
+
+IF ~~ ThinkingAbout1 
+SAY @621
+IF ~~ EXIT 
+END 
+
+IF ~~ ThinkingAbout2
+SAY @622
+IF ~~ EXIT 
+END 
+
+IF ~~ ThinkingAbout3 
+SAY @623
+IF ~~ EXIT 
+END 
+
+IF ~~ Hero1
+SAY @624
+IF ~~ EXIT 
+END 
+
+IF ~~ Hero2
+SAY @625
+IF ~~ EXIT 
+END 
+
+
+IF ~~ Hero3
+SAY @626
+IF ~~ EXIT 
+END 
+
+IF ~~ Watch1
+SAY @627
+IF ~~ EXIT 
+END 
+
+IF ~~ Watch2
+SAY @628
+IF ~~ EXIT 
+END 
+
+
+IF ~~ Watch3
+SAY @629
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke1 
+SAY @630
+= @631
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke2
+SAY @632
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke3
+SAY @633
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump1 
+SAY @634
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump2
+SAY @635
+= @636
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump3
+SAY @637
+= @638
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump1
+SAY @639
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump2
+SAY @640
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump3
+SAY @641
+IF ~~ EXIT 
+END 
+
+IF ~~ Side1 
+SAY @642
+IF ~~ EXIT 
+END 
+
+IF ~~ Side2
+SAY @643
+IF ~~ EXIT 
+END 
+
+IF ~~ Side3
+SAY @644
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink1 
+SAY @645
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink2 
+SAY @646
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink3 
+SAY @647
+IF ~~ EXIT 
+END 
+
+IF ~~ With1 
+SAY @648
+IF ~~ EXIT 
+END 
+
+IF ~~ With2 
+SAY @649
+IF ~~ EXIT 
+END 
+
+IF ~~ With3 
+SAY @650
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile1 
+SAY @651
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile2
+SAY @652
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile3 
+SAY @653
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape1 
+SAY @654
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape2 
+SAY @655
+= @656
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape3 
+SAY @657
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute1 
+SAY @658
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute2 
+SAY @659
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute3 
+SAY @660
+IF ~~ EXIT 
+END 
+
+IF ~~ Cheek1 
+SAY @605
+IF ~~ EXIT 
+END 
+
+IF ~~ Cheek2 
+SAY @606
+IF ~~ EXIT 
+END 
+
+IF ~~ Cheek3 
+SAY @607
+IF ~~ EXIT 
+END 
+
 IF ~~ FixString
 SAY @420
 IF ~~ DO ~ClearAllActions() 
       StartCutSceneMode() 
-      StartCutScene("X3KReset")~ EXIT 
+      StartCutScene("X3KalR")~ EXIT 
 END 
 
 END
