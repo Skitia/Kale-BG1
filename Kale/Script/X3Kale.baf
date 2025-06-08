@@ -1,4 +1,85 @@
+//Approval Shifts 
 
+IF 
+InParty(Myself)
+Switch("X3KaleAppChange","GLOBAL")
+THEN RESPONSE #1
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",-10)
+DisplayStringNoNameDlg(Player1,@300109)
+RESPONSE #2
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",-8)
+DisplayStringNoNameDlg(Player1,@300109)
+RESPONSE #3
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",-6)
+DisplayStringNoNameDlg(Player1,@300106)
+RESPONSE #4
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",-4)
+DisplayStringNoNameDlg(Player1,@300106)
+RESPONSE #5
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",-2)
+DisplayStringNoNameDlg(Player1,@300103)
+RESPONSE #6
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+RESPONSE #7
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",2)
+DisplayStringNoNameDlg(Player1,@300113)
+RESPONSE #8
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",4)
+DisplayStringNoNameDlg(Player1,@300116)
+RESPONSE #9
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",6)
+DisplayStringNoNameDlg(Player1,@300116)
+RESPONSE #10
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",8)
+DisplayStringNoNameDlg(Player1,@300119)
+RESPONSE #11
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+IncrementGlobal("X3KaleApp","GLOBAL",10)
+DisplayStringNoNameDlg(Player1,@300119)
+END 
+
+// If not in party, it should be reset with no approval changes. 
+IF 
+!InParty(Myself) 
+!Global("X3KaleAppChange","GLOBAL",0)
+THEN RESPONSE #100 
+SetGlobal("X3KaleAppChange","GLOBAL",0)
+END
+
+//Reset to 120 if past max/reward bonus stats.
+IF 
+GlobalGT("X3KaleApp","GLOBAL",120)
+InParty(Myself)
+Switch("X3KaleAppMaxBonus","LOCALS")
+THEN RESPONSE #0
+SetGlobal("X3KaleApp","GLOBAL",120)
+SetGlobal("X3KaleAppMaxBonus","LOCALS",1)
+ChangeStat(Myself,DEX,1,ADD)
+DisplayStringNoNameDlg(Player1,@30099)
+RESPONSE #1 
+SetGlobal("X3KaleApp","GLOBAL",120)
+END 
+
+IF 
+GlobalLT("X3KaleApp","GLOBAL",-39)
+InParty(Myself)
+Switch("X3Leave","LOCALS")
+THEN RESPONSE #0
+SetGlobal("X3Break","LOCALS",1)
+StartDialogueNoSet(Player1)
+RESPONSE #2
+SetGlobal("X3Break","LOCALS",3)
+StartDialogueNoSet(Player1) // Leaves for Good
+END
 
 
 // SEX CHANGE
