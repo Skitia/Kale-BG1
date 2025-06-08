@@ -47,6 +47,7 @@ THEN
     ActionOverride("X3Kale",SetGlobal("bd_joined","LOCALS",0))
     ActionOverride("X3Kale",SetGlobal("bd_retreat","LOCALS",0)) // Need to research this one later. 
     ActionOverride("X3Kale",SaveObjectLocation("LOCALS","bd_default_loc",Myself))// Need to research what this means. 
+	ActionOverride("X3Kale",ChangeAIScript("X32Kale",OVERRIDE))
     ActionOverride("X3Kale",ChangeAIScript("BDTHIE01",GENERAL))
     Continue()
 END	
