@@ -9,10 +9,10 @@ DO ~TakePartyItem("X3KNote")~
 == X3KBRO @5 // ~Lost my fortune. Tymora left me, she has. Lost in a game I surely had in the bags, and now I owe money to the guys upstairs.~
 == X3KaleJ @6 // ~Idiot.~
 END 
-++ @7 EXTERN X3KaleJ b1Help // ~Perhaps we can help.~
-++ @8 EXTERN X3KaleJ b1Help // ~What is the problem?~
-++ @9 EXTERN X3KBRO b1Story // ~We are only here to deliver the letter.~
-++ @10 EXTERN X3KBRO b1Story // ~I've heard this tale before.~ 
+++ @7 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ EXTERN X3KaleJ b1Help // ~Perhaps we can help.~
+++ @8 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ EXTERN X3KaleJ b1Help // ~What is the problem?~
+++ @9 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ EXTERN X3KBRO b1Story // ~We are only here to deliver the letter.~
+++ @10 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ EXTERN X3KBRO b1Story // ~I've heard this tale before.~ 
 
 CHAIN X3KaleJ b1Help 
 @11 // ~Oh boy. <CHARNAME>, this is not a good idea. He got himself in this mess, he should get himself out of it.~ 
@@ -22,10 +22,10 @@ CHAIN X3KBRO b1Story
 @12  // ~Kale, I just need someone to give a bit of gold or persuade the man upstairs to clear my debt. It was an unfair game, they had to have cheat! I had a sure victory.~
 == X3KaleJ @13 // ~You should know better than that anyway, Samuel. Don't feel like you need to do anything, <CHARNAME>.~
 END 
-++ @14 EXTERN X3KaleJ b1Help2 // ~It's not an inconvenience. We'll lend a hand.~
-++ @15 EXTERN X3KBRO b3Done // ~As you say, Kale. I'm sorry, Samuel, but you're on your own.~
-++ @16 EXTERN X3KaleJ b1Help2 // ~He's your family. We'll help him.
-++ @17 EXTERN X3KBRO b3Done // ~We have other things to do, yes.~ 
+++ @14 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ EXTERN X3KaleJ b1Help2 // ~It's not an inconvenience. We'll lend a hand.~
+++ @15 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ EXTERN X3KBRO b3Done // ~As you say, Kale. I'm sorry, Samuel, but you're on your own.~
+++ @16 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ EXTERN X3KaleJ b1Help2 // ~He's your family. We'll help him.
+++ @17 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ EXTERN X3KBRO b3Done // ~We have other things to do, yes.~ 
 
 CHAIN X3KaleJ b1Help2 
 @18 // ~I think it's pointless, but your call, mate.~
@@ -58,7 +58,7 @@ CHAIN X3KBRO b2Done
 @29 // ~Thank you. I'm going to write to ma right away, I'm happy enough to put words to ink!~
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @30 // ~Just don't stress her out anymore, Samuel. Stay out of trouble.~
 == X3KBRO @31 // ~Yes, yes, I will. Thank you Kale, and thank you to your friends. Take this, I was saving it in case things got bad, but I won't need it anymore.~
-DO ~EscapeArea()SetGlobal("X3KaleQuestDone","GLOBAL",2)AddJournalEntry(@10019,QUEST_DONE)GiveItem("X3KREW",Player1)AddexperienceParty(4500)~
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",9)SetGlobal("X3KaleQuestDone","GLOBAL",2)AddJournalEntry(@10019,QUEST_DONE)GiveItem("X3KREW",Player1)AddexperienceParty(4500)EscapeArea()~
 EXIT 
 
 APPEND X3KBRO 

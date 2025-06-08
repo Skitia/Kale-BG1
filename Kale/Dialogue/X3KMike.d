@@ -5,7 +5,7 @@ CHAIN IF ~Dead("X3KThug2")Dead("X3KThug3")~ THEN X3KMike Surrender
 DO ~GiveItem("X3KSYBQ",Player1)AddJournalEntry(@10035,QUEST)~ END 
 ++ @16 EXTERN X3KMike Escape  // ~Thank you. Now get out of here, before I call the guards.~
 ++ @17 EXTERN X3KMike Escape // ~I'm glad you saw reason. We'll take this back to the shop.~
-++ @19 DO ~Enemy()Attack(NearestEnemyOf(Myself))~ EXIT // ~Not so fast. You're not getting away.~
+++ @19 DO ~Enemy()SetGlobal("X3KaleAppChange","GLOBAL",5)Attack(NearestEnemyOf(Myself))~ EXIT // ~Not so fast. You're not getting away.~
 
 CHAIN X3KMike Escape 
 @20 // ~You'll not hear further from me, you got what you want now. Goodbye.~

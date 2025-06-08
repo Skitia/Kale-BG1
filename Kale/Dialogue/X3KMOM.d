@@ -16,10 +16,10 @@ DO ~SetGlobal("X3KaleMomTalk","GLOBAL",1)~
 == X3KMOM @4 // ~Your brother hasn't written back in a while. Can you take him this and check on him in Baldur's Gate?~
 == X3KaleJ @5 // ~Well. That fine with you, leader?~ 
 END 
-++ @6 EXTERN X3KMOM ACE // ~I'll be happy to.~
-++ @7 EXTERN X3KMOM ACE // ~There  are other priorities, but we can when we have time.~
+++ @6 DO ~SetGlobal("X3KaleAppChange","GLOBAL",8)~ EXTERN X3KMOM ACE // ~I'll be happy to.~
+++ @7 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ EXTERN X3KMOM ACE // ~There  are other priorities, but we can when we have time.~
 ++ @8 EXTERN X3KMOM REJ // ~There isn't time, I'm sorry.~
-++ @9 EXTERN X3KMOM REJ // ~We're not messengers.~
+++ @9 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ EXTERN X3KMOM REJ // ~We're not messengers.~
 
 CHAIN IF ~~ THEN X3KMOM ACE 
 @10 // ~Thank you. Here, take this letter, and make sure your brother Samuel gets it.~
@@ -41,8 +41,8 @@ CHAIN IF ~IsValidForPartyDialog("X3Kale")
 Global("X3KaleMomTalk","GLOBAL",1)~ THEN X3KMom KMom2 
 @17 // ~You're back. Do you have time to deliver this letter?~ 
 END 
-++ @6 EXTERN X3KMOM ACE // ~I'll be happy to.~
-++ @7 EXTERN X3KMOM ACE // ~There  are other priorities, but we can when we have time.~
+++ @6 DO ~SetGlobal("X3KaleAppChange","GLOBAL",8)~ EXTERN X3KMOM ACE // ~I'll be happy to.~
+++ @7 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ EXTERN X3KMOM ACE // ~There  are other priorities, but we can when we have time.~
 ++ @8 EXTERN X3KMOM REJ2 // ~There isn't time, I'm sorry.~
 ++ @9 EXTERN X3KMOM REJ2 // ~We're not messengers.~
 

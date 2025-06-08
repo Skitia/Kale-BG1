@@ -65,7 +65,7 @@ CHAIN X3Kale b1.action
 CHAIN X3Kale b1.join
 @17 // ~Onwards then, to the glory!~
 DO ~AddJournalEntry(@10011,USER)
-JoinParty()SetGlobal("X3KaleTest","GLOBAL",1)~
+JoinParty()~
 EXIT 
 
 CHAIN X3Kale b1.6

@@ -17,7 +17,7 @@ CHAIN IF ~Global("X3KaleCloakQuestAccept","GLOBAL",0)IsValidForPartyDialogue("X3
 END 
 ++ @6 EXTERN X3KKEEP c2 // ~Perhaps we can help find the thief. Tell us what you know of them.~
 ++ @7 EXTERN X3KKEEP c3 // ~What if we pay you for the supplies Kale needs?~
-++ @8 EXTERN X3KaleJ c4 // ~You will if you don't want to get hurt.~
+++ @8 DO ~SetGlobal("X3KaleAppChange","GLOBAL",3)~ EXTERN X3KaleJ c4 // ~You will if you don't want to get hurt.~
 ++ @9 DO ~AddJournalEntry(@10033,QUEST)~ EXIT // ~We'll leave you be, then.~
 
 CHAIN X3KKEEP c2 
@@ -57,6 +57,7 @@ END
 
 CHAIN X3KKEEP p2 
 @22 // ~I suppose that is enough to ease my worries. Enough to get a job with a better boss if I get the boot for... missing raw materials.~
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",8)~
 == X3KKEEP @23 // ~Here are the materials you need for your cloak, Kale. Your handiwork is fine, you should consider your own shop.~
 == X3KaleJ @24 // ~Thanks mate. Might consider hiring you if I ever do.~
 == X3KKEEP @25 // ~I'll never work for you. Now, do stop bothering me, I've got to get back to work before things get suspicious.~
@@ -74,6 +75,7 @@ EXIT
 /*Normal reward route.*/
 CHAIN IF ~Global("X3KaleCloakQuestAccept","GLOBAL",1)PartyHasItem("X3KSYBQ")~ THEN X3KKEEP HASITEM
 @28 // ~You've returned and you have it, excellent! I may be still in a job.~
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",9)~
 == X3KKEEP @29 // ~I suppose there's no harm giving you a few raw materials that will never be noticed in exchange as promised. Let me get everything and...there.~
 == X3KKEEP @23 // ~Here are the materials you need for your cloak, Kale. Your handiwork is fine, you should consider your own shop.~
 == X3KaleJ @24 // ~Thanks mate. Might consider hiring you if I ever do.~

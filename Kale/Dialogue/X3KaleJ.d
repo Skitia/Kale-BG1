@@ -2,9 +2,9 @@ BEGIN X3KaleJ
 /* Cut Options will be between a slash and an asterisk comment for talks. */
 IF ~Global("X3KaleTalk","GLOBAL",2)~ KaleT1
 SAY @0 // ~This is the life, ain't it? Making stories, not just hearing them.~
-+~Gender(Player1,MALE)~+ @1 + KaleT1.1 // ~I know what you mean, Kale.~
-+~Gender(Player1,FEMALE)~+ @1 + KaleT1.2 // ~I know what you mean, Kale.~
-++ @2 + KaleT1.3 // ~That may be true, but home has its own appeal.~
++~Gender(Player1,MALE)~+ @1 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT1.1 // ~I know what you mean, Kale.~
++~Gender(Player1,FEMALE)~+ @1 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT1.2 // ~I know what you mean, Kale.~
+++ @2 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT1.3 // ~That may be true, but home has its own appeal.~
 ++ @3 + KaleT1.4 // ~It is not the time for such talk, Kale.~
 END
 
@@ -18,10 +18,10 @@ END
 
 IF ~~ KaleT1.2
 SAY @10 // ~What brought a beauty like yourself to the roads anyway? Boredom? Fame? To seek out the handsome Kale?~
-++ @11 + KaleT1.FF // ~Oh yes. I came all the way from Candlekeep just to see the dashing Kale!~
+++ @11 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.FF // ~Oh yes. I came all the way from Candlekeep just to see the dashing Kale!~
 ++ @5 + KaleT1.5 // ~It was not by choice. Gorion, my father, bid us to leave, but he died soon after.~
 ++ @6 + KaleT1.6 // ~Threats to my life, I fear. Threats that will pay for what they have taken from me.~ 
-+~Gender(Player1,FEMALE)~+ @7 + KaleT1.F // ~Save the false compliments and flirting, I've no appreciation for it.~
++~Gender(Player1,FEMALE)~+ @7 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.F // ~Save the false compliments and flirting, I've no appreciation for it.~
 ++ @8 + KaleT1.9 // ~I was bid to for safety, though I want to make the world a better place.~
 ++ @3 + KaleT1.4 // ~It is not the time for such talk, Kale.~
 END
@@ -51,8 +51,8 @@ END
 IF ~~ KaleT1.6 
 SAY @19 // ~Nothing like a bit of thrill to give you a kicker in the legs, eh?~
 = @20 // ~With me around though, you won't need to run. I'll scare them off with my prowess, I will.~
-++ @21 + KaleT1.R2 // ~Thanks for that, Kale.~
-++ @22 + KaleT1.S // ~This isn't a joke, Kale.~
+++ @21 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.R2 // ~Thanks for that, Kale.~
+++ @22 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.S // ~This isn't a joke, Kale.~
 ++ @23 + KaleT1.L // ~We've tarried enough, let's keep moving.~
 END
 
@@ -74,22 +74,22 @@ END
 
 IF ~~ KaleT1.F
 SAY @28 // ~All right all right, sheesh. Just wanted to say if you stick around with me, you'll have plenty of fame.~
-++ @21 + KaleT1.R2 // ~Thanks for that, Kale.~
-++ @22 + KaleT1.S // ~This isn't a joke, Kale.~
+++ @21 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.R2 // ~Thanks for that, Kale.~
+++ @22 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.S // ~This isn't a joke, Kale.~
 ++ @23 + KaleT1.L // ~We've tarried enough, let's keep moving.~
 END
 
 IF ~~ KaleT1.9
 SAY @29 // ~The world isn't going to get any better. Lots of folks have come and gone, but people still have horrible things happen to them. But we can make our own lives better, eh?~
-++ @30 + KaleT1.10 // ~That's rather pessimistic of you. Aren't  you this big hero?~
-++ @31 + KaleT1.11 // ~I guess you're right.~
-++ @32 + KaleT1.12 // ~ We can make a difference.~
+++ @30 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.10 // ~That's rather pessimistic of you. Aren't  you this big hero?~
+++ @31 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.11 // ~I guess you're right.~
+++ @32 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.12 // ~ We can make a difference.~
 END
 
 IF ~~ KaleT1.10
 SAY @33 // ~For all that we do, <CHARNAME>, someone else just undoes it. Just seen a lot of good folks go gone. Heroes are really acting for their own image, not other people, cause there's no point. Least that's why I do it.~
-++ @31 + KaleT1.11 // ~I guess you're right.~
-++ @32 + KaleT1.12 // ~ We can make a difference.~
+++ @31 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.11 // ~I guess you're right.~
+++ @32 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.12 // ~ We can make a difference.~
 ++ @23 + KaleT1.L // ~We've tarried enough, let's keep moving.~
 END
 
@@ -110,9 +110,9 @@ END
 
 IF ~~KaleT1.FF
 SAY @39 // ~And now you've got him right where you want him, up, close, and personal!~
-++ @536 + KaleT1.F // ~I was obviously being sarcastic. I'd appreciate it if you stopped.~
-++ @537 + KaleT1.NNN // ~Cute, does this always work? I bet not.~
-++ @538 + KaleT1.FFF // ~I don't mind that much at all.~
+++ @536 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.F // ~I was obviously being sarcastic. I'd appreciate it if you stopped.~
+++ @537 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.NNN // ~Cute, does this always work? I bet not.~
+++ @538 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.FFF // ~I don't mind that much at all.~
 END 
 
 IF ~~ KaleT1.NNN 
@@ -127,19 +127,19 @@ END
 
 IF ~~ KaleT1.MUP
 SAY @41 // ~The world out there is a messed up place that's never getting better. Not enough good people out there to make a difference, always some jerk to counter their efforts.~
-++ @30 + KaleT1.10 // ~That's rather pessimistic of you. Aren't  you this big hero?~
-++ @31 + KaleT1.11 // ~I guess you're right.~
-++ @32 + KaleT1.12 // ~ We can make a difference.~
+++ @30 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.10 // ~That's rather pessimistic of you. Aren't  you this big hero?~
+++ @31 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT1.11 // ~I guess you're right.~
+++ @32 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT1.12 // ~ We can make a difference.~
 END
 
 // Second Talk 
 
 IF ~Global("X3KaleTalk","GLOBAL",4)~ KaleT2
 SAY @46 // ~Sooo. I ever tell you of my first plunge into this work, <CHARNAME>?~
-++ @47 + KaleT2.1 // ~I'd guess bored local wanting to try their hand at heroics?~
-++ @48 + KaleT2.2 // ~I don't recall, no.~
-++ @49 + KaleT2.2 // ~This will be interesting.~ 
-++ @50 + KaleT2.3 // ~Can it wait? We are busy at the moment.~
+++ @47 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT2.1 // ~I'd guess bored local wanting to try their hand at heroics?~
+++ @48 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT2.2 // ~I don't recall, no.~
+++ @49 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT2.2 // ~This will be interesting.~ 
+++ @50 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ + KaleT2.3 // ~Can it wait? We are busy at the moment.~
 END
 
 IF ~~ KaleT2.1
@@ -150,10 +150,10 @@ END
 IF ~~ KaleT2.2
 SAY @52 // ~Some unfriendly cultists were passing through Gullykin. Scary folks too.
 = @53 // ~Someone eh, might have borrowed something precious of theirs, they were mighty livid.~
-+~!Race(Player1,HALFLING)~+ @54 + KaleT2.R1 // ~Typically halfling, isn't it?~
++~!Race(Player1,HALFLING)~+ @54 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.R1 // ~Typically halfling, isn't it?~
 ++ @55 + KaleT2.R2 // ~I assume they wanted justice?~
 ++ @56 + KaleT2.R3 // ~What happened next?~
-++ @57 + KaleT2.3 // ~This is nice and all, but you'll have to share the rest another time, we should go.~
+++ @57 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.3 // ~This is nice and all, but you'll have to share the rest another time, we should go.~
 END
 
 IF ~~ KaleT2.3
@@ -175,9 +175,9 @@ IF ~~ KaleT2.R3
 SAY @61 // ~They right up and snatched the thief out of town. Waited until the dark, when he was by himself. Found the friend he was walking with dead in the grass.~
 = @62 // ~Saw his mother tearing up. Moved my heart, it did. Grabbed my father's cloak and asked for the biggest blade in town, and set out to get him back.~
 ++ @63 + KaleT2.R4 // ~The "Biggest"? This is getting far-fetched already.~ 
-++ @64 + KaleT2.R5 // ~Alone? That's rather heroic of you.~
+++ @64 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.R5 // ~Alone? That's rather heroic of you.~
 ++ @65 + KaleT2.R6 // ~And then?~
-++ @57 + KaleT2.3 // ~This is nice and all, but you'll have to share the rest another time, we should go.~
+++ @57 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.3 // ~This is nice and all, but you'll have to share the rest another time, we should go.~
 END
 
 IF ~~ KaleT2.R4 
@@ -219,27 +219,27 @@ IF ~~KaleT2.R8
 SAY @76 // ~Well, the blokes were more talk than walk. Took the first by complete shock, sword even got stuck when it was lodged in them.~
 = @77 // ~I didn't care though, started kicking and thrasing at every kneecap and stomach I could see. Was struck a few times myself, but I didn't notice it until after the battle.~
 = @78 // ~Was so fearsome they ran off, leaving the fellow with me. Town threw a nice party when I came back. Gullykin wasn't dull for a day.~
-++ @79 + KaleT2.E1 // ~A well deserved hero's welcome.~
-++ @80 + KaleT2.E2 // ~You did a good thing.~
-++ @81 + KaleT2.E3 // ~It sounds a bit much to be true, one against many?~
-++ @82 + KaleT2.EN // ~A fine story, Kale. Come, let's resume our journey.~
+++ @79 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.E1 // ~A well deserved hero's welcome.~
+++ @80 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.E2 // ~You did a good thing.~
+++ @81 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.E3 // ~It sounds a bit much to be true, one against many?~
+++ @82 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.EN // ~A fine story, Kale. Come, let's resume our journey.~
 END 
 
 IF ~~ KaleT2.E1
 SAY @83 // ~More than well deserved. The food was great, and his mother *very* thankful. Remember the romp like it was yesterday.~
 ++ @84 + KaleT2.E2 // ~That's...too much information.~
-++ @85 + KaleT2.E2 // ~Now that's how you get rewarded.~
+++ @85 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.E2 // ~Now that's how you get rewarded.~
 +~Gender(Player1,FEMALE)~+ @540 + KaleT2.E2 // ~How typically male.~
-++ @86 + KaleT2.E3 // ~Now I think you're lying.~
-++ @87 + KaleT2.EN // ~On that note...let's resume our journey. A fine story.~
+++ @86 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.E3 // ~Now I think you're lying.~
+++ @87 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.EN // ~On that note...let's resume our journey. A fine story.~
 END
 
 IF ~~ KaleT2.E2 
 SAY @88 // ~Pity the rescue was for nothing...he died a few months later anyway, in a kobold ambush. Just delayed the inevitable, really.~
 = @89 // ~Made it stink and all, but that's life, eh?~
-++ @90 + KaleT2.N1 // ~It's not for nothing, Kale. You did what you could.~
-++ @91 + KaleT2.N2 // ~That's unfortunate. I'm sorry.~
-++ @92 + KaleT2.N3 // ~All that risk for nothing. A shame.~
+++ @90 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.N1 // ~It's not for nothing, Kale. You did what you could.~
+++ @91 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT2.N2 // ~That's unfortunate. I'm sorry.~
+++ @92 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT2.N3 // ~All that risk for nothing. A shame.~
 ++ @93 + KaleT2.EN // ~We can move forward, at least. Speaking of, we've a journey ahead of us.~
 END
 
@@ -272,8 +272,8 @@ END
 // Talk 3 
 IF ~Global("X3KaleMomTalk","GLOBAL",3)~ KaleT3
 SAY @100 // ~Thanks for  you accepting ma's request. Been a while since I've seen my brother Samuel.~
-++ @101 + KaleT3.Trouble   // ~Your mother mentioned he hadn't written back in a while. Do you think he is in trouble?~
-++ @102 + KaleT3.Okay  // ~No problem.~
+++ @101 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + KaleT3.Trouble   // ~Your mother mentioned he hadn't written back in a while. Do you think he is in trouble?~
+++ @102 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + KaleT3.Okay  // ~No problem.~
 ++ @103 + KaleT3.First  // ~Just remember my issues come first.~
 END 
 
@@ -319,10 +319,10 @@ END
 
 IF ~Global("X3KaleTalk","GLOBAL",6)~ KaleT4 
 SAY @114 // ~Soooo.~
-++ @115 + KaleT4.Cloak // ~Soooo?~
-++ @116 +  KaleT4.Cloak // ~Go on.~
-++ @117 +  KaleT4.Cloak // ~Here we go.~
-++ @118 +  KaleT4.Cloak // ~Just say something already.~ 
+++ @115 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT4.Cloak // ~Soooo?~
+++ @116 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ +  KaleT4.Cloak // ~Go on.~
+++ @117 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ +  KaleT4.Cloak // ~Here we go.~
+++ @118 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ +  KaleT4.Cloak // ~Just say something already.~ 
 END 
 
 IF ~~ KaleT4.Cloak 
@@ -348,8 +348,8 @@ IF ~~ KaleT4.Make
 SAY @127 // ~Now, unlike most heroes, I can make my own cloak. Designed the one I wear now for myself.~
 =@128 // ~Was a bit of a potion mixed with the dyes of a cloak. Very long-lasting. Enchantment hasn't faded even. Must be my talent.~
 ++ @131 + KaleT4.Learn // ~I wouldn't mind learning, if you want to teach.~
-++ @132 + KaleT4.Better // ~I've seen better.~
-++ @133 + KaleT4.Fine2 // ~It's a fine cloak. I wouldn't mind one myself.~
+++ @132 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT4.Better // ~I've seen better.~
+++ @133 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT4.Fine2 // ~It's a fine cloak. I wouldn't mind one myself.~
 ++ @134 + KaleT4.Interest // ~I'm not interested in cloaks.~ 
 END 
 
@@ -390,9 +390,9 @@ END
 
 IF ~Global("X3KaleTalk","GLOBAL",8)~ KaleT5
 SAY @156 // ~Soooo. Let me have your attention for a minute.~
-++ @157 + KaleT5.Cloak // ~I'm listening, Kale.~
-++ @158 +  KaleT5.Wait // ~Can it wait?.~
-++ @159 +  KaleT5.Cloak // ~As long as it is one minute.~
+++ @157 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleT5.Cloak // ~I'm listening, Kale.~
+++ @158 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ +  KaleT5.Wait // ~Can it wait?.~
+++ @159 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ +  KaleT5.Cloak // ~As long as it is one minute.~
 END 
 
 IF ~~ KaleT5.Wait 
@@ -403,18 +403,18 @@ END
 IF ~~ KaleT5.Cloak 
 SAY @161 // ~I know a guy, who works for a guy, who could help me get materials to fashion you a nice cloak. It'd be more useful than just looks, too.~
 = @162 // ~All the famous adventurers have stylish, memorable cloaks. You shouldn't be any different, eh?~
-++ @163 + KaleT5.Kind // This is very generous of you Kale.~
-++ @164 + KaleT5.Want // I don't have the time to just strut in to a store to see a guy that kind of sounds shady.~
+++ @163 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT5.Kind // This is very generous of you Kale.~
+++ @164 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT5.Want // I don't have the time to just strut in to a store to see a guy that kind of sounds shady.~
 ++ @165 + KaleT5.Kind // ~Where is this store?~
-++ @166 + KaleT5.Want // ~I don't want this, Kale. I'm not interested.~
+++ @166 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT5.Want // ~I don't want this, Kale. I'm not interested.~
 END 
 
 IF ~~ KaleT5.Kind 
 SAY @167 // ~Southeast of the gate. I stop by sometimes, the guy gives me a good deal on raw products for my work.~
 = @168 // ~He's not exactly supposed to be giving them out to me, but we've got a sweet deal between us.~
-++ @169 + KaleT5.You // ~We'll make a stop there when time permits it.~
-++ @170 + KaleT5.TooMuch // ~I'm not comfortable with this if it's illegal.~
-++ @171 + KaleT5.TooMuch // ~This doesn't sound like a good idea when you put it like that.~ 
+++ @169 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleT5.You // ~We'll make a stop there when time permits it.~
+++ @170 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT5.TooMuch // ~I'm not comfortable with this if it's illegal.~
+++ @171 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleT5.TooMuch // ~This doesn't sound like a good idea when you put it like that.~ 
 END 
 
 IF ~~ KaleT5.Want 
@@ -442,15 +442,15 @@ END
 // Cloak Started Talk. 
 IF ~Global("X3KaleCloakStart","GLOBAL",2)~ KaleSC1 
 SAY @559 // ~Well, we got what I needed. I should be able to finish in a day.~
-IF ~Dead("X3KKEEP")~ + KaleSC2 
-IF ~!Dead("X3KKEEP")~ + KaleSC3 
+IF ~Dead("X3KKEEP")~ DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleSC2 
+IF ~!Dead("X3KKEEP")~ DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleSC3 
 END 
 
 IF ~~ KaleSC2 
 SAY @560 // ~It was wrong to kill the guy, though. Just what were you bloody thinking?!~
-++ @562 + KaleSC2.1 // ~I'm sorry. I got angry and lost control.~ 
+++ @562 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleSC2.1 // ~I'm sorry. I got angry and lost control.~ 
 ++ @563 + KaleSC2.2 // ~He refused to talk to us. It was the only way to get what we needed.~
-++ @564 + KaleSC2.3 // ~Don't question my actions, Kale.~
+++ @564 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-2)~ + KaleSC2.3 // ~Don't question my actions, Kale.~
 END 
 
 IF ~~ KaleSC2.1
@@ -476,9 +476,9 @@ END
 
 IF ~~ KaleSC3 
 SAY @561 // ~Don't worry, it will look splendid when I'm done.~
-++ @569 + KaleSC5 // ~I look forward to it.~
-++ @570 + KaleSC5 // ~I do expect the best!~
-++ @571 + KaleSC6 // ~I really didn't ask for this.~
+++ @569 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleSC5 // ~I look forward to it.~
+++ @570 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleSC5 // ~I do expect the best!~
+++ @571 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleSC6 // ~I really didn't ask for this.~
 END 
 
 IF ~~ KaleSC5
@@ -496,9 +496,9 @@ END
 // Cloak Completed Talk.
 IF ~Global("X3KaleCloak","GLOBAL",1)~ KaleC1
 SAY @172 // ~May I present, the fine sewing perfection of Kale? Your cloak is complete.~
-++ @175 + KaleC1.1 // ~I'm impressed.~
-++ @176 + KaleC1.2 // ~That's it?~
-++ @548 + KaleC1.3 // ~Finally.~
+++ @175 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + KaleC1.1 // ~I'm impressed.~
+++ @176 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ + KaleC1.2 // ~That's it?~
+++ @548 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleC1.3 // ~Finally.~
 END 
 
 IF ~~ KaleC1.1 
@@ -513,10 +513,10 @@ END
 
 IF ~~ KaleC1.3
 SAY @550 // ~Consider it thanks for the journey so far. I've never traveled with someone as grand as you. Happy you took me along.~
-++ @558 + KaleC1.4 // ~I'm happy I brought you along to.~
-++ @552 + KaleC1.4 // ~Thanks Kale. This means a lot.~
+++ @558 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleC1.4 // ~I'm happy I brought you along to.~
+++ @552 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",2)~ + KaleC1.4 // ~Thanks Kale. This means a lot.~
 ++ @553 + KaleC1.5 // ~It's okay, I suppose.~
-++ @554 + KaleC1.6 // ~I never wanted a cloak.~
+++ @554 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleC1.6 // ~I never wanted a cloak.~
 END 
 
 IF ~~ KaleC1.4 
@@ -540,15 +540,15 @@ END
 /* This splits, based off of whether the PC helped Kale's brother or not. */
 IF ~Global("X3KaleSixthTalk","GLOBAL",1)~ KaleT.6 
 SAY @368 // ~Thanks for the help with my brother there.~
-IF ~Global("X3KaleQuestDone","GLOBAL",1)~ + Kale.6DH 
-IF ~Global("X3KaleQuestDone","GLOBAL",2)~ + Kale.6NH
+IF ~Global("X3KaleQuestDone","GLOBAL",1)~ DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + Kale.6DH 
+IF ~Global("X3KaleQuestDone","GLOBAL",2)~ DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + Kale.6NH
 END 
 
 IF ~~ Kale.6DH 
 SAY @370 // ~Still don't see much point in it. Just going to get in trouble with money again.~
 ++ @371 + Kale.6DH1 // ~It gives him another chance. He may make use of it.~
-++ @372 + Kale.6DHY // ~He's your brother. Family helps family.~ 
-++ @373 + Kale.6DHT // ~It's not for you, it's for him.~
+++ @372 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.6DHY // ~He's your brother. Family helps family.~ 
+++ @373 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + Kale.6DHT // ~It's not for you, it's for him.~
 END 
 
 IF ~~ Kale.6DHY
@@ -564,9 +564,9 @@ END
 
 IF ~~ Kale.6DH1 
 SAY @374 // ~And what if it happens again? What do I do then, bail him out all over again?~
-++ @376 + Kale.6DH2 // ~Yes. that is what you do.~ 
+++ @376 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + Kale.6DH2 // ~Yes. that is what you do.~ 
 ++ @377 + Kale.6DH2 // ~You decide when it gets there. For now have faith in them.~ 
-++ @378 + Kale.6DH3 // ~At that point, maybe not.~ 
+++ @378 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.6DH3 // ~At that point, maybe not.~ 
 END 
 
 IF ~~ Kale.6DH2 
@@ -601,20 +601,20 @@ END
 IF ~~ Kale.6NH1
 SAY @385 // ~Still, small part does feel a bit guilty. Wondering what happens if he ain't collect enough gold, gets in trouble.~
 ++ @386 + Kale.6NHW // ~That does make me worry.~
-++ @387 + Kale.6NH2 // ~Then he doesn't. Sometimes people shouldn't be spared the consequences.~ 
-++ @388 + Kale.6NHY // ~You're the one who didn't want to help him.~ 
+++ @387 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",2)~ + Kale.6NH2 // ~Then he doesn't. Sometimes people shouldn't be spared the consequences.~ 
+++ @388 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-2)~ + Kale.6NHY // ~You're the one who didn't want to help him.~ 
 END 
 
 IF ~~ Kale.6NHW
 SAY @390 // ~Damn, going to have thoughts of regret for a while.~
 = @391 // ~What's done is done though. Might as well move on.~ 
-IF ~~ DO ~IncrementGlobal("X3KaleSixthTalk","GLOBAL",1)~ EXIT 
+IF ~~ DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ EXIT 
 END 
 
 IF ~~ Kale.6NH2 
 SAY @392 // ~Sensible thing to believe, that.~ 
 = @393 // ~Thanks for listening, <CHARNAME>. Feel a lot more relieved now.~
-IF ~~ DO ~IncrementGlobal("X3KaleSixthTalk","GLOBAL",1)~ EXIT 
+IF ~~ DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ EXIT 
 END 
 
 IF ~~ Kale.6NHY 
@@ -625,10 +625,10 @@ END
 IF ~Global("X3KaleFinalTalk","GLOBAL",2) ~ Kale.7
 SAY @399 // ~Mate, got to admit, this is the greatest adventurer I've ever gone on.~
 = @400 // ~Won't even have to fib parts of it to make it sound exciting.~
-++ @401 + Kale.7WW // ~You're welcome, for being able to join me.~
-++ @402 + Kale.71 // ~It wouldn't be possible without you, Kale.~
+++ @401 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + Kale.7WW // ~You're welcome, for being able to join me.~
+++ @402 DO ~SetGlobal("X3KaleAppChange","GLOBAL",8)~ + Kale.71 // ~It wouldn't be possible without you, Kale.~
 ++ @403 + Kale.7F // ~A fibless tale? That would be quite unlike you.~ 
-++ @420 + Kale.71 // ~You've not been that useful.~
+++ @420 DO ~SetGlobal("X3KaleAppChange","GLOBAL",4)~ + Kale.71 // ~You've not been that useful.~
 END 
 
 IF ~~ Kale.7WW 
@@ -645,8 +645,8 @@ IF ~~ Kale.71
 SAY @406 // ~Got to be honest mate, but I'm really playing second fiddle to you.~
 = @407 // ~In fact, I'm a bit worried the bards won't even remember me.~
 ++ @408 + Kale.71M // ~It's not the memory that matters, but what we do.~ 
-++ @409 + Kale.71K // ~They, forget the great Kale? You do yourself a disservice.~ 
-++ @410 + Kale.71K  // ~I don't know that, but I know I will always remember  you.~
+++ @409 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.71K // ~They, forget the great Kale? You do yourself a disservice.~ 
+++ @410 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",2)~ + Kale.71K  // ~I don't know that, but I know I will always remember  you.~
 ++ @421 + Kale.71W // ~They probably won't.~ 
 END
 
@@ -665,9 +665,9 @@ SAY @412 // ~Damn. That makes my heart swell.~
 = @419 // ~I do this for the perks though. Gold, Glory, and girls. Those are the sweet rewards.~
 ++ @414 + Kale.7Glory // ~There will be more glory to come.~
 ++ @415 + Kale.7Gold // ~There will be plenty of gold for everyone when this is over.~
-+~GlobalGT("X3KaleAlora1","GLOBAL",3)~+ @416 + Kale.7Alora // ~You have Alora, don't you?~
-+~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Female)~+ @417 + Kale.7Girl // ~I don't know about girls, but there's always me.~
-+~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Male)~+ @417 + Kale.7Boy // ~I don't know about girls, but there's always me.~
++~GlobalGT("X3KaleAlora1","GLOBAL",3)~+ @416 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Alora // ~You have Alora, don't you?~
++~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Female)~+ @417 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Girl // ~I don't know about girls, but there's always me.~
++~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Male)~+ @417 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Boy // ~I don't know about girls, but there's always me.~
 ++ @418 + Kale.7End // ~We'll have to disagree then.~ 
 END 
 
@@ -681,9 +681,9 @@ SAY @422 // ~You sure know how to crush a heart, mate.~
 = @423 // ~I just want a bit of the perks, you know? Gold, glory, and girls. Those are the sweet rewards.~
 ++ @414 + Kale.7Glory // ~There will be more glory to come.~
 ++ @415 + Kale.7Gold // ~There will be plenty of gold for everyone when this is over.~
-+~GlobalGT("X3KaleAlora1","GLOBAL",3)~+ @416 + Kale.7Alora // ~You have Alora, don't you?~
-+~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Female)~+ @417 + Kale.7Girl // ~I don't know about girls, but there's always me.~
-+~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Male)~+ @417 + Kale.7Boy // ~I don't know about girls, but there's always me.~
++~GlobalGT("X3KaleAlora1","GLOBAL",3)~+ @416 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Alora // ~You have Alora, don't you?~
++~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Female)~+ @417 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Girl // ~I don't know about girls, but there's always me.~
++~GlobalLT("X3KaleAlora1","GLOBAL",4)Gender(Player1,Male)~+ @417 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + Kale.7Boy // ~I don't know about girls, but there's always me.~
 ++ @418 + Kale.7End // ~We'll have to disagree then.~ 
 END 
 
@@ -718,9 +718,9 @@ END
 
 IF ~Global("X3KaleReminderTalk","GLOBAL",2)~ KaleR.Quest 
 SAY @142 // ~I don't mean to re-direct us back to Gullykin, but if we get a chance, I'd like to stop by and say hi to mother.~
-++ @143 + KaleR.Missing // ~Missing home already, Kale? 
-++ @144 + KaleR.Hi // ~Sure, that's not a problem.~
-++ @145 + KaleR.Forgot // ~Kale, I'm not going out of my way just for a greeting.~ 
+++ @143 DO ~SetGlobal("X3KaleAppChange","GLOBAL",6)~ + KaleR.Missing // ~Missing home already, Kale? 
+++ @144 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + KaleR.Hi // ~Sure, that's not a problem.~
+++ @145 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ + KaleR.Forgot // ~Kale, I'm not going out of my way just for a greeting.~ 
 END 
 
 IF ~~ KaleR.Missing 
@@ -736,10 +736,10 @@ END
 IF ~~ KaleR.Forgot 
 SAY @148 // ~It's just that I forgot to tell her I was even leaving. Kind of jumped on your wagon and forgot.~
 = @149 // ~She's getting older. I should have said something.~
-++ @150 + KaleR.Fine // ~It's okay, Kale. We'll head there right away.~
+++ @150 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",1)~ + KaleR.Fine // ~It's okay, Kale. We'll head there right away.~
 ++ @151 + KaleR.Fine // ~That's a bit irresponsible of you Kale. Let's make it right.~ 
-++ @152 + KaleR.Live // ~I have things that take priority. 
-++ @153 + KaleR.Live // ~Your mother will live.~
+++ @152 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-1)~ + KaleR.Live // ~I have things that take priority. 
+++ @153 DO ~IncrementGlobal("X3KaleAppChange","GLOBAL",-2)~ + KaleR.Live // ~Your mother will live.~
 END 
 
 IF ~~ KaleR.Fine 
@@ -782,14 +782,17 @@ EXIT
 
 I_C_T HALFFG 4 X3KaleHalfFG4
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @455
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~
 END 
 
 I_C_T HALFFG 5 X3KaleHalfFG5
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @456
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",4)~
 END 
 
 I_C_T HALFFG 6 X3KaleHalfFG6
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @456
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",4)~
 END 
 
 I_C_T HALFFG 7 X3KaleHalfFG7
@@ -810,6 +813,7 @@ END
 
 I_C_T HALFFG 11 X3KaleHalfFG11
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @461
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~
 END 
 
 I_C_T HALFG2 2 X3KaleHalfFG22
@@ -856,6 +860,10 @@ I_C_T HALFG4 0 X3KaleHalfFG40
 == HALFG4 @471
 END 
 
+ADD_TRANS_ACTION HALFG4 BEGIN 4 END BEGIN END ~SetGlobal("X3KaleAppChange","GLOBAL",7)~
+ADD_TRANS_ACTION HALFG4 BEGIN 6 END BEGIN END ~SetGlobal("X3KaleAppChange","GLOBAL",8)~
+ADD_TRANS_ACTION HALFG4 BEGIN 8 END BEGIN END ~SetGlobal("X3KaleAppChange","GLOBAL",5)~
+
 /* Half G5 is Gob's brother, from Kale's story. He has some special Dialogue responses at the end of some of his remarks.*/
 
 I_C_T HALFG5 1 X3KaleHalfFG51 
@@ -872,22 +880,30 @@ END
 
 I_C_T HALFG5 3 X3KaleHalfG53 
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @478
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~
 END 
 
 I_C_T HALFG5 4 X3KaleHalfG54
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @478
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",4)~
 END 
 
 I_C_T HALFG5 5 X3KaleHalfG55
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @479
 == HALFG5 @480 
 == X3KaleJ @481 
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~
 END 
 
 I_C_T HALFG5 6 X3KaleHalfG56
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @479
 == HALFG5 @480 
 == X3KaleJ @481 
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~
+END 
+
+I_C_T OGRMA3 0 X3KaleOGRMA3
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @669
 END 
 
 // Elder 
@@ -897,12 +913,21 @@ I_C_T HALFG6 0 X3KaleHalfG60
 == HALFG6 @483
 END 
 
+I_C_T MEILUM 4 X3KaleMEILUM
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @670
+DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~
+== MEILUM @671
+END 
 // Furret. We're using I_C_T2 because there is an escape area within this section.
 
 I_C_T HALFTR 2 X3KaleHALFTR1 
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @484
 == HALFTR @601 //~No pilfering here, kin. Just a pure business transaction with a rare, worthwhile gem.~ 
 END 
+
+I_C_T MENDA2 2 X3KaleMenda2
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @672
+END
 
 
 
@@ -1128,6 +1153,10 @@ I_C_T Sugar 0 X3KaleSugar0
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @596
 END
 
+I_C_T NOOBER 8 X3KaleNoober
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @668
+END
+
 //KRYSTI 
 I_C_T Krysti 0 X3KaleKrysti0
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @597
@@ -1148,6 +1177,76 @@ I_C_T Rahvin 0 X3KaleRahvin
 == X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @600
 END
 
+I_C_T PERMID 1 X3KalePermid 
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @661
+== PERMID @662
+END
+
+//
+I_C_T SAFANA 4 X3KaleSafana
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @667
+END
+
+// Berrun
+I_C_T Berrun 8 X3KaleBerrun8
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @665 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+// Berrun
+I_C_T Berrun 11 X3KaleBerrun11
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @665 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+// Berrun
+I_C_T Berrun 12 X3KaleBerrun12
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @665 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+// Berrun
+I_C_T Berrun 13 X3KaleBerrun13
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @665 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+// Berrun
+I_C_T Berrun 19 X3KaleBerrun19
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @665 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+I_C_T SCHLUM 0 X3KaleSCHLUM0
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @677 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+I_C_T SCHLUM 0 X3KaleSCHLUM0
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @677 // ~This will be a piece of pie. Let's just make sure to come back for our gold when this is done. Being a hero is hard work that deserves to be paid well.~
+END
+
+I_C_T CYTHAN 1 X3KaleSCHLUM0
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @678 // ~Aww, shucks. Seems we're putting her love story to a tragic end, mate.~
+END
+
+I_C_T BERRUN 15 X3KaleBERRUN15
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @663
+== BERRUN @664
+END
+
+I_C_T BERRUN 16 X3KaleBERRUN15
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @663
+== BERRUN @664
+END
+
+I_C_T BERRUN 17 X3KaleBERRUN15
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @663
+== BERRUN @664
+END
+
+I_C_T LAUREL 1 X3KaleLaurel1 
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @666
+END 
+
+I_C_T LAUREL 2 X3KaleLaurel2 
+== X3KaleJ IF ~InParty("X3Kale") InMyArea("X3Kale") !StateCheck("X3Kale",CD_STATE_NOTVALID)~ THEN @666
+END 
+
 APPEND X3KaleJ 
 
 // Area Comments: 
@@ -1156,8 +1255,8 @@ APPEND X3KaleJ
 IF ~Global("X3KaleTower","GLOBAL",1)~ KaleExcited
 SAY @513 // ~Mate, this is a real adventure. Creepy looming tower, danger, thrill. The tales we will be getting from this!~
 ++ @514 + KaleTowerExcited // ~I see you're excited.~
-++ @515 + KaleTowerSerious // ~Stay serious Kale. We need to be careful here.~
-++ @516 + KaleTowerKeepUp // ~I hope you can keep up with me. I'd hate to do all the work.~ 
+++ @515 DO ~SetGlobal("X3KaleAppChange","GLOBAL",5)~ + KaleTowerSerious // ~Stay serious Kale. We need to be careful here.~
+++ @516 DO ~SetGlobal("X3KaleAppChange","GLOBAL",7)~ + KaleTowerKeepUp // ~I hope you can keep up with me. I'd hate to do all the work.~ 
 END 
 
 IF ~~ KaleTowerExcited 
@@ -1235,8 +1334,8 @@ END
 
 // Player Initiated Dialogue 
 
-
-IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID 
+ 
+ IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID 
  SAY  @331 // ~Yeah? You want something, I bet.~  [KaleCom1] Greeting needs a number 
  + ~HPPercentGT(Myself,74)RandomNum(5,1)~ + @225 + Kale.PHowAreYou1 // ~How are you doing?~
  + ~HPPercentGT(Myself,74)RandomNum(5,2)~ + @225 + Kale.PHowAreYou2 // ~How are you doing?~
@@ -1247,9 +1346,11 @@ IF ~IsGabber(Player1) CombatCounter(0) !Detect([ENEMY])~ THEN BEGIN Kale.PID
  +~HPPercentGT(Myself,74)RandomNum(5,5)~+ @225 + Kale.PHowAreYou5 // ~How are you doing?~
  +~HPPercentLT(Myself,75)HPPercentGT(Myself,49)RandomNum(2,2)~+ @225 + Kale.PHowAreYouInjured2  // ~How are you doing?~
  ++ @336 + Kale.PTalk // ~Let's stop and chat for a bit.~ 
+ +~GlobalGT("X3KaleApp","GLOBAL",44)~+ @608 + KaleP.Interact
  ++ @603 + FixString
  ++ @193 EXIT // ~I need nothing at the moment.~ 
  END 
+
 
 IF ~~ Kale.PHowAreYou1
 SAY @226 // ~Not bad mate, not bad at all!~ 
@@ -1400,6 +1501,7 @@ SAY @367 // ~Which one, now?~
 +~InParty("X3Rec")~+ ~Recorder.~ + Em.Recorder
 +~InParty("X3Helga")~+ ~Helga.~ + Em.Helga
 +~InParty("C0Sirene")~+ @292 + Em.Sirene1 
++~InParty("SUFINCH")~+ @676 + Em.Finch
 + ~InParty("L#1DVER")~ + @293 + Em.Verrsza
 +~InParty("#Ishy")GlobalLT("IshyRomanceActive","GLOBAL",2)~+ @544 + Em.Ishy 
 +~InParty("#Ishy")Global("IshyRomanceActive","GLOBAL",2)~+ @544 + Em.Ishy2 
@@ -1410,8 +1512,10 @@ Low Reputation (8), Low Approval.
 Low Reputation (8), High Approval. 
 Low Approval, but Above 8 Reputation (Standard)
 For now, just script high and low reputation*/
-+~ReputationGT(Player1,12)~+ @294 + Em.Me1 
-+~ReputationLT(Player1,13)~+ @294 + Em.Me2
++~OR(2)ReputationGT(Player1,12)GlobalLT("X3KaleApp","GLOBAL",0)~+ @294 + Em.Me1 
++~ReputationLT(Player1,13)GlobalGT("X3KaleApp","GLOBAL",-1)GlobalLT("X3KaleApp","GLOBAL",20)~+ @294 + Em.Me2
++~ReputationLT(Player1,13)GlobalGT("X3KaleApp","GLOBAL",19)GlobalLT("X3KaleApp","GLOBAL",45)~+ @294 + Em.Me3
++~ReputationLT(Player1,13)GlobalGT("X3KaleApp","GLOBAL",44)~+ @294 + Em.Me4
 ++ ~Nevermind~ EXIT  
 END 
 
@@ -1604,6 +1708,11 @@ IF ~~ Em.Ishy2
 SAY @547
 IF ~~ EXIT 
 END 
+
+IF ~~ Em.Finch
+SAY @673 // ~Didn't pin her for the adventuring type, but she seems to carry herself just fine. Wonder if she'll like my charms, eh?~
+IF ~~ EXIT 
+END 
  
 IF ~~ Em.Me1 
 SAY @329 // ~You're not so bad, mate. A worthy fellow hero, I'd say.~ 
@@ -1614,6 +1723,16 @@ IF ~~ Em.Me2
 SAY @330 // ~To be honest mate, a bit troubled with some of your actions. Hoping you turn things around, else I'll have to strike out on my own.~ 
 IF ~~ EXIT 
 END 
+
+IF ~~ Em.Me3
+SAY @674 // ~I'm beginning to wish you lived in Gullykin. We'd have got up to some mischief, that's for sure.~
+IF ~~ EXIT 
+END 
+
+IF ~~ Em.Me4
+SAY @675 // ~I say this with the utmost seriousness: I'd follow you to the hells and back, friend. We make quite the force, and I'm proud to be the best looking member of that.~
+IF ~~ EXIT 
+END
 
 IF ~~ Kale.PT1Large
 SAY @215  // ~Adds to the mighty factor, don't you think?~ 
@@ -2034,11 +2153,238 @@ SAY @543 // ~Scented oils, mate. And give the hair a good scrub. You can get bet
 IF ~~ EXIT 
 END 
 
+IF ~~ KaleP.Interact 
+SAY @609
++~RandomNum(3,1)~+ @610 + ThinkingAbout1
++~RandomNum(3,2)~+ @610 + ThinkingAbout2
++~RandomNum(3,3)~+ @610 + ThinkingAbout3
++~RandomNum(3,1)~+ @611 + Hero1
++~RandomNum(3,2)~+ @611 + Hero2
++~RandomNum(3,3)~+ @611 + Hero3
++~RandomNum(3,1)~+ @612 + Watch1
++~RandomNum(3,2)~+ @612 + Watch2
++~RandomNum(3,3)~+ @612 + Watch3
++~RandomNum(3,1)~+ @613 + TellJoke1
++~RandomNum(3,2)~+ @613 + TellJoke2
++~RandomNum(3,3)~+ @613 + TellJoke3
++~RandomNum(3,1)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump1
++~RandomNum(3,2)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump2
++~RandomNum(3,3)!Race(Player1,GNOME) !Race(Player1,HALFLING) !Race(Player1,DWARF)~+ @614 + TallJump3
++~RandomNum(3,1)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump1
++~RandomNum(3,2)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump2
++~RandomNum(3,3)OR(3)Race(Player1,GNOME)Race(Player1,HALFLING)Race(Player1,DWARF)~+ @614 + Jump3
++~RandomNum(3,1)~+ @615 + Side1
++~RandomNum(3,2)~+ @615 + Side2
++~RandomNum(3,3)~+ @615 + Side3
++~RandomNum(3,1)~+ @616 + Drink1
++~RandomNum(3,2)~+ @616 + Drink2
++~RandomNum(3,3)~+ @616 + Drink3
++~RandomNum(3,1)~+ @617 + With1
++~RandomNum(3,2)~+ @617 + With2
++~RandomNum(3,3)~+ @617 + With3
++~RandomNum(3,1)~+ @618 + Smile1
++~RandomNum(3,2)~+ @618 + Smile2
++~RandomNum(3,3)~+ @618 + Smile3
++~RandomNum(3,1)~+ @619 + Cape1
++~RandomNum(3,2)~+ @619 + Cape2
++~RandomNum(3,3)~+ @619 + Cape3
++~RandomNum(3,1)~+ @620 + Cute1
++~RandomNum(3,2)~+ @620 + Cute2
++~RandomNum(3,3)~+ @620 + Cute3
+++ @596 EXIT 
+END 
+
+IF ~~ ThinkingAbout1 
+SAY @621
+IF ~~ EXIT 
+END 
+
+IF ~~ ThinkingAbout2
+SAY @622
+IF ~~ EXIT 
+END 
+
+IF ~~ ThinkingAbout3 
+SAY @623
+IF ~~ EXIT 
+END 
+
+IF ~~ Hero1
+SAY @624
+IF ~~ EXIT 
+END 
+
+IF ~~ Hero2
+SAY @625
+IF ~~ EXIT 
+END 
+
+
+IF ~~ Hero3
+SAY @626
+IF ~~ EXIT 
+END 
+
+IF ~~ Watch1
+SAY @627
+IF ~~ EXIT 
+END 
+
+IF ~~ Watch2
+SAY @628
+IF ~~ EXIT 
+END 
+
+
+IF ~~ Watch3
+SAY @629
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke1 
+SAY @630
+= @631
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke2
+SAY @632
+IF ~~ EXIT 
+END 
+
+IF ~~ TellJoke3
+SAY @633
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump1 
+SAY @634
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump2
+SAY @635
+= @636
+IF ~~ EXIT 
+END 
+
+IF ~~ TallJump3
+SAY @637
+= @638
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump1
+SAY @639
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump2
+SAY @640
+IF ~~ EXIT 
+END 
+
+IF ~~ Jump3
+SAY @641
+IF ~~ EXIT 
+END 
+
+IF ~~ Side1 
+SAY @642
+IF ~~ EXIT 
+END 
+
+IF ~~ Side2
+SAY @643
+IF ~~ EXIT 
+END 
+
+IF ~~ Side3
+SAY @644
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink1 
+SAY @645
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink2 
+SAY @646
+IF ~~ EXIT 
+END 
+
+IF ~~ Drink3 
+SAY @647
+IF ~~ EXIT 
+END 
+
+IF ~~ With1 
+SAY @648
+IF ~~ EXIT 
+END 
+
+IF ~~ With2 
+SAY @649
+IF ~~ EXIT 
+END 
+
+IF ~~ With3 
+SAY @650
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile1 
+SAY @651
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile2
+SAY @652
+IF ~~ EXIT 
+END 
+
+IF ~~ Smile3 
+SAY @653
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape1 
+SAY @654
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape2 
+SAY @655
+= @656
+IF ~~ EXIT 
+END 
+
+IF ~~ Cape3 
+SAY @657
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute1 
+SAY @658
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute2 
+SAY @659
+IF ~~ EXIT 
+END 
+
+IF ~~ Cute3 
+SAY @660
+IF ~~ EXIT 
+END 
+
 IF ~~ FixString
 SAY @604
 IF ~~ DO ~ClearAllActions() 
       StartCutSceneMode() 
-      StartCutScene("X3KReset")~ EXIT 
+      StartCutScene("X3KalR")~ EXIT 
 END 
 
 END 
