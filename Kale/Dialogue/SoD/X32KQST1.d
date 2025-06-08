@@ -125,7 +125,7 @@ IF ~OR(2)!Global("X32KaleQuestLie","GLOBAL",1)!IsValidForPartyDialogue("X3Kale")
 
 CHAIN X32KaleJ Q3.Lie 
 @46
-DO ~AddJournalEntry(@10102,QUEST_DONE)AddexperienceParty(6000)~
+DO ~SetGlobal("X32KaleQuest","GLOBAL",3)AddJournalEntry(@10102,QUEST_DONE)AddexperienceParty(6000)~
 == X32KQST1 @47
 == X32KaleJ @48
 END 
@@ -147,8 +147,8 @@ EXTERN X32KQST1 Q3.Lie2
 CHAIN X32KQST1 Q4 
 @55
 END
-++ @56 DO ~AddJournalEntry(@10101,QUEST_DONE)AddexperienceParty(6000)~ +  Q4.A 
-++ @57 DO ~AddJournalEntry(@10102,QUEST_DONE)AddexperienceParty(6000)~ + Q4.B 
+++ @56 DO ~SetGlobal("X32KaleQuest","GLOBAL",3)AddJournalEntry(@10101,QUEST_DONE)AddexperienceParty(6000)~ +  Q4.A 
+++ @57 DO ~SetGlobal("X32KaleQuest","GLOBAL",3)SetGlobal("X32KaleQuestLie","GLOBAL",1)AddJournalEntry(@10102,QUEST_DONE)AddexperienceParty(6000)~ + Q4.B 
 ++ @58 + Q4.G 
 
 CHAIN X32KQST1 Q4.A 
