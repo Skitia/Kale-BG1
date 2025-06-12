@@ -286,3 +286,125 @@ COPY "%MOD_FOLDER%/Spells/X3KCURE.SPL" override
       match_opcode = 139 parameter1 = RESOLVE_STR_REF (@55)
 END
 COPY "%MOD_FOLDER%/Spells/X3KCON3.SPL" override 
+
+BEGIN @57
+SUBCOMPONENT @54 
+REQUIRE_COMPONENT ~OFPATHSANDWAYS.TP2~ ~12~ ~The 3-Foot-Tall-Fury Kit must be installed.~
+
+COPY ~%MOD_FOLDER%/cre/X3Kale3.cre~ ~override/X3Kale.cre~
+  SAY NAME1 @1 //Kale
+  SAY NAME2 @1 //Kale
+  WRITE_ASCII 0x248 ~X3Kale~ #8  //override script
+  WRITE_ASCII 0x280 ~X3Kale~ #32  //DV
+  WRITE_ASCII 0x2cc ~X3Kale~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~KaleM~ #8   
+  WRITE_ASCII 0x3c ~KaleL~ #8   
+  SAY BIO @2 
+  SAY MORALE @3 // ~This isn't working out like I thought.~
+  SAY HAPPY @4 // ~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~
+  SAY UNHAPPY_ANNOYED @5 //
+  SAY UNHAPPY_SERIOUS @6
+  SAY UNHAPPY_BREAKING_POINT @7
+  SAY LEADER @8 // ~Oy, listen up!~
+  SAY TIRED @9 // ~I am so bushed, you have no idea.~
+  SAY BORED @10 // ~*Yawn*~
+  SAY BATTLE_CRY1 @11 // ~Damn, this is fun. Kill them all!~
+  SAY BATTLE_CRY2 @12 // ~Here comes halfling death!~
+  SAY BATTLE_CRY3 @13 // ~I love this part!~
+  SAY BATTLE_CRY4 @14 // ~Now you're gonna get it!~
+  SAY BATTLE_CRY5 @15 // ~Uh oh. Uninvited guests.~
+  SAY DAMAGE @16 //~Hugh!~ 
+  SAY DYING @17 //~Aww, not again...~ [KaleDead]
+  SAY HURT @18 // ~Hey, bleeding over here!~
+  SAY AREA_FOREST @19 // ~Oh lovely. What'd I step in now?~
+  SAY AREA_CITY @20
+  SAY AREA_DUNGEON @21 // ~*Pfft.* Every dungeon looks the same.~
+  SAY AREA_DAY @22 // ~Sooo. I wonder how much a map of this place would go for?~
+  SAY AREA_NIGHT @23 // ~Criminy. Where the bloody hell are we?~
+  SAY SELECT_COMMON1 @24 // ~Yeah? You want something, I bet.~  
+  SAY SELECT_COMMON2 @25 // ~Aye now. Something else you need?~
+  SAY SELECT_COMMON3 @26 // ~Soooo.~
+  SAY SELECT_COMMON4 @27 // ~Yep?~
+  SAY SELECT_COMMON5 @28 // ~Come on, come on!~
+  SAY SELECT_COMMON6 @24 // ~Yeah? You want something, I bet.~ 
+  SAY SELECT_ACTION1 @29 // ~Righto. Off we go.~
+  SAY SELECT_ACTION2 @30 // ~Okey-Dokey.~ 
+  SAY SELECT_ACTION3 @31 // ~Just give me a sec.~
+  SAY SELECT_ACTION4 @51 // ~Wish I thought of that.~
+  SAY SELECT_ACTION5 @49 // ~You might want to re-think that.~
+  SAY SELECT_ACTION6 @50 // ~Woohoo.~
+  SAY SELECT_ACTION7 @51 // ~Wish I thought of that.~
+  SAY CRITICAL_HIT @32 //~Yeah! That's the way!~ 
+  SAY CRITICAL_MISS @33 //~Bloody Hell~ 
+  SAY TARGET_IMMUNE @34 // ~I ain't doing much here.~
+  SAY INVENTORY_FULL @35 // ~What am I, a bloody mule?!~  
+  SAY SPELL_DISRUPTED @36 // ~I hate it when my bloody spells won't work.~ 
+  SAY SET_A_TRAP @37 // ~Yep. All done.~
+  SAY HIDDEN_IN_SHADOWS @38 // ~Time to slip into the shadows.~ 
+  SAY PICKED_POCKET @39 // ~Hey, what's this?~ 
+  SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
+  SAY SELECT_RARE2 @41 //~Come on, come on!~
+  SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
+  WRITE_BYTE  0x246 ~%L#KT3F%~ 
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~
+THEN BEGIN
+COPY ~Kale/cre/SoD/X32Kale3.cre~ ~override/X32Kale.cre~
+   SAY NAME1 @1 //Kale
+  SAY NAME2 @1 //Kale
+  WRITE_ASCII 0x248 ~X32Kale~ #8  //override script
+  WRITE_ASCII 0x280 ~X3Kale~ #32  //DV
+  WRITE_ASCII 0x2cc ~X32Kale~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~KaleM~ #8   
+  WRITE_ASCII 0x3c ~KaleL~ #8   
+  SAY BIO @2 
+  SAY MORALE @3 // ~This isn't working out like I thought.~
+  SAY HAPPY @4 // ~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~
+  SAY UNHAPPY_ANNOYED @5 //
+  SAY UNHAPPY_SERIOUS @6
+  SAY UNHAPPY_BREAKING_POINT @7
+  SAY LEADER @8 // ~Oy, listen up!~
+  SAY TIRED @9 // ~I am so bushed, you have no idea.~
+  SAY BORED @10 // ~*Yawn*~
+  SAY BATTLE_CRY1 @11 // ~Damn, this is fun. Kill them all!~
+  SAY BATTLE_CRY2 @12 // ~Here comes halfling death!~
+  SAY BATTLE_CRY3 @13 // ~I love this part!~
+  SAY BATTLE_CRY4 @14 // ~Now you're gonna get it!~
+  SAY BATTLE_CRY5 @15 // ~Uh oh. Uninvited guests.~
+  SAY DAMAGE @16 //~Hugh!~ 
+  SAY DYING @17 //~Aww, not again...~ [KaleDead]
+  SAY HURT @18 // ~Hey, bleeding over here!~
+  SAY AREA_FOREST @19 // ~Oh lovely. What'd I step in now?~
+  SAY AREA_CITY @20
+  SAY AREA_DUNGEON @21 // ~*Pfft.* Every dungeon looks the same.~
+  SAY AREA_DAY @22 // ~Sooo. I wonder how much a map of this place would go for?~
+  SAY AREA_NIGHT @23 // ~Criminy. Where the bloody hell are we?~
+  SAY SELECT_COMMON1 @24 // ~Yeah? You want something, I bet.~  
+  SAY SELECT_COMMON2 @25 // ~Aye now. Something else you need?~
+  SAY SELECT_COMMON3 @26 // ~Soooo.~
+  SAY SELECT_COMMON4 @27 // ~Yep?~
+  SAY SELECT_COMMON5 @28 // ~Come on, come on!~
+  SAY SELECT_COMMON6 @24 // ~Yeah? You want something, I bet.~ 
+  SAY SELECT_ACTION1 @29 // ~Righto. Off we go.~
+  SAY SELECT_ACTION2 @30 // ~Okey-Dokey.~ 
+  SAY SELECT_ACTION3 @31 // ~Just give me a sec.~
+  SAY SELECT_ACTION4 @51 // ~Wish I thought of that.~
+  SAY SELECT_ACTION5 @49 // ~You might want to re-think that.~
+  SAY SELECT_ACTION6 @50 // ~Woohoo.~
+  SAY SELECT_ACTION7 @51 // ~Wish I thought of that.~
+  SAY CRITICAL_HIT @32 //~Yeah! That's the way!~ 
+  SAY CRITICAL_MISS @33 //~Bloody Hell~ 
+  SAY TARGET_IMMUNE @34 // ~I ain't doing much here.~
+  SAY INVENTORY_FULL @35 // ~What am I, a bloody mule?!~  
+  SAY SPELL_DISRUPTED @36 // ~I hate it when my bloody spells won't work.~ 
+  SAY SET_A_TRAP @37 // ~Yep. All done.~
+  SAY HIDDEN_IN_SHADOWS @38 // ~Time to slip into the shadows.~ 
+  SAY PICKED_POCKET @39 // ~Hey, what's this?~ 
+  SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
+  SAY SELECT_RARE2 @41 //~Come on, come on!~
+  SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
+  WRITE_BYTE  0x246 ~%L#KT3F%~   
+END 
+
+BEGIN @58
+SUBCOMPONENT @54 
