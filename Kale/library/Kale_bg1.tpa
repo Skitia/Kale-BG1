@@ -289,8 +289,8 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bsufinch.dlg~
 THEN BEGIN
-  PRINT @503 // Adding crossmod banter between Kale and Sirene
-COMPILE ~Kale/dialogue/CrossMod/Sirene.d~
+  PRINT @504 // Adding crossmod banter between Kale and Finch
+COMPILE ~Kale/dialogue/CrossMod/Finch.d~
 END  
 
 //TO MAKE IT DISPLAY RIGHT IN WEIDU
