@@ -345,7 +345,7 @@ COPY ~%MOD_FOLDER%/cre/X3Kale3.cre~ ~override/X3Kale.cre~
   SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
   SAY SELECT_RARE2 @41 //~Come on, come on!~
   SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
-  WRITE_BYTE  0x246 ~%L#KT3F%~ 
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~L#KT3F~)) 
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~
 THEN BEGIN
@@ -403,7 +403,7 @@ COPY ~Kale/cre/SoD/X32Kale3.cre~ ~override/X32Kale.cre~
   SAY SELECT_RARE1 @40 // ~Oh um. Maybe we should organize ourselves a bit?~
   SAY SELECT_RARE2 @41 //~Come on, come on!~
   SAY REACT_TO_DIE_GENERAL @42 //~Oh shoot. And we were doing so well...~
-  WRITE_BYTE  0x246 ~%L#KT3F%~   
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~L#KT3F~)) 
 END 
 
 BEGIN @58
