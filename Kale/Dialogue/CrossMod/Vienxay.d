@@ -5,6 +5,7 @@ See("X3Kale")
 !StateCheck("X3Kale",CD_STATE_NOTVALID)
 Global("CrossVienKale","GLOBAL",0)~ THEN X3VienB KaVieBanter1
 @0 // ~Stop ogling me. I see your eyes on me, *again*. 
+DO ~SetGlobal("CrossVienKale","GLOBAL",1)~
 == X3KaleB @1 // ~What's wrong with getting a nice look at you?~
 == X3VienB @2 // ~I don't like commoners overly staring. And your kind are known for swiping.~
 == X3KaleB @3 // ~Oh boy. If you lived in Gullykin with that attitude who wouldn't want to swipe from you?~
