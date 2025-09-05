@@ -57,9 +57,9 @@ Advantages:
 
 WARD: Designates target as the ward. The bonuses last until the ward or warden's death, or a new ward is selected.
 Level 1: The ward receives +1 damage bonus and -1 THAC0.
-Level 8: The ward receives +1 damage bonus and -1 THAC0, and cannot be back stabbed.
-Level 12: The ward receives +1 damage bonus and -1 THAC0, cannot be back stabbed, and gains Iron Will.
-Level 16: The ward receives +1 damage bonus and -1 THAC0, cannot be back stabbed, gains Iron Will, and receives +1 luck.
+Level 8: The ward receives +1 damage bonus and -1 THAC0, and cannot be backstabbed.
+Level 12: The ward receives +1 damage bonus and -1 THAC0, cannot be backstabbed, and gains Iron Will.
+Level 16: The ward receives +1 damage bonus and -1 THAC0, cannot be backstabbed, gains Iron Will, and receives +1 luck.
 
 IRON WILL: Upon being subjected to a spell that causes the Warden to sleep, be stunned, feel fear, or confusion, the warden has a 10% chance to snap out of the state every second that they are in it. At level 12, the one bestowed with ward also gains this effect.
 
