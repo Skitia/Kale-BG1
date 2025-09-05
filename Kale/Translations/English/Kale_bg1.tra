@@ -1,11 +1,11 @@
 @0 = ~BG:EE detected - Baeloth interdia.2da append - set Baeloth's banter file (BBAELOTH)~
 // Kale's Lines and Items
 @1 = ~Kale~
-@2 = ~Kale claps his hand on your back and almost eagerly launches into his story. Born faster, stronger, and more courageous than the rest of Gullykin combined, he describes himself as a daredevil and ladies' man, listing exploits of strength and flashing scar after scar. While the other hin of Gullykin were more homebodies or expert cons, Kale quickly realized his peerless strength and flashed it as his feat of mettle. Still, you have a feeling he is exaggerating when he begins to describe the process of slaying a wyvern with a sword into it's hindquarters blindfolded. He ends with how proud his mother is, obviously very fond of her as he goes into how much she gushes over his stories.~
+@2 = ~Kale claps his hand on your back and almost eagerly launches into his story. Born faster, stronger, and more courageous than the rest of Gullykin combined, he describes himself as a daredevil and ladies' man, listing exploits of strength and flashing scar after scar. While the other hin of Gullykin were more homebodies or expert cons, Kale quickly realized his peerless strength and flashed it as his feat of mettle. Still, you have a feeling he is exaggerating when he begins to describe the process of slaying a wyvern with a sword into its hindquarters blindfolded. He ends with how proud his mother is, obviously very fond of her as he goes into how much she gushes over his stories.~
 @3 = ~This isn't working out like I thought.~ [KaleFlee]
 @4 = ~I feel better than a fox with a belly full of chicken! Not bloody bad at all.~ [KaleHap]
 @5 = ~Things aren't all bad, but they aren't all great either.~
-@6 = ~I ain't pleased with what's going on, don't expect me to stick around if this keeps up.~ 
+@6 = ~I ain't pleased with what's going on, don't expect me to stick around if this keeps up.~
 @7 = ~Whelp, I warned you! No more will my legend follow your bloody mess.~
 @8 = ~Oy, listen up!~ [KaleLead]
 @9 = ~I am so bushed, you have no idea.~ [KaleRest]
@@ -29,10 +29,10 @@
 @27 = ~Yep?~ [KaleCom4]
 @28 = ~Come on, come on!~ [KaleCom5]
 @29 = ~Righto. Off we go.~ [KaleAct1]
-@30 = ~Okey-Dokey.~ [KaleAct2]
+@30 = ~Okey-dokey.~ [KaleAct2]
 @31 = ~Wish I thought of that.~ [KaleAct3]
 @51 = ~Just give me a sec.~ [KaleAct4]
-@49 = ~You might want to re-think that.~ [KaleAct5]
+@49 = ~You might want to rethink that.~ [KaleAct5]
 @50 = ~Woohoo.~ [KaleAct6]
 @32 = ~Yeah! That's the way!~ [KaleCrit]
 @33 = ~Bloody hell.~ [KaleCrtM]
@@ -42,24 +42,20 @@
 @37 = ~Yep. All done.~ [KaleTrap]
 @38 = ~Time to slip into the shadows.~ [KaleHide]
 @39 = ~Hey, what's this?~ [KalePP]
-@40 = ~Oh um. Maybe we should organize ourselves a bit?~ [KaleRare]
+@40 = ~Oh, um. Maybe we should organize ourselves a bit?~ [KaleRare]
 @41 = ~Come on, come on!~ [KaleCom5]
-@42 = ~Oh shoot. And we were doing so well...~ [KaleDieR]
-@43 = ~Oh um. Maybe we should organize ourselves a bit?~ [KaleRare]
+@42 = ~Oh, shoot. And we were doing so well...~ [KaleDieR]
+@43 = ~Oh, um. Maybe we should organize ourselves a bit?~ [KaleRare]
 @44 = ~Come on, come on!~ [KaleCom5]
 @45 = ~The Champion's Cloak~
-@46 = ~Kale doesn't go anywhere without his cloak. He insists the ladies love it, and it makes him look the part of dashing savior. The cloak is part of the reason for Kale's great hardiness in battle, an amazing feat for a halfling to take blow after blow and remain standing, to the annoyance of his opposition.
+@46 = ~Kale doesn't go anywhere without his cloak. He insists the ladies love it, and it makes him look the part of dashing savior. The cloak is part of the reason for Kale's great hardiness in battle, an amazing feat for a halfling—to take blow after blow and remain standing, to the annoyance of his opposition.
 
 STATISTICS:
 
-+2 Constitution
+Equipped abilities:
+– +2 Constitution
 
-Usable By: 
-Kale
-Barbarian
-
-
-Weight: 1 ~
+Weight: 1~
 // Crossmod
 @47 = ~Adding crossmod banter between Kale and Emily~
 @48 = ~Adding crossmod banter between Kale and Vienxay~
@@ -69,14 +65,14 @@ Weight: 1 ~
 @502 = ~Adding crossmod banter between Kale and Drake~
 @503 = ~Adding crossmod banter between Kale and Sirene~
 @504 = ~Adding crossmod banter between Kale and Finch~
-// Creatures 
-@49 = ~Betsy Longfoot~ 
+// Creatures
+@49 = ~Betsy Longfoot~
 @50 = ~Samuel Longfoot~
 @51 = ~Debtor~
 @52 = ~Thug~
 @53 = ~Kirk~
 @54 = ~Mike~
-@55 = ~Shopkeep Assistant~ 
+@55 = ~Shopkeep Assistant~
 ///
 @10010 = ~Kale of Gullykin~
 @10011 = ~Kale of Gullykin
@@ -106,7 +102,7 @@ We met with Kale’s debtor. He’s dead now.~
 @10017 = ~Kale of Gullykin
 
 We cleared Samuel's debt with his debtor. We should let Samuel know the news.~
-// We're not using 18, though this was an initial idea we are scraping it. 
+// We're not using 18, though this was an initial idea we are scraping it.
 @10018 = ~Kale of Gullykin
 
 Kale’s brother was very worried about the dead debtor and is returning to Gullykin.~
@@ -119,11 +115,11 @@ Kale’s brother was relieved with our assistance and rewarded us.~
 
 Kale attacked us after we killed his family member.~
 
-@10021 = ~Kale of Gullykin 
+@10021 = ~Kale of Gullykin
 
 We arranged an offer to track down a dwarf named Kirk that hangs in Jopalin's tavern to clear Samuel's debt. We should get the money from the dwarf and then return to the debtor.~
 
-@10022 = ~Kale of Gullykin 
+@10022 = ~Kale of Gullykin
 
 The dwarf had no interest in paying up and attacked us. We should let the debtor know.~
 
@@ -131,53 +127,53 @@ The dwarf had no interest in paying up and attacked us. We should let the debtor
 
 The halfling warrior Kale has joined my party. He seemed eager to be off, burdened by the pressure of marriage. If I dismiss him, he will travel along with the flaming fist to their camp at Coast Way Crossing.~
 
-@100002 = ~Kale claps his hand on your back and almost eagerly launches into his story. Born faster, stronger, and more courageous than the rest of Gullykin combined, he describes himself as a daredevil and flirt, listing exploits of strength and flashing scar after scar. While the other hin of Gullykin were more homebodies or expert cons, Kale quickly realized his peerless strength and flashed it as his feat of mettle. Still, you have a feeling he is exaggerating when he begins to describe the process of slaying a wyvern with a sword into it's hindquarters blindfolded. He ends with how proud his mother is, obviously very fond of her as he goes into how much she gushes over his stories.~
+@100002 = ~Kale claps his hand on your back and almost eagerly launches into his story. Born faster, stronger, and more courageous than the rest of Gullykin combined, he describes himself as a daredevil and flirt, listing exploits of strength and flashing scar after scar. While the other hin of Gullykin were more homebodies or expert cons, Kale quickly realized his peerless strength and flashed it as his feat of mettle. Still, you have a feeling he is exaggerating when he begins to describe the process of slaying a wyvern with a sword into its hindquarters blindfolded. He ends with how proud his mother is, obviously very fond of her as he goes into how much she gushes over his stories.~
 
 @10030 = ~The Cloak~
 
-@10031 = ~The Cloak 
+@10031 = ~The Cloak
 
 Kale advised we visit a shopkeeper in the southeast side of Baldur's Gate who has an assistant that may be able to help get him materials to make me a cloak.~
 
-@10032 = ~The Cloak 
+@10032 = ~The Cloak
 
 We assisted the shop assistant with his dilemma and collected the materials Kale needed. Now he can get started on it.~
 
-@10033 = ~The Cloak 
+@10033 = ~The Cloak
 
 The shop assistant seems unwilling to just hand us what Kale needs without payment or assistance.~
 
-@10034 = ~The Cloak 
+@10034 = ~The Cloak
 
 The shop assistant advised we track down a thief before he'll make the trade of the raw materials. He says the thief may be around the low lantern.~
 
-@10035 = ~The Cloak 
+@10035 = ~The Cloak
 
 We retrieved the stolen supplies from the thief.~
 
-@10036 = ~The Cloak 
+@10036 = ~The Cloak
 
 We killed the shop assistant. Not only will my reputation take a dip in the city, but Kale probably won't be too happy, but at least he can get started on the cloak.~
 
-@10037 = ~The Cloak 
+@10037 = ~The Cloak
 
 Kale has finished making the cloak for me.~
 
 @10099 = ~Lilah~
 
-@10100 = ~Lilah 
+@10100 = ~Lilah
 
-A halfling woman named Lilah informed us she is looking for her brother that she was seperated from. We could keep an eye out if we wished.~
+A halfling woman named Lilah informed us she is looking for her brother that she was separated from. We could keep an eye out if we wished.~
 
-@10101 = ~Lilah 
+@10101 = ~Lilah
 
 We revealed to Lilah her brother was killed. She was as expected, devastated.~
 
-@10102 = ~Lilah 
+@10102 = ~Lilah
 
 We lied to Lilah. It is best she thinks her brother is still out there.~
 
-@10103 = ~Lilah 
+@10103 = ~Lilah
 
 Lilah's brother is dead.~
 
