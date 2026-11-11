@@ -40,7 +40,7 @@ See("X3Vien")
 !StateCheck("X3Vien",CD_STATE_NOTVALID)
 !StateCheck("X3Kale",CD_STATE_NOTVALID)
 Dead("X3VMAS")
-Global("CrossVienKale","GLOBAL",2)~ THEN X3KaleB KaVieBanter2
+Global("CrossVienKale","GLOBAL",2)~ THEN X3KaleB KaVieBanter3
 @19 // ~She's dead now, eh? Didn't really see the point of chasing her myself.~
 DO ~SetGlobal("CrossVienKale","GLOBAL",3)~
 == X3VienB @20 // ~She ruined my life, the entire point was justice.~

@@ -15,6 +15,10 @@ LANGUAGE ~English~
          ~english~
          ~Kale/translations/english/Kale.TRA~
 
+LANGUAGE ~Schinese~
+         ~schinese~
+         ~Kale/translations/schinese/Kale.TRA~
+
 BEGIN @0 /* Kale for BGEE/SOD */
 ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
 OUTER_SPRINT "bg1_eet_symbol" AR

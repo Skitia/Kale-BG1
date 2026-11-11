@@ -82,9 +82,9 @@ CHAIN IF ~InParty("X3Isaac")
 See("X3Isaac")
 !StateCheck("X3Isaac",CD_STATE_NOTVALID)
 !StateCheck("X3Kale",CD_STATE_NOTVALID)
-Global("CrossEmilKale","LOCALS",0)~ THEN X3KaleB KalIsaBanter1
+Global("CrossIsaacKale","LOCALS",0)~ THEN X3KaleB KalIsaBanter1
 @52 //  ~I never heard of you Planar Hunter lot. Not in Gullykin, anyway.~
-DO ~SetGlobal("CrossEmilKale","LOCALS",1)~
+DO ~SetGlobal("CrossIsaacKale","LOCALS",1)~
 == X3IsaacB @53 
 == X3KaleB @54
 == X3IsaacB @55 
