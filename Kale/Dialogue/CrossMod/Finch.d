@@ -18,7 +18,7 @@ CHAIN IF ~InParty("sufinch")
 See("sufinch")
 !StateCheck("sufinch",CD_STATE_NOTVALID)
 !StateCheck("X3Kale",CD_STATE_NOTVALID)
-Global("CrossFinchKale","GLOBAL",1)~ THEN X3KaleB KaleAuraBanter2
+Global("CrossFinchKale","GLOBAL",1)~ THEN X3KaleB KaleFinchBanter2
 @6 // ~So Books. Booky. You follow this Dinner fellow, right?~
 DO ~SetGlobal("CrossFinchKale","GLOBAL",2)~
 == BSUFINCH @7 // ~Deneir! His temples ensure the education of people about the great progress of mankind.~
