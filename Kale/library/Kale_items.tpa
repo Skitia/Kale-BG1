@@ -1,5 +1,5 @@
 // ITEMS
-LOAD_TRA ~Kale/translations/English/Kale_items.tra~
+LOAD_TRA ~Kale/translations/%LANGUAGE%/Kale_items.tra~
 
 COPY_EXISTING ~Kale/Item/X3KCLO.itm~ ~override/X3KCLO.itm~
 SAY NAME1 @45
