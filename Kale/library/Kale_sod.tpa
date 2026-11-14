@@ -1,4 +1,4 @@
-LOAD_TRA ~Kale/translations/English/Kale_sod.tra~
+LOAD_TRA ~Kale/translations/%LANGUAGE%/Kale_sod.tra~
 
 
 //////////////////////////////////////////////////////////////////////////////////
